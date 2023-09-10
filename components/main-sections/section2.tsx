@@ -34,7 +34,7 @@ function section2() {
               src="https://www.youtube.com/embed/GtLxHohHEJ4?si=FfzZj2A_Ojs5yLZy"
               title="S&T Intro Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
+              allowFullScreen
             ></iframe>
           </div>
         </div>
