@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
 
 function section7() {
   return (
-    <div>section7</div>
-  )
+    <section className="h-fit p-4">
+      <div>
+        <div className="text-center text-[#0A146E] px-2 md:px-8">
+          <p className="text-4xl md:text-6xl font-extrabold mb-4 md:mb-12">
+            When excellence turns into words!!!
+          </p>
+        </div>
+      </div>
+    </section>
+  );
 }
 
-export default section7
+export default section7;

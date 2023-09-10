@@ -9,7 +9,7 @@ function section4() {
   return (
     <section>
       <div
-        className="bg-cover bg-no-repeat bg-center bg-scroll md:bg-fixed"
+        className="bg-cover bg-no-repeat bg-center bg-fixed"
         style={{
           backgroundImage: `url(${snt_teams.src})`,
           width: "100%",
