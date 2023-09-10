@@ -1,5 +1,7 @@
-import Gallery from "@/components/gallery";
 import React from "react";
+import Glimpses from "@/components/glimpses";
+import { StaticImageData } from 'next/image';
+
 import img1 from "@/assets/gallery/Aarambh-2022-1.webp";
 import img2 from "@/assets/gallery/Aarambh-2022-2.webp";
 import img3 from "@/assets/gallery/Aarambh-2022-3.webp";
@@ -24,7 +26,7 @@ import img21 from "@/assets/gallery/Tech-Lounge-1.webp";
 import img22 from "@/assets/gallery/Tech-Lounge-2.webp";
 import img23 from "@/assets/gallery/Tech-Lounge-3.webp";
 
-const images = [
+const images: (StaticImageData | string)[] = [
   img1,
   img2,
   img3,
@@ -50,6 +52,13 @@ const images = [
   img23,
 ];
 
+const itemsPerSlide = [
+  { screen: 'sm', items: 1 },
+  { screen: 'md', items: 2 },
+  { screen: 'lg', items: 3 },
+  { screen: 'xl', items: 4 },
+];
+
 function section3() {
   return (
     <section className="h-fit p-4">
@@ -63,8 +72,8 @@ function section3() {
             skills and achieve the apogee of technological advancements.
           </p>
         </div>
-        <div>
-{/*           <Gallery images={images} /> */}
+        <div className="pt-4">
+          <Glimpses images={images} itemsPerSlide={itemsPerSlide} />
         </div>
       </div>
     </section>
