@@ -67,13 +67,13 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images, itemsPerSlide }) => {
         <ImageSlide imageUrls={currentImages} fullScreen={windowSize === 'sm'} />
       </div>
       <button
-        className="absolute left-0 top-1/2 text-white px-2 py-1 rounded-full"
+        className="absolute left-0 top-0 text-white bg-black bg-opacity-50 p-2 h-full"
         onClick={prevSlide}
       >
         <span className="material-icons">arrow_back_ios</span>
       </button>
       <button
-        className="absolute right-0 top-1/2  text-white px-2 py-1 rounded-full"
+        className="absolute left-0 top-0 text-white bg-black bg-opacity-50 p-2 h-full"
         onClick={nextSlide}
       >
         <span className="material-icons">arrow_forward_ios</span>
