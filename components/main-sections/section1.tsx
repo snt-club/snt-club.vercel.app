@@ -8,7 +8,7 @@ function section1() {
   return (
     <section>
       <div
-        className="bg-cover bg-no-repeat bg-center bg-fixed"
+        className="bg-cover bg-no-repeat bg-center bg-scroll md:bg-fixed"
         style={{
           backgroundImage: `url(${snt_main.src})`,
           width: "100%",
