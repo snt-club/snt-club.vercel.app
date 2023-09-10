@@ -9,18 +9,7 @@ interface ImageSlideProps {
 
 const ImageSlide: React.FC<ImageSlideProps> = ({ imageUrls, fullScreen }) => {
   return (
-    // <div className="flex space-x-4">
-    //   {imageUrls.map((imageUrl, index) => (
-    //     <div key={index} className="flex-shrink-0 w-1/4 h-2/4">
-    //       {typeof imageUrl === 'string' ? (
-    //         <Image src={imageUrl} alt={`Slide ${index + 1}`} className="w-full h-2/4 rounded object-cover aspect-video" />
-    //       ) : (
-    //         <Image src={imageUrl} alt={`Slide ${index + 1}`} className="w-full h-2/4 rounded object-cover aspect-video" />
-    //       )}
-    //     </div>
-    //   ))}
-    // </div>
-    <div className={`flex space-x-4 ${fullScreen ? 'flex-col' : ''}`}>
+    <div className={`flex space-x-4 justify-center ${fullScreen ? 'flex-col' : ''}`}>
       {imageUrls.map((imageUrl, index) => (
         <div
           key={index}
