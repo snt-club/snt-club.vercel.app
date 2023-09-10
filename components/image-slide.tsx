@@ -19,13 +19,13 @@ const ImageSlide: React.FC<ImageSlideProps> = ({ imageUrls, fullScreen }) => {
             <Image
               src={imageUrl}
               alt={`Slide ${index + 1}`}
-              className={`w-full h-auto rounded object-cover aspect-video ${fullScreen ? 'mb-2' : ''}`}
+              className={`w-full h-auto rounded object-cover aspect-video`}
             />
           ) : (
             <Image
               src={imageUrl}
               alt={`Slide ${index + 1}`}
-              className={`w-full h-auto rounded object-cover aspect-video ${fullScreen ? 'mb-2' : ''}`}
+              className={`w-full h-auto rounded object-cover aspect-video`}
             />
           )}
         </div>
