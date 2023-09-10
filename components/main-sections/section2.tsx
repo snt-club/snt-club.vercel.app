@@ -33,7 +33,7 @@ function section2() {
               height="250"
               src="https://www.youtube.com/embed/GtLxHohHEJ4?si=FfzZj2A_Ojs5yLZy"
               title="S&T Intro Video"
-              frameborder = "0"
+              frameBorder = "0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen = 'true'
             ></iframe>
