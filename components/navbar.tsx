@@ -1,0 +1,41 @@
+import Image from "next/image";
+import React from "react";
+import Link from "next/link";
+import Hamburger from "./hanmburger"
+
+// Images EE4B76
+import sntLogo from "@/assets/icons/snt-logo.png";
+
+function navbar() {
+  return (
+    <header>
+      <div className="w-full h-fit bg-[#0A146E] grid grid-cols-1 lg:grid-cols-2 px-8 py-2 text-white font-semibold max-sm:flex-col ">
+        <div className="flex justify-between items-center ease-in-out">
+          <div><Link href="/"><Image src={sntLogo} alt="S&T Logo" className="w-auto h-16" /></Link></div>
+          <Hamburger/>
+        </div>
+        <nav className="flex justify-end items-center">
+          <ul className="hidden lg:flex gap-x-4 justify-end" id="mob-navbar">
+            <li className="hover:scale-110 hover:text-[#EE4B76] ease-in-out duration-300 flex items-center">
+              <Link href="/">Home</Link>
+            </li>
+            <li className="hover:scale-110 hover:text-[#EE4B76] ease-in-out duration-300 flex items-center">
+              <Link href="/">About</Link>
+            </li>
+            <li className="hover:scale-110 hover:text-[#EE4B76] ease-in-out duration-300 flex items-center">
+              <Link href="/">Resources</Link>
+            </li>
+            <li className="hover:scale-110 hover:text-[#EE4B76] ease-in-out duration-300 flex items-center">
+              <Link href="/">Contact Us</Link>
+            </li>
+            <li className="hover:scale-110 hover:text-[#EE4B76] ease-in-out duration-300 border px-2 rounded-md bg-[#EE4B76] border-[#EE4B76] hover:bg-[#0A146E]">
+              <Link href="/">Events</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  );
+}
+
+export default navbar;
