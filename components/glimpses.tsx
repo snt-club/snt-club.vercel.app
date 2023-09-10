@@ -73,7 +73,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images, itemsPerSlide }) => {
         <span className="material-icons">arrow_back_ios</span>
       </button>
       <button
-        className="absolute left-0 top-0 text-white bg-black bg-opacity-50 p-2 h-full"
+        className="absolute right-0 top-0 text-white bg-black bg-opacity-50 p-2 h-full"
         onClick={nextSlide}
       >
         <span className="material-icons">arrow_forward_ios</span>
