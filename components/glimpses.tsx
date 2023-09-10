@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ImageSlide from "./image-slide";
 import { StaticImageData } from "next/image";
 
@@ -11,24 +11,37 @@ interface ImageSliderProps {
 
 const ImageSlider: React.FC<ImageSliderProps> = ({ images, itemsPerSlide }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [windowSize, setWindowSize] = useState('');
 
-  const getWindowSize = () => {
-    const width = window.innerWidth;
-    if (width < 640) {
-      return 'sm';
-    } else if (width < 768) {
-      return 'md';
-    } else if (width < 1024) {
-      return 'lg';
-    } else {
-      return 'xl';
+  useEffect(() => {
+    function handleResize() {
+      const width = window.innerWidth;
+      if (width < 640) {
+        setWindowSize('sm');
+      } else if (width < 768) {
+        setWindowSize('md');
+      } else if (width < 1024) {
+        setWindowSize('lg');
+      } else {
+        setWindowSize('xl');
+      }
     }
-  };
+
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Initial call to handleResize to set the initial window size
+    handleResize();
+
+    // Remove event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const getCurrentItemsPerSlide = () => {
-    const screenSize = getWindowSize();
-    const selectedItem = itemsPerSlide.find((item) => item.screen === screenSize);
-    return selectedItem ? selectedItem.items : 4;
+    const selectedItem = itemsPerSlide.find((item) => item.screen === windowSize);
+    return selectedItem ? selectedItem.items : 4; // Default to 4 items per slide if not specified
   };
 
 
@@ -51,7 +64,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images, itemsPerSlide }) => {
   return (
     <div className="relative">
       <div className="overflow-hidden">
-        <ImageSlide imageUrls={currentImages} fullScreen={getWindowSize() === 'sm'} />
+        <ImageSlide imageUrls={currentImages} fullScreen={windowSize === 'sm'} />
       </div>
       <button
         className="absolute left-0 top-1/2 text-white px-2 py-1 rounded-full"
