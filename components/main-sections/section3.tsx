@@ -64,7 +64,7 @@ function section3() {
           </p>
         </div>
         <div>
-          <Gallery images={images} />
+{/*           <Gallery images={images} /> */}
         </div>
       </div>
     </section>
