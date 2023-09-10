@@ -9,7 +9,7 @@ import Link from "next/link";
 
 function section6() {
   return (
-    <section className="h-fit p-4">
+    <section className="h-fit p-4" id="resources">
       <div>
         <div className="text-center text-[#0A146E] px-2 md:px-8">
           <p className="text-4xl md:text-6xl font-extrabold mb-4 md:mb-12">

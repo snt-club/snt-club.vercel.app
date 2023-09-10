@@ -2,7 +2,7 @@ import React from "react";
 
 function section2() {
   return (
-    <section className="h-fit p-4">
+    <section className="h-fit p-4" id="about">
       <div className="grid grid-cols-1 md:grid-cols-2 md:px-4">
         <div className="text-[#0A146E] text-center">
           <div>

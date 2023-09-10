@@ -7,7 +7,7 @@ import cws2 from "@/assets/svg/cws2.svg";
 
 function section5() {
   return (
-    <section className="h-fit p-4">
+    <section className="h-fit p-4" id="events">
       <div className="pb-8">
         <div className="text-center text-[#0A146E] px-2 md:px-8">
           <p className="text-4xl md:text-6xl font-extrabold mb-4 md:mb-12">

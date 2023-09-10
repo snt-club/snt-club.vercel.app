@@ -5,12 +5,12 @@ import snt from "@/assets/images/snt-member-form.webp";
 function BecomeMember() {
   return (
     <main className="h-fit py-28 flex justify-center content-center">
-      <div className="my-auto">
-        <div className="flex container m-auto shadow-2xl bg-gradient-to-r from-[#0a146eab] to-[#832A8Fab] rounded-xl">
-          <div className="p-8">
+      <div className="my-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 container m-auto shadow-2xl bg-gradient-to-r from-[#0a146eab] to-[#832A8Fab] rounded-xl">
+          <div className="p-4 md:p-8">
             <h1 className="text-4xl font-bold text-center pb-4 text-white">Member Registration</h1>
             <div>
-              <form action="https://docs.google.com/forms/d/e/1FAIpQLScLFSzPXm18xyhOdENz21Ce0pyyPkDy2iuZv1EMgykluI6hyw/formResponse" className="w-3/4 mx-auto">
+              <form action="https://docs.google.com/forms/d/e/1FAIpQLScLFSzPXm18xyhOdENz21Ce0pyyPkDy2iuZv1EMgykluI6hyw/formResponse" className="w-full md:w-3/4 mx-auto">
                 <div className="flex flex-col">
                   <label htmlFor="name" className="pb-0.5 pt-2 text-white">Name</label>
                   <input
@@ -80,7 +80,7 @@ function BecomeMember() {
               </form>
             </div>
           </div>
-          <div className="max-md:hidden">
+          <div className="hidden md:block">
             <Image
               src={snt}
               alt="SnT Logo"

@@ -1,11 +1,49 @@
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
+
 import sntLogo from "@/assets/icons/snt-logo.png";
+import instagram from "@/assets/svg/instagram.png";
+import linkedin from "@/assets/svg/linkedin.png";
+import github from "@/assets/svg/github.png";
+import youtube from "@/assets/svg/youtube.png";
+import discord from "@/assets/svg/discord.png";
 
 function Footer() {
+  const socials = [
+    {
+      id: 1,
+      url: "https://www.instagram.com/snt_club",
+      src: instagram,
+      alt: "Instagram",
+    },
+    {
+      id: 2,
+      url: "https://www.linkedin.com/company/sntclub/mycompany/",
+      src: linkedin,
+      alt: "LinkedIn",
+    },
+    {
+      id: 3,
+      url: "https://github.com/snt-club",
+      src: github,
+      alt: "GitHub",
+    },
+    {
+      id: 4,
+      url: "https://www.youtube.com/channel/UCs7cNBZzRubgSe-zZJWif8A",
+      src: youtube,
+      alt: "Youtube",
+    },
+    {
+      id: 5,
+      url: "https://discord.com/invite/5EtXmVp3qM",
+      src: discord,
+      alt: "Discord",
+    },
+  ];
   return (
-    <footer className="bg-[#0A146E] p-4 text-white divide-y-2">
+    <footer className="bg-[#0A146E] p-4 text-white divide-y-2" id="footer">
       <div className="grid grid-cols-5 max-md:grid-cols-2 p-2 w-fit mx-auto max-md:text-center max-md:gap-4">
         <div className="max-md:col-span-2">
           <div>
@@ -18,7 +56,15 @@ function Footer() {
               />
             </Link>
           </div>
-          <div></div>
+          <div className="flex gap-4 justify-center">
+            {socials.map((social) => (
+              <div key={social.id}>
+                <Link href={social.url} target="_blank">
+                  <Image src={social.src} alt={social.alt} width={30} />
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
         <div>
           <div>
