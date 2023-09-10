@@ -29,8 +29,8 @@ function section2() {
           <div className="p-4">
             <iframe
               className="rounded-xl"
-              width="400"
-              height="250"
+              width="100%"
+              height="100%"
               src="https://www.youtube.com/embed/GtLxHohHEJ4?si=FfzZj2A_Ojs5yLZy"
               title="S&T Intro Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
