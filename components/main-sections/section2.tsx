@@ -3,13 +3,15 @@ import React from "react";
 function section2() {
   return (
     <section className="h-fit p-4" id="about">
-      <div className="grid grid-cols-1 md:grid-cols-2 md:px-4">
-        <div className="text-[#0A146E] text-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:px-4 gap-y-4">
+        <div className="text-[#0A146E]">
           <div>
-            <p className="text-2xl md:text-4xl font-extrabold mb-2 md:mb-8">Why Join Us?</p>
+            <p className="text-4xl font-extrabold mb-2 md:mb-4 max-md:text-center">
+              Why Join Us?
+            </p>
           </div>
           <div>
-            <p className="text-justify whitespace-normal text-sm md:text-lg">
+            <p className="whitespace-normal text-sm md:text-lg">
               To facilitate students with easy self-learning, here at Science
               and Technology Club we provide a technical exposure to students by
               having them engaged in Conferences, Seminars and Workshops of
@@ -26,13 +28,11 @@ function section2() {
           </div>
         </div>
         <div className="flex justify-center items-center">
-          <div className="p-4">
+          <div className="w-full h-full p-4 md:p-8">
             <iframe
-              className="rounded-xl"
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/GtLxHohHEJ4?si=FfzZj2A_Ojs5yLZy"
-              title="S&T Intro Video"
+              className="rounded-2xl w-full h-full"
+              src="https://www.youtube.com/embed/GtLxHohHEJ4?si=RrJcTO5Idk-kSQ-P"
+              title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             ></iframe>

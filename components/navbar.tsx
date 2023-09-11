@@ -8,7 +8,7 @@ import sntLogo from "@/assets/icons/snt-logo.png";
 
 function navbar() {
   return (
-    <header>
+    <header className="sticky top-0 z-50">
       <div className="w-full h-fit bg-[#0A146E] grid grid-cols-1 lg:grid-cols-2 px-8 py-2 text-white font-semibold max-sm:flex-col ">
         <div className="flex justify-between items-center ease-in-out">
           <div><Link href="/"><Image src={sntLogo} alt="S&T Logo" className="w-auto h-16" /></Link></div>

@@ -88,7 +88,7 @@ function Footer() {
               <p className="text-sm hover:underline">Python</p>
             </Link>
             <Link href="/">
-              <p className="text-sm hover:underline">Linus</p>
+              <p className="text-sm hover:underline">Linux</p>
             </Link>
             <Link href="/">
               <p className="text-sm hover:underline">C Language</p>

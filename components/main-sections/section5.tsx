@@ -14,7 +14,7 @@ function section5() {
             Upcoming Events
           </p>
         </div>
-        <div className="w-full mx-auto px-4 md:px-12">
+        <div className="w-full mx-auto px-4 md:px-12 mb-6 hidden">
           <div className="bg-[#0A146E] text-white p-4 grid grid-cols-12">
             <div className="col-span-12 md:col-span-3 mx-auto">
               <Image src={jecrchack} alt="Event Icon" width={250} />
@@ -39,6 +39,11 @@ function section5() {
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="w-full mx-auto px-4 md:px-12">
+          <div className="bg-[#0A146E] text-white p-4 grid text-center text-2xl font-semibold">
+            NO EVENTS FOR NOW, STAY TUNNED!
           </div>
         </div>
       </div>

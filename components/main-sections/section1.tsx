@@ -24,7 +24,7 @@ function section1() {
               <Typewriter texts={texts} speed={speed} />
             </p>
           </div>
-          <div className="">
+          <div className="w-fit mx-auto">
             <Link href="/become-member">
               <p className="w-fit mx-auto font-bold text-sm md:text-lg py-1 px-2 text-white bg-[#EE4B76] rounded-md border-2 border-[#EE4B76] hover:text-[#EE4B76] hover:bg-opacity-0 hover:border-[#EE4B76] ease-in-out duration-300">
                 Become Member
