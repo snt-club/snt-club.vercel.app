@@ -9,7 +9,6 @@ function section7() {
             When excellence turns into words!!!
           </p>
         </div>
-      {/* <Testimonial /> */}
       </div>
     </section>
   );

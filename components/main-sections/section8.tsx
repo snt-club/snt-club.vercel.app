@@ -13,7 +13,7 @@ function section8() {
             Faculty Coordinators
           </p>
         </div>
-        <div className="text-[#0A146E] grid grid-cols-1 md:grid-cols-2 gap-y-8 pb-4">
+        <div className="text-[#0A146E] flex justify-evenly">
           <div>
             <div>
               <Image
