@@ -18,6 +18,7 @@ function BecomeMember() {
                     name="entry.1881354852"
                     id="name"
                     placeholder="Full Name"
+                    required
                     className="border outline-none text-[14px] border-black rounded-[5px] px-[10px] py-[8px]"
                   />
                 </div>
@@ -28,6 +29,7 @@ function BecomeMember() {
                     name="entry.1930234057"
                     id="email"
                     placeholder="Email Address"
+                    required
                     className="border outline-none text-[14px] border-black rounded-[5px] px-[10px] py-[8px]"
                   />
                 </div>
@@ -38,6 +40,7 @@ function BecomeMember() {
                     name="entry.1613640667"
                     id="phone"
                     placeholder="Phone Number"
+                    required
                     className="border outline-none text-[14px] border-black rounded-[5px] px-[10px] py-[8px]"
                   />
                 </div>
@@ -48,12 +51,13 @@ function BecomeMember() {
                     name="entry.1057253889"
                     id="cid"
                     placeholder="College ID"
+                    required
                     className="border outline-none text-[14px] border-black rounded-[5px] px-[10px] py-[8px]"
                   />
                 </div>
                 <div className="flex flex-col">
                   <label htmlFor="branch" className="pb-0.5 pt-2 text-white">Branch</label>
-                  <select name="entry.654958202" id="branch" className="rounded-xl border-black">
+                  <select name="entry.654958202" id="branch" className="rounded-xl border-black" required>
                     <option value="CS">CS</option>
                     <option value="CS-AI">CS-AI</option>
                     <option value="CS-DS">CS-DS</option>
@@ -67,7 +71,7 @@ function BecomeMember() {
                 </div>
                 <div className="flex flex-col">
                   <label htmlFor="year" className="pb-0.5 pt-2 text-white">Year</label>
-                  <select name="entry.332826609" id="year">
+                  <select name="entry.332826609" id="year" required>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
