@@ -12,7 +12,7 @@ function section1() {
         style={{
           backgroundImage: `url(${snt_main.src})`,
           width: "100%",
-          height: "80vh",
+          height: "82vh",
         }}
       >
         <div className="w-full h-full bg-[#0A146E] bg-opacity-25">
