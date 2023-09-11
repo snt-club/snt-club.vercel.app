@@ -18,7 +18,7 @@ function section9() {
     <section className="h-fit p-4">
       <div>
         <div className="text-center text-[#0A146E] px-2 md:px-8">
-          <p className="text-4xl md:text-6xl font-extrabold mb-4 md:mb-12">
+          <p className="text-2xl md:text-4xl font-extrabold mb-4 md:mb-12">
             Student Coordinators
           </p>
         </div>
@@ -43,13 +43,29 @@ function section9() {
               </div>
               <div className="flex gap-2 justify-center">
                 <div>
-                  <Link href="https://www.instagram.com/sh_reyan_sh_/" target="_blank">
-                    <Image src={instagram} alt="Instagram" width={30} className="hover:scale-110 ease-in-out duration-300" />
+                  <Link
+                    href="https://www.instagram.com/sh_reyan_sh_/"
+                    target="_blank"
+                  >
+                    <Image
+                      src={instagram}
+                      alt="Instagram"
+                      width={30}
+                      className="hover:scale-110 ease-in-out duration-300"
+                    />
                   </Link>
                 </div>
                 <div>
-                  <Link href="https://www.linkedin.com/in/shreyansh-agarwal-1060a4222/" target="_blank">
-                    <Image src={linkedin} alt="LinkedIn" width={30} className="hover:scale-110 ease-in-out duration-300" />
+                  <Link
+                    href="https://www.linkedin.com/in/shreyansh-agarwal-1060a4222/"
+                    target="_blank"
+                  >
+                    <Image
+                      src={linkedin}
+                      alt="LinkedIn"
+                      width={30}
+                      className="hover:scale-110 ease-in-out duration-300"
+                    />
                   </Link>
                 </div>
               </div>
@@ -74,13 +90,29 @@ function section9() {
 
               <div className="flex gap-2 justify-center">
                 <div>
-                  <Link href="https://www.instagram.com/chinklerathore11/?igshid=MzRlODBiNWFlZA%3D%3D" target="_blank">
-                    <Image src={instagram} alt="Instagram" width={30} className="hover:scale-110 ease-in-out duration-300" />
+                  <Link
+                    href="https://www.instagram.com/chinklerathore11/?igshid=MzRlODBiNWFlZA%3D%3D"
+                    target="_blank"
+                  >
+                    <Image
+                      src={instagram}
+                      alt="Instagram"
+                      width={30}
+                      className="hover:scale-110 ease-in-out duration-300"
+                    />
                   </Link>
                 </div>
                 <div>
-                  <Link href="https://www.linkedin.com/in/chinkle-rathore-7a5519252/" target="_blank">
-                    <Image src={linkedin} alt="LinkedIn" width={30} className="hover:scale-110 ease-in-out duration-300" />
+                  <Link
+                    href="https://www.linkedin.com/in/chinkle-rathore-7a5519252/"
+                    target="_blank"
+                  >
+                    <Image
+                      src={linkedin}
+                      alt="LinkedIn"
+                      width={30}
+                      className="hover:scale-110 ease-in-out duration-300"
+                    />
                   </Link>
                 </div>
               </div>
@@ -90,199 +122,301 @@ function section9() {
       </div>
       <div>
         <div className="text-center text-[#0A146E] px-2 md:px-8">
-          <p className="text-4xl md:text-6xl font-extrabold mb-4 md:mb-12">
+          <p className="text-2xl md:text-4xl font-extrabold mb-4 md:mb-12">
             Student Heads
           </p>
         </div>
-        <div className="text-[#0A146E] grid grid-cols-2 md:grid-cols-4 gap-8 pb-4">
-          <div>
+        <div className="container mx-auto">
+          <div className="text-[#0A146E] grid grid-flow-col auto-cols-max gap-8 overflow-scroll">
             <div>
-              <Image
-                src={vanshaj}
-                alt="Development Head - Vanshaj Kataria"
-                width={125}
-                className="mx-auto rounded-full"
-              />
-            </div>
-            <div className="text-center">
               <div>
-                <p className="text-2xl font-bold pb-2 pt-1">Vanshaj Kataria</p>
+                <Image
+                  src={vanshaj}
+                  alt="Development Head - Vanshaj Kataria"
+                  width={125}
+                  className="mx-auto rounded-full"
+                />
               </div>
-              <div>
-                <p className="text-lg">III Yr, ECE</p>
-                <p className="text-lg">Development Head</p>
-              </div>
+              <div className="text-center">
+                <div>
+                  <p className="text-2xl font-bold pb-2 pt-1">
+                    Vanshaj Kataria
+                  </p>
+                </div>
+                <div>
+                  <p className="text-lg">III Yr, ECE</p>
+                  <p className="text-lg">Development Head</p>
+                </div>
 
-              <div className="flex gap-2 justify-center">
-                <div>
-                  <Link href="https://www.instagram.com/vanshaj_kataria/" target="_blank">
-                    <Image src={instagram} alt="Instagram" width={30} className="hover:scale-110 ease-in-out duration-300" />
-                  </Link>
-                </div>
-                <div>
-                  <Link href="https://www.linkedin.com/in/vanshaj-kataria-3730731b2/" target="_blank">
-                    <Image src={linkedin} alt="LinkedIn" width={30} className="hover:scale-110 ease-in-out duration-300" />
-                  </Link>
+                <div className="flex gap-2 justify-center">
+                  <div>
+                    <Link
+                      href="https://www.instagram.com/vanshaj_kataria/"
+                      target="_blank"
+                    >
+                      <Image
+                        src={instagram}
+                        alt="Instagram"
+                        width={30}
+                        className="hover:scale-110 ease-in-out duration-300"
+                      />
+                    </Link>
+                  </div>
+                  <div>
+                    <Link
+                      href="https://www.linkedin.com/in/vanshaj-kataria-3730731b2/"
+                      target="_blank"
+                    >
+                      <Image
+                        src={linkedin}
+                        alt="LinkedIn"
+                        width={30}
+                        className="hover:scale-110 ease-in-out duration-300"
+                      />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div>
             <div>
-              <Image
-                src={somya}
-                alt="Student Coordinator - Chinkle Rathore"
-                width={125}
-                className="mx-auto rounded-full"
-              />
-            </div>
-            <div className="text-center">
               <div>
-                <p className="text-2xl font-bold pb-2 pt-1">Somya Jain</p>
+                <Image
+                  src={somya}
+                  alt="Student Coordinator - Chinkle Rathore"
+                  width={125}
+                  className="mx-auto rounded-full"
+                />
               </div>
-              <div>
-                <p className="text-lg">III Yr, CSE</p>
-                <p className="text-lg">Management Head</p>
-              </div>
+              <div className="text-center">
+                <div>
+                  <p className="text-2xl font-bold pb-2 pt-1">Somya Jain</p>
+                </div>
+                <div>
+                  <p className="text-lg">III Yr, CSE</p>
+                  <p className="text-lg">Management Head</p>
+                </div>
 
-              <div className="flex gap-2 justify-center">
-                <div>
-                  <Link href="https://www.instagram.com/somyaa_jain08/" target="_blank">
-                    <Image src={instagram} alt="Instagram" width={30} className="hover:scale-110 ease-in-out duration-300" />
-                  </Link>
-                </div>
-                <div>
-                  <Link href="https://www.linkedin.com/in/somya-jain-76b230223/" target="_blank">
-                    <Image src={linkedin} alt="LinkedIn" width={30} className="hover:scale-110 ease-in-out duration-300" />
-                  </Link>
+                <div className="flex gap-2 justify-center">
+                  <div>
+                    <Link
+                      href="https://www.instagram.com/somyaa_jain08/"
+                      target="_blank"
+                    >
+                      <Image
+                        src={instagram}
+                        alt="Instagram"
+                        width={30}
+                        className="hover:scale-110 ease-in-out duration-300"
+                      />
+                    </Link>
+                  </div>
+                  <div>
+                    <Link
+                      href="https://www.linkedin.com/in/somya-jain-76b230223/"
+                      target="_blank"
+                    >
+                      <Image
+                        src={linkedin}
+                        alt="LinkedIn"
+                        width={30}
+                        className="hover:scale-110 ease-in-out duration-300"
+                      />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div>
             <div>
-              <Image
-                src={unique}
-                alt="Student Coordinator - Chinkle Rathore"
-                width={125}
-                className="mx-auto rounded-full"
-              />
-            </div>
-            <div className="text-center">
               <div>
-                <p className="text-2xl font-bold pb-2 pt-1">Unique Paliwal</p>
+                <Image
+                  src={unique}
+                  alt="Student Coordinator - Chinkle Rathore"
+                  width={125}
+                  className="mx-auto rounded-full"
+                />
               </div>
-              <div>
-                <p className="text-lg">III Yr, CSE</p>
-                <p className="text-lg">Tutor Head</p>
-              </div>
+              <div className="text-center">
+                <div>
+                  <p className="text-2xl font-bold pb-2 pt-1">Unique Paliwal</p>
+                </div>
+                <div>
+                  <p className="text-lg">III Yr, CSE</p>
+                  <p className="text-lg">Tutor Head</p>
+                </div>
 
-              <div className="flex gap-2 justify-center">
-                <div>
-                  <Link href="https://www.instagram.com/paliwalunique/" target="_blank">
-                    <Image src={instagram} alt="Instagram" width={30} className="hover:scale-110 ease-in-out duration-300" />
-                  </Link>
-                </div>
-                <div>
-                  <Link href="https://www.linkedin.com/in/unique-paliwal-6a3456226/" target="_blank">
-                    <Image src={linkedin} alt="LinkedIn" width={30} className="hover:scale-110 ease-in-out duration-300" />
-                  </Link>
+                <div className="flex gap-2 justify-center">
+                  <div>
+                    <Link
+                      href="https://www.instagram.com/paliwalunique/"
+                      target="_blank"
+                    >
+                      <Image
+                        src={instagram}
+                        alt="Instagram"
+                        width={30}
+                        className="hover:scale-110 ease-in-out duration-300"
+                      />
+                    </Link>
+                  </div>
+                  <div>
+                    <Link
+                      href="https://www.linkedin.com/in/unique-paliwal-6a3456226/"
+                      target="_blank"
+                    >
+                      <Image
+                        src={linkedin}
+                        alt="LinkedIn"
+                        width={30}
+                        className="hover:scale-110 ease-in-out duration-300"
+                      />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div>
             <div>
-              <Image
-                src={shailesh}
-                alt="Student Coordinator - Chinkle Rathore"
-                width={125}
-                className="mx-auto rounded-full"
-              />
-            </div>
-            <div className="text-center">
               <div>
-                <p className="text-2xl font-bold pb-2 pt-1">Shailesh Purohit</p>
+                <Image
+                  src={shailesh}
+                  alt="Student Coordinator - Chinkle Rathore"
+                  width={125}
+                  className="mx-auto rounded-full"
+                />
               </div>
-              <div>
-                <p className="text-lg">III Yr, CSE</p>
-                <p className="text-lg">Content Head</p>
-              </div>
+              <div className="text-center">
+                <div>
+                  <p className="text-2xl font-bold pb-2 pt-1">
+                    Shailesh Purohit
+                  </p>
+                </div>
+                <div>
+                  <p className="text-lg">III Yr, CSE</p>
+                  <p className="text-lg">Content Head</p>
+                </div>
 
-              <div className="flex gap-2 justify-center">
-                <div>
-                  <Link href="https://www.instagram.com/bhaba_shailesh.raj/" target="_blank">
-                    <Image src={instagram} alt="Instagram" width={30} className="hover:scale-110 ease-in-out duration-300" />
-                  </Link>
-                </div>
-                <div>
-                  <Link href="https://www.linkedin.com/in/shailesh-purohit-9917291b7/" target="_blank">
-                    <Image src={linkedin} alt="LinkedIn" width={30} className="hover:scale-110 ease-in-out duration-300" />
-                  </Link>
+                <div className="flex gap-2 justify-center">
+                  <div>
+                    <Link
+                      href="https://www.instagram.com/bhaba_shailesh.raj/"
+                      target="_blank"
+                    >
+                      <Image
+                        src={instagram}
+                        alt="Instagram"
+                        width={30}
+                        className="hover:scale-110 ease-in-out duration-300"
+                      />
+                    </Link>
+                  </div>
+                  <div>
+                    <Link
+                      href="https://www.linkedin.com/in/shailesh-purohit-9917291b7/"
+                      target="_blank"
+                    >
+                      <Image
+                        src={linkedin}
+                        alt="LinkedIn"
+                        width={30}
+                        className="hover:scale-110 ease-in-out duration-300"
+                      />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div>
             <div>
-              <Image
-                src={parth}
-                alt="Student Coordinator - Chinkle Rathore"
-                width={125}
-                className="mx-auto rounded-full"
-              />
-            </div>
-            <div className="text-center">
               <div>
-                <p className="text-2xl font-bold pb-2 pt-1">Parth Jain</p>
+                <Image
+                  src={parth}
+                  alt="Student Coordinator - Chinkle Rathore"
+                  width={125}
+                  className="mx-auto rounded-full"
+                />
               </div>
-              <div>
-                <p className="text-lg">III Yr, CSE</p>
-                <p className="text-lg">Design Head</p>
-              </div>
+              <div className="text-center">
+                <div>
+                  <p className="text-2xl font-bold pb-2 pt-1">Parth Jain</p>
+                </div>
+                <div>
+                  <p className="text-lg">III Yr, CSE</p>
+                  <p className="text-lg">Design Head</p>
+                </div>
 
-              <div className="flex gap-2 justify-center">
-                <div>
-                  <Link href="https://www.instagram.com/art_at_adobe/?igshid=YmMyMTA2M2Y%3D" target="_blank">
-                    <Image src={instagram} alt="Instagram" width={30} className="hover:scale-110 ease-in-out duration-300" />
-                  </Link>
-                </div>
-                <div>
-                  <Link href="https://www.linkedin.com/in/parth-jain-b95182214/" target="_blank">
-                    <Image src={linkedin} alt="LinkedIn" width={30} className="hover:scale-110 ease-in-out duration-300" />
-                  </Link>
+                <div className="flex gap-2 justify-center">
+                  <div>
+                    <Link
+                      href="https://www.instagram.com/art_at_adobe/?igshid=YmMyMTA2M2Y%3D"
+                      target="_blank"
+                    >
+                      <Image
+                        src={instagram}
+                        alt="Instagram"
+                        width={30}
+                        className="hover:scale-110 ease-in-out duration-300"
+                      />
+                    </Link>
+                  </div>
+                  <div>
+                    <Link
+                      href="https://www.linkedin.com/in/parth-jain-b95182214/"
+                      target="_blank"
+                    >
+                      <Image
+                        src={linkedin}
+                        alt="LinkedIn"
+                        width={30}
+                        className="hover:scale-110 ease-in-out duration-300"
+                      />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div>
             <div>
-              <Image
-                src={simran}
-                alt="Student Coordinator - Chinkle Rathore"
-                width={125}
-                className="mx-auto rounded-full"
-              />
-            </div>
-            <div className="text-center">
               <div>
-                <p className="text-2xl font-bold pb-2 pt-1">Simran Rawat</p>
+                <Image
+                  src={simran}
+                  alt="Student Coordinator - Chinkle Rathore"
+                  width={125}
+                  className="mx-auto rounded-full"
+                />
               </div>
-              <div>
-                <p className="text-lg">III Yr, CSE</p>
-                <p className="text-lg">Social Media/PR Head</p>
-              </div>
-
-              <div className="flex gap-2 justify-center">
+              <div className="text-center">
                 <div>
-                  <Link href="https://www.instagram.com/simranrawat2513/?igshid=NGExMmI2YTkyZg%3D%3D" target="_blank">
-                    <Image src={instagram} alt="Instagram" width={30} className="hover:scale-110 ease-in-out duration-300" />
-                  </Link>
+                  <p className="text-2xl font-bold pb-2 pt-1">Simran Rawat</p>
                 </div>
                 <div>
-                  <Link href="https://www.linkedin.com/in/simran-rawat-150554214/" target="_blank">
-                    <Image src={linkedin} alt="LinkedIn" width={30} className="hover:scale-110 ease-in-out duration-300" />
-                  </Link>
+                  <p className="text-lg">III Yr, CSE</p>
+                  <p className="text-lg">Social Media/PR Head</p>
+                </div>
+
+                <div className="flex gap-2 justify-center">
+                  <div>
+                    <Link
+                      href="https://www.instagram.com/simranrawat2513/?igshid=NGExMmI2YTkyZg%3D%3D"
+                      target="_blank"
+                    >
+                      <Image
+                        src={instagram}
+                        alt="Instagram"
+                        width={30}
+                        className="hover:scale-110 ease-in-out duration-300"
+                      />
+                    </Link>
+                  </div>
+                  <div>
+                    <Link
+                      href="https://www.linkedin.com/in/simran-rawat-150554214/"
+                      target="_blank"
+                    >
+                      <Image
+                        src={linkedin}
+                        alt="LinkedIn"
+                        width={30}
+                        className="hover:scale-110 ease-in-out duration-300"
+                      />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -291,7 +425,7 @@ function section9() {
       </div>
       {/* <div>
         <div className="text-center text-[#0A146E] px-2 md:px-8">
-          <p className="text-4xl md:text-6xl font-extrabold mb-4 md:mb-12">
+          <p className="text-2xl md:text-4xl font-extrabold mb-4 md:mb-12">
             Faculty Coordinators
           </p>
         </div>

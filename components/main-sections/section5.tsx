@@ -10,7 +10,7 @@ function section5() {
     <section className="h-fit p-4" id="events">
       <div className="pb-8">
         <div className="text-center text-[#0A146E] px-2 md:px-8">
-          <p className="text-4xl md:text-6xl font-extrabold mb-4 md:mb-12">
+          <p className="text-2xl md:text-4xl font-extrabold mb-4 md:mb-12">
             Upcoming Events
           </p>
         </div>
@@ -44,7 +44,7 @@ function section5() {
       </div>
       <div>
         <div className="text-center text-[#0A146E] px-2 md:px-8">
-          <p className="text-4xl md:text-6xl font-extrabold mb-4 md:mb-12">
+          <p className="text-2xl md:text-4xl font-extrabold mb-4 md:mb-12">
             Past Events
           </p>
         </div>

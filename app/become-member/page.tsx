@@ -57,7 +57,7 @@ function BecomeMember() {
                 </div>
                 <div className="flex flex-col">
                   <label htmlFor="branch" className="pb-0.5 pt-2 text-white">Branch</label>
-                  <select name="entry.654958202" id="branch" className="rounded-xl border-black" required>
+                  <select name="entry.654958202" id="branch" className="rounded-xl border-black required">
                     <option value="CS">CS</option>
                     <option value="CS-AI">CS-AI</option>
                     <option value="CS-DS">CS-DS</option>
@@ -78,8 +78,8 @@ function BecomeMember() {
                     <option value="4">4</option>
                   </select>
                 </div>
-                <button className="pt-4 mx-auto ">
-                  <input type="submit" value="Submit" className="align-middle flex rounded-lg px-2 bg-white text-lg font-bold hover:bg-none hover:border-white" />
+                <button className="pt-4 mx-auto cursor-pointer">
+                  <input type="submit" value="Submit" className="align-middle flex rounded-lg px-2 bg-white text-lg font-bold hover:bg-none hover:border-white text-center cursor-pointer" />
                 </button>
               </form>
             </div>

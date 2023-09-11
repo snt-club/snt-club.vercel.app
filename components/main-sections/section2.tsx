@@ -6,7 +6,7 @@ function section2() {
       <div className="grid grid-cols-1 md:grid-cols-2 md:px-4">
         <div className="text-[#0A146E] text-center">
           <div>
-            <p className="text-3xl md:text-6xl font-extrabold mb-2 md:mb-8">Why Join Us?</p>
+            <p className="text-2xl md:text-4xl font-extrabold mb-2 md:mb-8">Why Join Us?</p>
           </div>
           <div>
             <p className="text-justify whitespace-normal text-sm md:text-lg">
