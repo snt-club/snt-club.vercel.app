@@ -1,12 +1,12 @@
-import Section1 from '@/components/main-sections/section1'
-import Section2 from '@/components/main-sections/section2'
-import Section3 from '@/components/main-sections/section3'
-import Section4 from '@/components/main-sections/section4'
-import Section5 from '@/components/main-sections/section5'
-import Section6 from '@/components/main-sections/section6'
-import Section7 from '@/components/main-sections/section7'
-import Section8 from '@/components/main-sections/section8'
-import Section9 from '@/components/main-sections/section9'
+import Section1 from '@/components/main-sections/main'
+import Section2 from '@/components/main-sections/why-join-us'
+import Section3 from '@/components/main-sections/glimpses'
+import Section4 from '@/components/main-sections/teams'
+import Section5 from '@/components/main-sections/events'
+import Section6 from '@/components/main-sections/onlinecourse'
+import Section7 from '@/components/main-sections/testimonial'
+import Section8 from '@/components/main-sections/faculty'
+import Section9 from '@/components/main-sections/coreteam'
 
 
 export default function Home() {

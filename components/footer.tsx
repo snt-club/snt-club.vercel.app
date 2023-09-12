@@ -44,7 +44,7 @@ function Footer() {
   ];
   return (
     <footer className="bg-[#0A146E] p-4 text-white divide-y-2" id="footer">
-      <div className="grid grid-cols-5 max-md:grid-cols-2 p-2 w-fit mx-auto max-md:text-center max-md:gap-4">
+      <div className="grid grid-cols-5 max-md:grid-cols-2 p-2 w-fit mx-auto max-md:text-center gap-4">
         <div className="max-md:col-span-2">
           <div>
             <Link href="/">
