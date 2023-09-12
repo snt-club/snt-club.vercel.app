@@ -10,6 +10,7 @@ import unique from "@/assets/people/unique.png";
 import shailesh from "@/assets/people/shailesh.png";
 import parth from "@/assets/people/parth.png";
 import simran from "@/assets/people/simran.png";
+import laveena from "@/assets/people/laveena.png";
 import instagram from "@/assets/svg/in.svg";
 import linkedin from "@/assets/svg/li.svg";
 
@@ -40,7 +41,7 @@ function coreTeam() {
                   </p>
                 </div>
                 <div>
-                  <p className="text-md">III Yr, CSE</p>
+                  <p className="text-base">III Yr, CSE</p>
                 </div>
                 <div className="flex gap-6 justify-center">
                   <div>
@@ -88,7 +89,7 @@ function coreTeam() {
                   </p>
                 </div>
                 <div>
-                  <p className="text-md">III Yr, CSE</p>
+                  <p className="text-base">III Yr, CSE</p>
                 </div>
 
                 <div className="flex gap-6 justify-center">
@@ -131,7 +132,7 @@ function coreTeam() {
           </p>
         </div>
         <div className="flex justify-center">
-          <div className="text-[#0A146E] grid grid-flow-col auto-cols-max gap-8 overflow-scroll">
+          <div className="text-[#0A146E] grid grid-flow-col auto-cols-max gap-8 overflow-scroll team-scroll">
             <div>
               <div>
                 <Image
@@ -148,8 +149,8 @@ function coreTeam() {
                   </p>
                 </div>
                 <div className="w-fit mx-auto text-center">
-                  <p className="text-md">III Yr, ECE</p>
-                  <p className="text-md">Development Head</p>
+                  <p className="text-base">III Yr, ECE</p>
+                  <p className="text-base">Development Head</p>
                 </div>
                 <div className="w-fit mx-auto">
                   <div className="gap-6 flex">
@@ -187,7 +188,7 @@ function coreTeam() {
               <div>
                 <Image
                   src={somya}
-                  alt="Student Coordinator - Chinkle Rathore"
+                  alt="Management Head - Somya Jain"
                   width={125}
                   className="mx-auto rounded-full"
                 />
@@ -197,8 +198,8 @@ function coreTeam() {
                   <p className="text-2xl font-bold pb-2 pt-1">Somya Jain</p>
                 </div>
                 <div>
-                  <p className="text-md">III Yr, CSE</p>
-                  <p className="text-md">Management Head</p>
+                  <p className="text-base">III Yr, CSE</p>
+                  <p className="text-base">Management Head</p>
                 </div>
 
                 <div className="flex gap-6 justify-center">
@@ -235,7 +236,7 @@ function coreTeam() {
               <div>
                 <Image
                   src={unique}
-                  alt="Student Coordinator - Chinkle Rathore"
+                  alt="Tutor Head - Unique Paliwal"
                   width={125}
                   className="mx-auto rounded-full"
                 />
@@ -245,8 +246,8 @@ function coreTeam() {
                   <p className="text-2xl font-bold pb-2 pt-1">Unique Paliwal</p>
                 </div>
                 <div>
-                  <p className="text-md">III Yr, CSE</p>
-                  <p className="text-md">Tutor Head</p>
+                  <p className="text-base">III Yr, CSE</p>
+                  <p className="text-base">Tutor Head</p>
                 </div>
 
                 <div className="flex gap-6 justify-center">
@@ -283,7 +284,7 @@ function coreTeam() {
               <div>
                 <Image
                   src={shailesh}
-                  alt="Student Coordinator - Chinkle Rathore"
+                  alt="Content Head - Shailesh Purohit"
                   width={125}
                   className="mx-auto rounded-full"
                 />
@@ -295,8 +296,8 @@ function coreTeam() {
                   </p>
                 </div>
                 <div>
-                  <p className="text-md">III Yr, CSE</p>
-                  <p className="text-md">Content Head</p>
+                  <p className="text-base">III Yr, CSE</p>
+                  <p className="text-base">Content Head</p>
                 </div>
 
                 <div className="flex gap-6 justify-center">
@@ -333,7 +334,7 @@ function coreTeam() {
               <div>
                 <Image
                   src={parth}
-                  alt="Student Coordinator - Chinkle Rathore"
+                  alt="Design Head - Parth Jain"
                   width={125}
                   className="mx-auto rounded-full"
                 />
@@ -343,8 +344,8 @@ function coreTeam() {
                   <p className="text-2xl font-bold pb-2 pt-1">Parth Jain</p>
                 </div>
                 <div>
-                  <p className="text-md">III Yr, CSE</p>
-                  <p className="text-md">Design Head</p>
+                  <p className="text-base">III Yr, CSE</p>
+                  <p className="text-base">Design Head</p>
                 </div>
 
                 <div className="flex gap-6 justify-center">
@@ -381,7 +382,7 @@ function coreTeam() {
               <div>
                 <Image
                   src={simran}
-                  alt="Student Coordinator - Chinkle Rathore"
+                  alt="Social Media/PR Head - Simran Rawat"
                   width={125}
                   className="mx-auto rounded-full"
                 />
@@ -391,8 +392,8 @@ function coreTeam() {
                   <p className="text-2xl font-bold pb-2 pt-1">Simran Rawat</p>
                 </div>
                 <div>
-                  <p className="text-md">III Yr, CSE</p>
-                  <p className="text-md">Social Media/PR Head</p>
+                  <p className="text-base">III Yr, CSE</p>
+                  <p className="text-base">Social Media/PR Head</p>
                 </div>
 
                 <div className="flex gap-6 justify-center">
@@ -412,6 +413,54 @@ function coreTeam() {
                   <div>
                     <Link
                       href="https://www.linkedin.com/in/simran-rawat-150554214/"
+                      target="_blank"
+                    >
+                      <Image
+                        src={linkedin}
+                        alt="LinkedIn"
+                        width={30}
+                        className="hover:scale-110 ease-in-out duration-300"
+                      />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div>
+                <Image
+                  src={laveena}
+                  alt="Technical Head - Laveena Goyal"
+                  width={125}
+                  className="mx-auto rounded-full"
+                />
+              </div>
+              <div className="text-center">
+                <div>
+                  <p className="text-2xl font-bold pb-2 pt-1">Laveena Goyal</p>
+                </div>
+                <div>
+                  <p className="text-base">III Yr, CSE</p>
+                  <p className="text-base">Technical Head</p>
+                </div>
+
+                <div className="flex gap-6 justify-center">
+                  <div>
+                    <Link
+                      href="https://www.instagram.com/lavigoyal8303/"
+                      target="_blank"
+                    >
+                      <Image
+                        src={instagram}
+                        alt="Instagram"
+                        width={30}
+                        className="hover:scale-110 ease-in-out duration-300"
+                      />
+                    </Link>
+                  </div>
+                  <div>
+                    <Link
+                      href="https://www.linkedin.com/in/laveena-goyal-05680b223/"
                       target="_blank"
                     >
                       <Image

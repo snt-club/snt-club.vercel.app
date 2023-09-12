@@ -7,6 +7,7 @@ import Section6 from '@/components/main-sections/onlinecourse'
 import Section7 from '@/components/main-sections/testimonial'
 import Section8 from '@/components/main-sections/faculty'
 import Section9 from '@/components/main-sections/coreteam'
+import Section10 from '@/components/main-sections/coremembers'
 
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <Section7 />
       <Section8 />
       <Section9 />
+      <Section10 />
     </main>
   );
 }

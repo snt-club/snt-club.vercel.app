@@ -112,7 +112,7 @@ function Footer() {
           <div>
             <p className="text-xl font-bold pb-2">Contact Us</p>
           </div>
-          <div>
+          <div className="truncate">
             <Link href="mailto:info.sntclub@gmail.com">
               <p className="text-sm hover:underline">info.sntclub@gmail.com</p>
             </Link>

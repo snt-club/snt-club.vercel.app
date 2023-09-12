@@ -30,7 +30,7 @@ function faculty() {
                   </p>
                 </div>
                 <div>
-                  <p className="text-md">
+                  <p className="text-base">
                     Head of Department
                     <br />
                     Chemistry
@@ -53,7 +53,7 @@ function faculty() {
                   </p>
                 </div>
                 <div>
-                  <p className="text-md">
+                  <p className="text-base">
                     Associate Professor
                     <br />
                     Department of Mechanical Engineering
