@@ -44,9 +44,9 @@ function Footer() {
   ];
   return (
     <footer className="bg-[#0A146E] p-4 text-white divide-y-2" id="footer">
-      <div className="grid grid-cols-5 max-md:grid-cols-2 p-2 w-fit mx-auto max-md:text-center gap-4">
-        <div className="max-md:col-span-2">
-          <div>
+      <div className="grid grid-cols-5 max-lg:grid-cols-2 p-2 w-fit mx-auto max-lg:text-center gap-4">
+        <div className="max-lg:col-span-2">
+          <div className="my-[20px] lg:my-0">
             <Link href="/">
               <Image
                 src={sntLogo}

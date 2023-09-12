@@ -88,23 +88,23 @@ function glimpsesSlider() {
     <div className="mb-[20px] lg:mb-0">
       <Swiper
         slidesPerView={swiperSlides}
-        spaceBetween={5}
+        spaceBetween={50}
         loop={true}
         autoplay={{
           delay: 2000,
           disableOnInteraction: false,
         }}
-        navigation={true}
+        // navigation={true}
         modules={[Pagination, Navigation, Autoplay]}
-        className="mt-[15px] flex justify-center"
+        className="mt-[15px] "
       >
         {images.map((image, index) => (
-          <SwiperSlide key={index} className="w-full flex justify-center">
-            <div className="w-full md:w-[300px] h-auto overflow-hidden rounded-[10px] mx-auto ">
+          <SwiperSlide key={index}>
+            <div className="w-full lg:w-[320px] h-auto overflow-hidden rounded-[10px] mx-auto ">
               <Image
                 src={image.images}
                 alt={image.alt}
-                className="w-full md:w-[300px] bg-cover bg-center rounded-[10px] aspect-video object-cover"
+                className="w-full lg:w-[320px] bg-cover bg-center rounded-[10px] aspect-video object-cover"
               />
             </div>
           </SwiperSlide>

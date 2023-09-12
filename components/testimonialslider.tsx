@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -57,7 +57,7 @@ function testimonialslider() {
       if (screenWidth >= 1200) {
         setSwiperSlides(3); // Desktop
       } else if (screenWidth >= 992) {
-        setSwiperSlides(3); // Desktop-Small
+        setSwiperSlides(2); // Desktop-Small
       } else if (screenWidth >= 768) {
         setSwiperSlides(1); // Tablet
       } else {
@@ -72,7 +72,7 @@ function testimonialslider() {
   }, []);
   return (
     <div>
-      <div className="mx-[20px] md:mx-[40px]">
+      <div className="mx-[10px] md:mx-[40px]">
         <div className="mb-[20px] lg:mb-0">
           <Swiper
             slidesPerView={swiperSlides}
@@ -82,19 +82,18 @@ function testimonialslider() {
               delay: 4000,
               disableOnInteraction: false,
             }}
-            navigation={true}
             modules={[Autoplay]}
             className="mt-[15px] flex justify-center z-10"
           >
             {testimonial.map((message, index) => (
               <SwiperSlide key={index}>
-                <div className="p-8 flex justify-center items-center bg-[#0A146E] text-white text-center rounded-[10px]">
+                <div className="p-4 md:p-8 flex justify-center items-center bg-[#0A146E] text-white text-center rounded-[10px]">
                   <div>
                     <div>
                       <span className="font-extrabold text-5xl ">{'"'}</span>
                     </div>
-                    <div className="overflow-y-scroll h-40 w-full">
-                      <span className="text-sm">{message.message}</span>
+                    <div className="h-[180px] md:h-[160px] w-full">
+                      <span className="text-sm md:text-base">{message.message}</span>
                     </div>
                     <div>
                       <span className="font-extrabold text-5xl ">{'"'}</span>
