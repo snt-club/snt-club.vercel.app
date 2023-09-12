@@ -41,7 +41,7 @@ function section6() {
           Online Courses
         </span>
       </div>
-      <div className="flex flex-wrap justify-center gap-[50px] mt-[20px] mx-[20px]">
+      <div className="flex flex-wrap justify-evenly mt-[20px] mx-[20px]">
         {online_course.map((course, index) => (
           <div key={index} className="border-2  w-[400px]  rounded-[20px]">
             <div className="-z-10">
@@ -51,12 +51,12 @@ function section6() {
                 className="rounded-t-[20px]"
               />
             </div>
-            <div className="-mt-[30px] ml-[70%] ">
+            <div className="-mt-[20px] md:-mt-[30px] ml-[70%] ">
               <Link href={course.course_link} target="blank">
                 <Image
                   src={course_button}
                   alt="button"
-                  className="w-[60px] hover:scale-110 duration-200"
+                  className="w-[40px] md:w-[60px] hover:scale-110 duration-200"
                 />
               </Link>
             </div>

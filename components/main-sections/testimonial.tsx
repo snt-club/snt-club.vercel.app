@@ -1,5 +1,5 @@
 import React from "react";
-import Testimonials from '@/components/testimonialslider'
+import Testimonials from "@/components/testimonialslider";
 
 const testimonials = [
   {
@@ -41,14 +41,14 @@ const testimonials = [
 
 function testimonial() {
   return (
-    <section className="h-fit container mx-auto">
-      <div className="p-8">
+    <section className="h-fit container ">
+      <div>
         <div className="text-center text-[#0A146E]">
-          <p className="text-2xl md:text-4xl font-extrabold mb-4 md:mb-12">
+          <p className="text-2xl md:text-4xl font-extrabold">
             When excellence turns into words!!!
           </p>
         </div>
-        <div>
+        <div className="mt-[30px]">
           <Testimonials />
         </div>
       </div>

@@ -11,7 +11,7 @@ function coremembers() {
               Team Members
             </p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="flex flex-wrap justify-between gap-x-[80px]">
             <div className="w-fit mx-auto text-center p-4">
               <div>
                 <p className="text-base md:text-lg font-semibold mb-4">
@@ -20,7 +20,7 @@ function coremembers() {
               </div>
               <div>
                 <Link href="https://www.linkedin.com/in/prashant-singh-529391250/" target="_blank">
-                  <p className="text-sm md:text-base hover:underline">Prashant Hooda</p>
+                  <p className="text-sm md:text-base hover:underline">Prashant Singh</p>
                 </Link>
               </div>
             </div>
