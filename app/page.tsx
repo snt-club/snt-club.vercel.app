@@ -1,5 +1,5 @@
 import Section1 from '@/components/main-sections/main'
-import Section2 from '@/components/main-sections/why-join-us'
+import Section2 from '@/components/main-sections/whyjoinus'
 import Section3 from '@/components/main-sections/glimpses'
 import Section4 from '@/components/main-sections/teams'
 import Section5 from '@/components/main-sections/events'
