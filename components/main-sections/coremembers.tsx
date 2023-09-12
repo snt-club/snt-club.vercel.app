@@ -46,7 +46,7 @@ function coremembers() {
                 </p>
               </div>
               <div>
-                <Link href="/" target="_blank">
+                <Link href="https://www.linkedin.com/in/nawel-asgar-448358263/" target="_blank">
                   <p className="text-sm md:text-base hover:underline">Nawel Asgar</p>
                 </Link>
               </div>
