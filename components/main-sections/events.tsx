@@ -14,12 +14,12 @@ function events() {
             Upcoming Events
           </p>
         </div>
-        <div className="w-full mx-auto px-4 md:px-12 mb-6 hidden mt-[10px] md:mt-[20px]">
-          <div className="bg-[#0A146E] text-white p-4 grid grid-cols-12">
+        <div className="w-full mx-auto mb-6 mt-[10px] md:mt-[20px]">
+          <div className="bg-[#0A146E] text-white p-4\ grid grid-cols-12">
             <div className="col-span-12 md:col-span-3 mx-auto">
               <Image src={jecrchack} alt="Event Icon" width={250} />
             </div>
-            <div className="col-span-12 md:col-span-9 my-auto px-4 md:px-8">
+            <div className="col-span-12 md:col-span-9 my-auto px-4 md:px-8 py-4">
               <div>
                 <p className="text-xl md:text-3xl font-bold pb-2 md:pb-4">
                   INNOV8 &apos;23 - JECRC Hackathon
@@ -31,12 +31,50 @@ function events() {
                   Hackathon taking place on 27th September 2023.
                 </p>
               </div>
-              <div>
+              <div className="hidden">
                 <Link href="/">
                   <p className="px-2 py-1 bg-[#EE4B76] w-fit border border-[#EE4B76] text-center font-semibold hover:text-[#EE4B76] hover:bg-opacity-0">
                     Register Now
                   </p>
                 </Link>
+              </div>
+              <div>
+                <p className="font-semibold text-[#EE4B76]">
+                  Registrations Start Soon
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="w-full mx-auto mb-6 mt-[10px] md:mt-[20px]">
+          <div className="bg-[#0A146E] text-white p-4\ grid grid-cols-12">
+            <div className="col-span-12 md:col-span-3 mx-auto">
+              <Image src={cbootcamp} alt="Event Icon" width={250} />
+            </div>
+            <div className="col-span-12 md:col-span-9 my-auto px-4 md:px-8 py-4">
+              <div>
+                <p className="text-xl md:text-3xl font-bold pb-2 md:pb-4">
+                  C Bootcamp
+                </p>
+              </div>
+              <div>
+                <p className="text-sm md:text-lg pb-2 md:pb-4">
+                  Science and Technology Club is organising a C Bootcamp for the
+                  students where you will be taught the concepts of C
+                  Programming .
+                </p>
+              </div>
+              <div className="hidden">
+                <Link href="/">
+                  <p className="px-2 py-1 bg-[#EE4B76] w-fit border border-[#EE4B76] text-center font-semibold hover:text-[#EE4B76] hover:bg-opacity-0">
+                    Register Now
+                  </p>
+                </Link>
+              </div>
+              <div>
+                <p className="font-semibold text-[#EE4B76]">
+                  Registrations Start Soon
+                </p>
               </div>
             </div>
           </div>
@@ -58,7 +96,7 @@ function events() {
             <div className="col-span-12 md:col-span-3 mx-auto">
               <Image src={cws2} alt="Event Icon" width={250} />
             </div>
-            <div className="col-span-12 md:col-span-9 my-auto px-4 md:px-8">
+            <div className="col-span-12 md:col-span-9 my-auto px-4 md:px-8 py-4">
               <div>
                 <p className="text-xl md:text-3xl font-bold pb-2 md:pb-4">
                   Code With SnT 2.0
@@ -71,18 +109,24 @@ function events() {
                   your fellow coders and solve C Programming Questions.
                 </p>
               </div>
-              <div>
+              <div className="hidden">
                 <Link href="/">
                   <p className="px-2 py-1 bg-[#EE4B76] w-fit border border-[#EE4B76] text-center font-semibold hover:text-[#EE4B76] hover:bg-opacity-0">
                     Register Now
                   </p>
                 </Link>
               </div>
+              <div>
+                <p className="font-semibold text-[#EE4B76]">
+                  Registrations Closed
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
   );
 }
 
