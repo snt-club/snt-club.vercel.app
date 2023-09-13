@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 import jecrchack from "@/assets/svg/jecrchack.svg";
+import cbootcamp from "@/assets/svg/c_bootcamp.svg";
 import cws2 from "@/assets/svg/cws2.svg";
 
 function events() {
