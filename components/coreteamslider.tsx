@@ -152,6 +152,11 @@ const coreteamslider = () => {
                   <span>&nbsp;{coordinator.branch}</span>
                 </div>
               </div>
+              <div className="flex justify-center">
+                <div>
+                  <span>{coordinator.role}</span>
+                </div>
+              </div>
               <div className="flex justify-center gap-5 mt-[10px]">
                 <div>
                   <Link href={coordinator.instagram_link} target="_blank">

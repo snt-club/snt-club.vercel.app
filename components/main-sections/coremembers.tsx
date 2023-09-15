@@ -22,6 +22,9 @@ function coremembers() {
                 <Link href="https://www.linkedin.com/in/prashant-singh-529391250/" target="_blank">
                   <p className="text-sm md:text-base hover:underline">Prashant Singh</p>
                 </Link>
+                <Link href="https://www.linkedin.com/in/garvit-singhal-aa58b0254/" target="_blank">
+                  <p className="text-sm md:text-base hover:underline">Garvit Singhal</p>
+                </Link>
               </div>
             </div>
             <div className="w-fit mx-auto text-center p-4">
@@ -36,6 +39,9 @@ function coremembers() {
                 </Link>
                 <Link href="https://www.linkedin.com/in/prakhar-singhal-16536a25a/" target="_blank">
                   <p className="text-sm md:text-base hover:underline">Prakhar Singhal</p>
+                </Link>
+                <Link href="https://www.linkedin.com/in/yatharth-bajaj-77aa22261/" target="_blank">
+                  <p className="text-sm md:text-base hover:underline">Yatharth Bajaj</p>
                 </Link>
               </div>
             </div>
@@ -58,11 +64,11 @@ function coremembers() {
                 </p>
               </div>
               <div>
-                <Link href="/" target="_blank">
+                <Link href="https://www.linkedin.com/in/puru-bhatt-96056a27a/" target="_blank">
                   <p className="text-sm md:text-base hover:underline">Puru Bhatt</p>
                 </Link>
-                <Link href="/" target="_blank">
-                  <p className="text-sm md:text-base hover:underline">Priyansh</p>
+                <Link href="https://www.linkedin.com/in/priyansh-agrawal-6486b1260/" target="_blank">
+                  <p className="text-sm md:text-base hover:underline">Priyansh Agarwal</p>
                 </Link>
               </div>
             </div>
