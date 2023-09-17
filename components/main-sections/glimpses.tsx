@@ -7,7 +7,7 @@ function section3() {
     <section className="h-fit container mx-auto">
       <div className="text-[#0A146E] mx-8 lg:mx-12 mt-16">
         <div>
-          <p className="text-5xl md:text-8xl font-extrabold pt-4">
+          <p className="text-5xl md:text-6xl font-bold pt-4">
             Glimpses
           </p>
           <p className="text-justify text-sm md:text-base ml-1 lg:ml-4 sm:my-auto h-fit mt-[10px] md:mt-[20px]">

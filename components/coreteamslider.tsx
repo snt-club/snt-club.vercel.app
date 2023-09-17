@@ -80,16 +80,6 @@ const studenthead = [
     instagram_link: "https://www.instagram.com/simranrawat2513/",
     linkedin_link: "https://www.linkedin.com/in/simran-rawat-150554214/",
   },
-  {
-    name: "Laveena Goyal",
-    profile_pic: laveena,
-    alt: "Technical Head - Laveena Goyal",
-    year: "III yr",
-    branch: "CSE",
-    role: "Technical Head",
-    instagram_link: "https://www.instagram.com/lavigoyal8303/",
-    linkedin_link: "https://www.linkedin.com/in/laveena-goyal-05680b223/",
-  },
 ];
 
 const coreteamslider = () => {

@@ -29,16 +29,16 @@ function section4() {
                   />
                 </div>
                 <div className="text-center w-full md:w-fit md:text-right mx-auto">
-                  <p className="font-bold text-lg">
-                    Alpha comprises of 1st year students
+                  <p className="font-bold text-xl">
+                    Alpha comprises of <span className="text-[#EE4B76]">1st year</span> students
                   </p>
                   <p className="text-sm">Enthusiasts will experience a basic level in Alpha team</p>
                 </div>
               </div>
               <div className="p-8 py-12 flex flex-col-reverse justify-center items-center md:grid md:grid-cols-2">
                 <div className="text-center w-full md:w-fit md:text-left mx-auto">
-                  <p className="font-bold text-lg">
-                    Beta comprises of 2nd year students
+                  <p className="font-bold text-xl">
+                    Beta comprises of <span className="text-[#EE4B76]">2nd year</span> students
                   </p>
                   <p className="text-sm">
                     Enthusiasts will experience an intermediate level in Beta
@@ -64,8 +64,8 @@ function section4() {
                   />
                 </div>
                 <div className="text-center w-full md:w-fit md:text-right mx-auto">
-                  <p className="font-bold text-lg">
-                    Gamma comprises of 3rd and 4th year students
+                  <p className="font-bold text-xl">
+                    Gamma comprises of <span className="text-[#EE4B76]">3rd and 4th year</span> students
                   </p>
                   <p className="text-sm">
                     Enthusiasts will experience an expertise level in Gamma team

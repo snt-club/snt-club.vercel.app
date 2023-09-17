@@ -1,28 +1,28 @@
-import Section1 from '@/components/main-sections/main'
-import Section2 from '@/components/main-sections/whyjoinus'
-import Section3 from '@/components/main-sections/glimpses'
-import Section4 from '@/components/main-sections/teams'
-import Section5 from '@/components/main-sections/events'
-import Section6 from '@/components/main-sections/onlinecourse'
-import Section7 from '@/components/main-sections/testimonial'
-import Section8 from '@/components/main-sections/faculty'
-import Section9 from '@/components/main-sections/coreteam'
-import Section10 from '@/components/main-sections/coremembers'
+import Main from '@/components/main-sections/main'
+import WhyJoinUs from '@/components/main-sections/whyjoinus'
+import Glimpses from '@/components/main-sections/glimpses'
+import Teams from '@/components/main-sections/teams'
+import Events from '@/components/main-sections/events'
+import OnlineCourse from '@/components/main-sections/onlinecourse'
+import Testimonials from '@/components/main-sections/testimonial'
+import Faculty from '@/components/main-sections/faculty'
+import CoreTeam from '@/components/main-sections/coreteam'
+import CoreMembers from '@/components/main-sections/coremembers'
 
 
 export default function Home() {
   return (
     <main>
-      <Section1 />
-      <Section2 />
-      <Section3 />
-      <Section4 />
-      <Section5 />
-      <Section6 />
-      <Section7 />
-      <Section8 />
-      <Section9 />
-      <Section10 />
+      <Main />
+      <WhyJoinUs />
+      <Glimpses />
+      <Teams />
+      <Events />
+      <OnlineCourse />
+      <Testimonials />
+      <Faculty />
+      <CoreTeam />
+      <CoreMembers />
     </main>
   );
 }

@@ -5,7 +5,7 @@ function section2() {
     <section className="h-fit container mx-auto " id="about">
       <div className="text-[#0A146E] mx-8 lg:mx-12 mt-16">
         <div>
-          <p className="text-5xl md:text-8xl font-extrabold pt-4">Why Join Us?</p>
+          <p className="text-5xl md:text-7xl font-bold pt-4">Why Join Us?</p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 w-fit mx-auto gap-10 mt-[10px] md:mt-[20px]">
           <div className="flex align-middle">
