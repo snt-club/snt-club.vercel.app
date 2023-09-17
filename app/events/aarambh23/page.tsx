@@ -10,14 +10,19 @@ function aarambh23() {
       <header className="bg-[#0A146E]  text-white text-base md:text-xl py-2 md:py-8">
         <div className="block md:flex justify-between align-middle font-bold px-8 md:px-36">
           <div>
-            <Link href="https://drive.google.com/file/d/1DxVRrkcuYEaVY5KKeEQaMqwOmYkowZ7P/view?usp=share_link" target="_blank">
+            <Link
+              href="https://drive.google.com/file/d/1DxVRrkcuYEaVY5KKeEQaMqwOmYkowZ7P/view?usp=share_link"
+              target="_blank"
+            >
               <p className="hover:text-gray-400 text-center">Notice</p>
             </Link>
           </div>
           <div className="max-md:w-fit max-md:mx-auto">
-            <button className="bg-white text-[#0A146E] px-2 rounded-full hover:bg-transparent hover:text-white border-white border text-center">
-              Register Now
-            </button>
+            <Link href="https://forms.gle/ghZqA2RUZkK5VFBz6">
+              <button className="bg-white text-[#0A146E] px-2 rounded-full hover:bg-transparent hover:text-white border-white border text-center">
+                Register Now
+              </button>
+            </Link>
           </div>
         </div>
       </header>
@@ -29,11 +34,7 @@ function aarambh23() {
         </div>
         <div className="block md:flex">
           <div className="mx-16 pb-8">
-            <Image
-              src={aarambh_poster}
-              alt="Aarambh 2023"
-              className="h-fit"
-            />
+            <Image src={aarambh_poster} alt="Aarambh 2023" className="h-fit" />
           </div>
           <div className="h-fit my-auto">
             <div className="mx-16">
@@ -73,7 +74,16 @@ function aarambh23() {
               </div>
             </div>
             <div className="pt-4 text-center mx-8 text-xs">
-              <p><b>Alpha &#40;1st Year Community&#41; WhatsApp Group:</b> <a className="text-blue-600 hover:underline" href="https://chat.whatsapp.com/Hgvn6rhASDK1Uu3zVHV6gP" target="_blank">https://chat.whatsapp.com/Hgvn6rhASDK1Uu3zVHV6gP</a></p>
+              <p>
+                <b>Alpha &#40;1st Year Community&#41; WhatsApp Group:</b>{" "}
+                <a
+                  className="text-blue-600 hover:underline"
+                  href="https://chat.whatsapp.com/Hgvn6rhASDK1Uu3zVHV6gP"
+                  target="_blank"
+                >
+                  https://chat.whatsapp.com/Hgvn6rhASDK1Uu3zVHV6gP
+                </a>
+              </p>
             </div>
           </div>
         </div>
