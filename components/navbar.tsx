@@ -25,16 +25,16 @@ function navbar() {
                 <Link href="/">Home</Link>
               </li>
               <li className="hover:scale-110 hover:text-[#EE4B76] ease-in-out duration-300 flex items-center">
-                <Link href="#about">About</Link>
+                <Link href="/#about">About</Link>
               </li>
               <li className="hover:scale-110 hover:text-[#EE4B76] ease-in-out duration-300 flex items-center">
-                <Link href="#resources">Resources</Link>
+                <Link href="/#resources">Resources</Link>
               </li>
               <li className="hover:scale-110 hover:text-[#EE4B76] ease-in-out duration-300 flex items-center">
-                <Link href="#footer">Contact Us</Link>
+                <Link href="/#footer">Contact Us</Link>
               </li>
               <li className="hover:scale-110 hover:text-[#EE4B76] ease-in-out duration-300 border px-2 rounded-md bg-[#EE4B76] border-[#EE4B76] hover:bg-[#0A146E]">
-                <Link href="#events">Events</Link>
+                <Link href="/#events">Events</Link>
               </li>
             </ul>
           </nav>

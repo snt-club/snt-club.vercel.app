@@ -6,7 +6,7 @@ import vinay_marwal from "@/assets/people/vinay.png";
 
 function faculty() {
   return (
-    <section className="h-fit container mx-auto">
+    <section className="h-fit container mx-auto" id="faculty">
       <div className="text-[#0A146E] mx-8 lg:mx-12 mt-16">
         <div className="text-center">
           <p className="text-2xl md:text-5xl font-bold pt-4">

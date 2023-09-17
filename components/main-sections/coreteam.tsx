@@ -33,7 +33,7 @@ const studentcoordinator = [
 
 function coreTeam() {
   return (
-    <section className="h-fit container mx-auto">
+    <section className="h-fit container mx-auto" id="coreteam">
       {/* Student Coordinator */}
       <div className="text-[#0A146E] mx-8 lg:mx-12 mt-16">
         <div className="text-center text-[#0A146E]">
