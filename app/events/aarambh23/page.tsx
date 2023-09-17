@@ -15,9 +15,11 @@ function aarambh23() {
             </Link>
           </div>
           <div className="max-md:w-fit max-md:mx-auto">
-            <button className="bg-white text-[#0A146E] px-2 rounded-full hover:bg-transparent hover:text-white border-white border text-center">
-              Register Now
-            </button>
+            <Link href="https://forms.gle/ghZqA2RUZkK5VFBz6">
+              <button className="bg-white text-[#0A146E] px-2 rounded-full hover:bg-transparent hover:text-white border-white border text-center">
+                Register Now
+              </button>
+            </Link>
           </div>
         </div>
       </header>
