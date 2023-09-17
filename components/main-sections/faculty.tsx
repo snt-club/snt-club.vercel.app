@@ -9,7 +9,7 @@ function faculty() {
     <section className="h-fit container mx-auto">
       <div className="text-[#0A146E] mx-8 lg:mx-12 mt-16">
         <div className="text-center">
-          <p className="text-2xl md:text-6xl font-extrabold pt-4">
+          <p className="text-2xl md:text-5xl font-bold pt-4">
             Faculty Coordinators
           </p>
         </div>
