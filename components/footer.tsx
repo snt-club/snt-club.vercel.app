@@ -71,7 +71,7 @@ function Footer() {
             <p className="text-xl font-bold pb-2">S&T Club</p>
           </div>
           <div>
-            <Link href="/">
+            <Link href="/#about">
               <p className="text-sm hover:underline">About Us</p>
             </Link>
             <Link href="/">
@@ -84,13 +84,13 @@ function Footer() {
             <p className="text-xl font-bold pb-2">Resources</p>
           </div>
           <div>
-            <Link href="/">
+            <Link href="/#resources">
               <p className="text-sm hover:underline">Python</p>
             </Link>
-            <Link href="/">
+            <Link href="/#resources">
               <p className="text-sm hover:underline">Linux</p>
             </Link>
-            <Link href="/">
+            <Link href="/#resources">
               <p className="text-sm hover:underline">C Language</p>
             </Link>
           </div>
@@ -100,10 +100,10 @@ function Footer() {
             <p className="text-xl font-bold pb-2">Team</p>
           </div>
           <div>
-            <Link href="/">
+            <Link href="/#faculty">
               <p className="text-sm hover:underline">Faculty Coordinators</p>
             </Link>
-            <Link href="/">
+            <Link href="/#coreteam">
               <p className="text-sm hover:underline">Student Coordinators</p>
             </Link>
           </div>
