@@ -9,7 +9,7 @@ function faculty() {
     <section className="h-fit container mx-auto" id="faculty">
       <div className="text-[#0A146E] mx-8 lg:mx-12 mt-16">
         <div className="text-center">
-          <p className="text-2xl md:text-5xl font-bold pt-4">
+          <p className="text-3xl md:text-5xl font-bold pt-4">
             Faculty Coordinators
           </p>
         </div>
@@ -25,7 +25,7 @@ function faculty() {
               </div>
               <div className="text-center">
                 <div>
-                  <p className="text-2xl font-bold pb-2 pt-1">
+                  <p className="text-base md:text-xl font-bold pt-1">
                     Dr. Sharda Soni
                   </p>
                 </div>
@@ -48,7 +48,7 @@ function faculty() {
               </div>
               <div className="text-center">
                 <div>
-                  <p className="text-2xl font-bold pb-2 pt-1">
+                  <p className="text-base md:text-xl font-bold pt-1">
                     Mr. Vinay Marwal
                   </p>
                 </div>
