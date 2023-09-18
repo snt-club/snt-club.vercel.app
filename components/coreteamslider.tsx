@@ -132,7 +132,7 @@ const coreteamslider = () => {
                 />
               </div>
               <div className="mt-[10px] text-center">
-                <span className="text-2xl font-bold">{coordinator.name}</span>
+                <span className="text-base md:text-xl font-bold">{coordinator.name}</span>
               </div>
               <div className="flex justify-center">
                 <div>

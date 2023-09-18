@@ -37,7 +37,7 @@ function coreTeam() {
       {/* Student Coordinator */}
       <div className="text-[#0A146E] mx-8 lg:mx-12 mt-16">
         <div className="text-center text-[#0A146E]">
-          <p className="text-2xl md:text-5xl font-bold pt-4">
+          <p className="text-3xl md:text-5xl font-bold pt-4">
             Student Coordinators
           </p>
         </div>
@@ -53,7 +53,7 @@ function coreTeam() {
                 />
               </div>
               <div className="mt-[10px] text-center">
-                <span className="text-2xl font-bold">{coordinator.name}</span>
+                <span className="text-base md:text-xl font-bold">{coordinator.name}</span>
               </div>
               <div className="w-fit mx-auto">
                 <div>
@@ -93,7 +93,7 @@ function coreTeam() {
       {/* Core Team */}
       <div className="text-[#0A146E] mx-8 lg:mx-12 mt-16">
         <div className="text-center">
-          <p className="text-2xl md:text-5xl font-bold pt-4">
+          <p className="text-3xl md:text-5xl font-bold pt-4">
             Student Heads
           </p>
         </div>
