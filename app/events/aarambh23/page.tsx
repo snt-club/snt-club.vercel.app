@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import aarambh_poster from "@/assets/images/aarambh_poster.png";
+import aarambhposter from "@/assets/images/aarmbhposter.webp";
 
 function aarambh23() {
   return (
@@ -14,12 +14,12 @@ function aarambh23() {
               href="https://drive.google.com/file/d/1DxVRrkcuYEaVY5KKeEQaMqwOmYkowZ7P/view?usp=share_link"
               target="_blank"
             >
-              <p className="hover:text-gray-400 text-center">Notice</p>
+              <p className="hover:text-gray-400 p-2 text-center">Notice</p>
             </Link>
           </div>
           <div className="max-md:w-fit max-md:mx-auto">
             <Link href="https://forms.gle/ghZqA2RUZkK5VFBz6">
-              <button className="bg-white text-[#0A146E] px-2 rounded-full hover:bg-transparent hover:text-white border-white border text-center">
+              <button className="bg-white text-[#0A146E] p-2 rounded-full hover:bg-transparent hover:text-white border-white border text-center ease-in-out duration-300">
                 Register Now
               </button>
             </Link>
@@ -34,7 +34,7 @@ function aarambh23() {
         </div>
         <div className="block md:flex">
           <div className="mx-16 pb-8">
-            <Image src={aarambh_poster} alt="Aarambh 2023" className="h-fit" />
+            <Image src={aarambhposter} alt="Aarambh 2023" className="h-fit" />
           </div>
           <div className="h-fit my-auto">
             <div className="mx-16">
@@ -54,7 +54,7 @@ function aarambh23() {
                 <br />
               </div>
             </div>
-            <div className="text-lg md:text-2xl mx-16">
+            <div className="text-lg md:text-4xl mx-16">
               <div className="w-fit mx-auto text-left md:text-center">
                 <div>
                   <p>
