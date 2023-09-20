@@ -107,7 +107,7 @@ function events() {
               </div>
               <div>
                 <p className="font-semibold text-[#EE4B76]">
-                  Registrations Start Soon
+                  Registrations Closed
                 </p>
               </div>
             </div>
