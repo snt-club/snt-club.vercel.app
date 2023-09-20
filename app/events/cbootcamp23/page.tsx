@@ -62,7 +62,10 @@ function CBOOTCAMP() {
                 </div>
                 <div>
                   <p>
-                    <b>Time:</b> Will be announced
+                    <b>Offline:</b> Wednesday 1:30PM - 3:30PM, at 4F4
+                  </p>
+                  <p>
+                    <b>Online:</b> Monday and Saturday, 5:30PM to 7:00PM
                   </p>
                 </div>
                 <div>
