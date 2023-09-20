@@ -67,7 +67,7 @@ function events() {
                 </p>
               </div>
               <div className="">
-                <Link href="/events/cbootcamp">
+                <Link href="/events/cbootcamp23">
                   <p className="px-2 py-1 bg-[#EE4B76] w-fit border border-[#EE4B76] text-center font-semibold hover:text-[#EE4B76] hover:bg-opacity-0">
                     Register Now
                   </p>
