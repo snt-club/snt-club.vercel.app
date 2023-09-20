@@ -44,7 +44,7 @@ function CBOOTCAMP() {
                   strengthen your skills.
                 </p>
                 <br />
-                <p className="text-center">
+                <p className="text-left md:text-center">
                   Join us for: <br />
                   • Both online and offline classes 💻 <br />
                   • Fun problem-solving activities 🧑‍💻 <br />
