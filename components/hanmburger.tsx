@@ -47,16 +47,16 @@ const MenuButton: React.FC = () => {
             <Link href="/" className='w-full'>Home</Link>
           </li>
           <li className="hover:scale-110 hover:text-[#EE4B76] ease-in-out duration-300 flex items-center w-fit">
-            <Link href="/" className='w-full'>About</Link>
+            <Link href="/#about" className='w-full'>About</Link>
           </li>
           <li className="hover:scale-110 hover:text-[#EE4B76] ease-in-out duration-300 flex items-center w-fit">
-            <Link href="/" className='w-full'>Resources</Link>
+            <Link href="/#resources" className='w-full'>Resources</Link>
           </li>
           <li className="hover:scale-110 hover:text-[#EE4B76] ease-in-out duration-300 flex items-center w-fit">
-            <Link href="/" className='w-full'>Contact Us</Link>
+            <Link href="/#footer" className='w-full'>Contact Us</Link>
           </li>
           <li className="hover:scale-110 hover:text-[#EE4B76] ease-in-out duration-300 border rounded-md bg-[#EE4B76] border-[#EE4B76] hover:bg-[#0A146E] w-fit px-2">
-            <Link href="/" className='w-fit'>Events</Link>
+            <Link href="/#events" className='w-fit'>Events</Link>
           </li>
         </ul>
       </nav>
