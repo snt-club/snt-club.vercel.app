@@ -74,7 +74,7 @@ function events() {
               </div>
               <div>
                 <p className="font-semibold text-[#EE4B76]">
-                  Registrations Closed
+                  Registrations Closed | Event on 27th September, JECRC University
                 </p>
               </div>
             </div>
@@ -117,7 +117,7 @@ function events() {
               </div>
               <div>
                 <p className="font-semibold text-[#EE4B76]">
-                  Registrations Start Soon
+                  Registrations Closed
                 </p>
               </div>
             </div>
