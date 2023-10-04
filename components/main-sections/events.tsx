@@ -19,7 +19,7 @@ function events() {
         <div className="w-full mx-auto mb-6 mt-[10px] md:mt-[20px]"></div>
 
         <div className="w-full mx-auto mt-[10px] md:mt-[20px]">
-          <div className="bg-[#0A146E] text-white p-4 grid text-center text-2xl font-semibold hidden">
+          <div className="bg-[#0A146E] text-white p-4 text-center text-2xl font-semibold hidden">
             NO EVENTS FOR NOW, STAY TUNNED!
           </div>
           <div className="bg-[#0A146E] text-white p-4\ grid grid-cols-12">
