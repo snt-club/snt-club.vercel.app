@@ -7,6 +7,7 @@ import cbootcamp from "@/assets/svg/c_bootcamp.svg";
 import cws2 from "@/assets/svg/cws2.svg";
 import aarambh from "@/assets/svg/aarambh.svg";
 import windows from "@/assets/svg/windows.svg";
+import flutterworkshop from "@/assets/svg/flutterworkshop.svg";
 
 function events() {
   return (
@@ -15,7 +16,43 @@ function events() {
         <div className="text-center">
           <p className="text-2xl md:text-5xl font-bold pt-4">Upcoming Events</p>
         </div>
-        <div className="w-full mx-auto mt-[10px] md:mt-[20px]">
+        <div className="w-full mx-auto mb-6 mt-[10px] md:mt-[20px]">
+          <div className="bg-[#0A146E] text-white p-4\ grid grid-cols-12">
+            <div className="col-span-12 md:col-span-3 mx-auto">
+              <Image src={flutterworkshop} alt="Event Icon" width={250} />
+            </div>
+            <div className="col-span-12 md:col-span-9 my-auto px-4 md:px-8 py-4">
+              <div>
+                <p className="text-xl md:text-3xl font-bold pb-2 md:pb-4">
+                  Flutter Workshop
+                </p>
+              </div>
+              <div>
+                <p className="text-sm md:text-lg pb-2 md:pb-4">
+                  Science and Technology Club is organising a Flutter Workshop for all those App Development Enthusiasts out there.
+                </p>
+              </div>
+              <div className="">
+                <Link href="/events/flutterworkshop">
+                  <p className="px-2 py-1 bg-[#EE4B76] w-fit border border-[#EE4B76] text-center font-semibold hover:text-[#EE4B76] hover:bg-opacity-0">
+                    Register Now
+                  </p>
+                </Link>
+              </div>
+              <div>
+                <p className="font-semibold text-[#EE4B76] hidden">
+                  Registrations Start Soon
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-[#EE4B76] hidden">
+                  Registrations Closed
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="w-full mx-auto mt-[10px] md:mt-[20px] hidden">
           <div className="bg-[#0A146E] text-white p-4 text-center text-2xl font-semibold">
             NO EVENTS FOR NOW, STAY TUNNED!
           </div>
