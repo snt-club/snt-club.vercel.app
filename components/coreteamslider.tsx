@@ -19,6 +19,8 @@ import laveena from "@/assets/people/laveena.png";
 import instagram from "@/assets/svg/in.svg";
 import linkedin from "@/assets/svg/li.svg";
 
+import { sntTeamMember } from "@/teamConstants";
+
 const studenthead = [
   {
     name: "Vanshaj Kataria",
@@ -83,10 +85,8 @@ const studenthead = [
 ];
 
 const coreteamslider = () => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [swiperSlides, setSwiperSlides] = useState(1);
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     const updateSwriperSlides = () => {
       const screenWidth = window.innerWidth;
@@ -120,57 +120,68 @@ const coreteamslider = () => {
         modules={[Autoplay]}
         className="mt-[15px] flex justify-center z-10"
       >
-        {studenthead.map((coordinator, index) => (
-          <SwiperSlide key={index}>
-            <div>
-              <div className="flex justify-center">
-                <Image
-                  src={coordinator.profile_pic}
-                  alt={coordinator.name}
-                  width={120}
-                  className="rounded-full"
-                />
-              </div>
-              <div className="mt-[10px] text-center">
-                <span className="text-base md:text-xl font-bold">{coordinator.name}</span>
-              </div>
-              <div className="flex justify-center">
-                <div>
-                  <span>{coordinator.year},</span>
-                </div>
-                <div>
-                  <span>&nbsp;{coordinator.branch}</span>
-                </div>
-              </div>
-              <div className="flex justify-center">
-                <div>
-                  <span>{coordinator.role}</span>
-                </div>
-              </div>
-              <div className="flex justify-center gap-5 mt-[10px]">
-                <div>
-                  <Link href={coordinator.instagram_link} target="_blank">
+        {/* {studenthead.map((coordinator, index) => (
+          
+        ))} */}
+        {sntTeamMember.map((memberDetails, index) => (
+          <>
+            {memberDetails.memberPost === "Student_Head" ? (
+              <SwiperSlide key={index} >
+                <div className="py-[20px]">
+                  <div className="flex justify-center">
                     <Image
-                      src={instagram}
-                      alt="Instagram"
-                      width={30}
-                      className="hover:scale-110 duration-150"
+                      src={memberDetails.memberPhoto}
+                      alt={index.toString()}
+                      width={120}
+                      className="rounded-full"
                     />
-                  </Link>
+                  </div>
+                  <div className="mt-[10px] text-center">
+                    <span className="text-base md:text-xl font-bold">
+                      {memberDetails.memberName}
+                    </span>
+                  </div>
+                  <div className="flex justify-center">
+                    <div>
+                      <span>{memberDetails.memberYear},</span>
+                    </div>
+                    <div>
+                      <span>&nbsp;{memberDetails.memberBranch}</span>
+                    </div>
+                  </div>
+                  <div className="flex justify-center">
+                    <div>
+                      <span>{memberDetails.memberRole}</span>
+                    </div>
+                  </div>
+                  <div className="flex justify-center gap-5 mt-[10px]">
+                    <div>
+                      <Link href={memberDetails.memberInsta} target="_blank">
+                        <Image
+                          src={instagram}
+                          alt="Instagram"
+                          width={30}
+                          className="hover:scale-110 duration-150"
+                        />
+                      </Link>
+                    </div>
+                    <div>
+                      <Link href={memberDetails.memberLinkedin} target="_blank">
+                        <Image
+                          src={linkedin}
+                          alt="LinkedIn"
+                          width={30}
+                          className="hover:scale-110 duration-150"
+                        />
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <Link href={coordinator.linkedin_link} target="_blank">
-                    <Image
-                      src={linkedin}
-                      alt="LinkedIn"
-                      width={30}
-                      className="hover:scale-110 duration-150"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
+              </SwiperSlide>
+            ) : (
+              ""
+            )}
+          </>
         ))}
       </Swiper>
     </>

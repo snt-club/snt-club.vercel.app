@@ -25,12 +25,12 @@ const events = () => {
               key={index}
               className="w-full mx-auto mb-6 mt-[10px] md:mt-[20px]"
             >
-              <div className="bg-[#0A146E] text-white p-4\ grid grid-cols-12">
+              <div className="bg-[#0A146E] rounded-[20px] p-[20px] text-white  grid grid-cols-12">
                 <div className="col-span-12 md:col-span-3 mx-auto">
                   <Image
                     src={details.eventImg}
                     alt={details.eventName}
-                    className="w-[250px] aspect-square"
+                    className="w-[200px] aspect-square"
                   />
                 </div>
                 <div className="col-span-12 md:col-span-9 my-auto px-4 md:px-8 py-4">
@@ -58,7 +58,7 @@ const events = () => {
         )}
         {UpcomingEventNumber.length === 0 ? (
           <div className="w-full mx-auto mt-[10px] md:mt-[20px] ">
-            <div className="bg-[#0A146E] text-white p-4 text-center text-2xl font-semibold">
+            <div className="bg-[#0A146E] rounded-[20px] p-[20px] text-white text-center text-[16px] md:text-[20px] font-bold">
               NO EVENTS FOR NOW, STAY TUNNED!
             </div>
           </div>
@@ -68,7 +68,7 @@ const events = () => {
       </div>
 
       {/* ONGOING EVNETS */}
-      <div className="text-[#0A146E] mx-8 lg:mx-12 mt-16">
+      <div className="text-[#0A146E] mx-8 lg:mx-12 mt-[30px] lg:mt-[50px]">
         <div className="text-center">
           <p className="text-2xl md:text-5xl font-bold pt-4">Ongoing Events</p>
         </div>
@@ -78,12 +78,12 @@ const events = () => {
               key={index}
               className="w-full mx-auto mb-6 mt-[10px] md:mt-[20px]"
             >
-              <div className="bg-[#0A146E] text-white p-4\ grid grid-cols-12">
+              <div className="bg-[#0A146E] rounded-[20px] p-[20px] text-white  grid grid-cols-12">
                 <div className="col-span-12 md:col-span-3 mx-auto">
                   <Image
                     src={details.eventImg}
                     alt={details.eventName}
-                    className="w-[250px] aspect-square"
+                    className="w-[200px] aspect-square"
                   />
                 </div>
                 <div className="col-span-12 md:col-span-9 my-auto px-4 md:px-8 py-4">
@@ -122,7 +122,7 @@ const events = () => {
       </div>
 
       {/* PAST EVENTS */}
-      <div className="text-[#0A146E] mx-8 lg:mx-12 mt-16">
+      <div className="text-[#0A146E] mx-8 lg:mx-12 mt-[30px] lg:mt-[50px]">
         <div className="text-center">
           <p className="text-2xl md:text-5xl font-bold pt-4">Past Events</p>
         </div>
@@ -132,12 +132,12 @@ const events = () => {
               key={index}
               className="w-full mx-auto mb-6 mt-[10px] md:mt-[20px]"
             >
-              <div className="bg-[#0A146E] text-white p-4\ grid grid-cols-12">
+              <div className="bg-[#0A146E] rounded-[20px] p-[20px] text-white  grid grid-cols-12">
                 <div className="col-span-12 md:col-span-3 mx-auto">
                   <Image
                     src={details.eventImg}
                     alt={details.eventName}
-                    className="w-[250px] aspect-square"
+                    className="w-[200px] aspect-square"
                   />
                 </div>
                 <div className="col-span-12 md:col-span-9 my-auto px-4 md:px-8 py-4">

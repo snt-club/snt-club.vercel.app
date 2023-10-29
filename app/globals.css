@@ -13,3 +13,10 @@
     background-color: transparent;
 }
 
+::-webkit-scrollbar{
+    width: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
