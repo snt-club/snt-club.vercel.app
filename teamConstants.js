@@ -11,7 +11,7 @@ import {
     shailesh,
     parth,
     simran,
-    laveena
+    laveena,
 } from "./assets/index"
 
 const sntTeamMember = [
@@ -56,30 +56,30 @@ const sntTeamMember = [
 
     },
     // Student Heads
-    {
-        memberName: "Shreyansh Agrawal",
-        memberPost: "Student_Head",
-        memberTeam: "",
-        memberPhoto: shreyansh,
-        memberRole: "Development Head",
-        memberDepartment: "",
-        memberYear: "III yr",
-        memberBranch: "CSE",
-        memberInsta: "https://www.instagram.com/sh_reyan_sh_/",
-        memberLinkedin: "https://www.linkedin.com/in/shreyansh-agarwal-1060a4222/",
-    },
-    {
-        memberName: "Chinkle Rathore",
-        memberPost: "Student_Head",
-        memberTeam: "",
-        memberPhoto: chinkle,
-        memberRole: "NOT DECIDED",
-        memberDepartment: "",
-        memberYear: "III yr",
-        memberBranch: "CSE",
-        memberInsta: "https://www.instagram.com/sh_reyan_sh_/",
-        memberLinkedin: "https://www.linkedin.com/in/shreyansh-agarwal-1060a4222/",
-    },
+    // {
+    //     memberName: "Shreyansh Agrawal",
+    //     memberPost: "Student_Head",
+    //     memberTeam: "",
+    //     memberPhoto: shreyansh,
+    //     memberRole: "Development Head",
+    //     memberDepartment: "",
+    //     memberYear: "III yr",
+    //     memberBranch: "CSE",
+    //     memberInsta: "https://www.instagram.com/sh_reyan_sh_/",
+    //     memberLinkedin: "https://www.linkedin.com/in/shreyansh-agarwal-1060a4222/",
+    // },
+    // {
+    //     memberName: "Chinkle Rathore",
+    //     memberPost: "Student_Head",
+    //     memberTeam: "",
+    //     memberPhoto: chinkle,
+    //     memberRole: "NOT DECIDED",
+    //     memberDepartment: "",
+    //     memberYear: "III yr",
+    //     memberBranch: "CSE",
+    //     memberInsta: "https://www.instagram.com/sh_reyan_sh_/",
+    //     memberLinkedin: "https://www.linkedin.com/in/shreyansh-agarwal-1060a4222/",
+    // },
     {
         memberName: "Somya Jain",
         memberPost: "Student_Head",
