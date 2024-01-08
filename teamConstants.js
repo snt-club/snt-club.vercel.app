@@ -50,7 +50,7 @@ const sntTeamMember = [
         memberRole: "Student Coordinator",
         memberDepartment: "",
         memberYear: "III yr",
-        memberBranch: "CSE",
+        memberBranch: "ECE",
         memberInsta: "https://www.instagram.com/vanshaj_kataria/",
         memberLinkedin: "https://www.linkedin.com/in/vanshaj-kataria/",
 
