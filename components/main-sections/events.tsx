@@ -78,7 +78,9 @@ const events = () => {
               key={index}
               className="w-full mx-auto mb-6 mt-[10px] md:mt-[20px]"
             >
-              <div className="bg-[#0A146E] rounded-[20px] p-[20px] text-white  grid grid-cols-12">
+              <div
+                className={`bg-[#0A146E] rounded-[20px] p-[20px] text-white  grid grid-cols-12`}
+              >
                 <div className="col-span-12 md:col-span-3 mx-auto">
                   <Image
                     src={details.eventImg}
@@ -100,7 +102,7 @@ const events = () => {
                   {details.eventRegStatus === "live" ? (
                     <div>
                       <Link href={details.eventRegLink}>
-                        <p className="px-2 py-1 bg-[#EE4B76] w-fit border border-[#EE4B76] text-center font-semibold hover:text-[#EE4B76] hover:bg-opacity-0">
+                        <p className="px-2 py-1 bg-[#EE4B76] rounded-[4px] w-fit border border-[#EE4B76] text-center font-semibold hover:text-[#EE4B76] hover:bg-opacity-0">
                           Register Now
                         </p>
                       </Link>
