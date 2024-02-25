@@ -27,7 +27,7 @@ const eventDetails = [
         eventDesc: "Science and Technology Club is organising a C++ Workshop for the students where you will be taught the concepts of C++ Programming.",
         eventImg: c_bootcamp_img,
         eventStatus: "ongoing",
-        eventRegLink: "/events/cbootcamp23",
+        eventRegLink: "/events/cppWorkshop ",
         eventRegStatus: "live"
     },
     {
