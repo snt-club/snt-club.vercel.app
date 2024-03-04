@@ -10,15 +10,23 @@ const eventDetails = [
         eventDesc: "Science and Technology Club is organising a Clash of Coders. Event will be live at SKIT during Pravah 2024.",
         eventImg: flutterworkshop_img,
         eventStatus: "upcoming",
-        eventRegLink: "/events/flutterworkshop",
+        eventRegLink: "",
         eventRegStatus: "closed"
+    },
+    {
+        eventName: "Seminar on GenAI Tools and Alumni Tech Talk",
+        eventDesc: "Science and Technology Club is organising Seminar on GenAI Tools and Alumni Tech Talk",
+        eventImg: windows_img,
+        eventStatus: "ongoing",
+        eventRegLink: "https://forms.gle/FGHGR5AkfEuLga3b6",
+        eventRegStatus: "live"
     },
     {
         eventName: "Flutter Workshop",
         eventDesc: "Science and Technology Club is organising a Flutter Workshop for all those App Development Enthusiasts out there.",
         eventImg: flutterworkshop_img,
         eventStatus: "past",
-        eventRegLink: "/events/flutterworkshop",
+        eventRegLink: " +",
         eventRegStatus: "closed"
     },
 
@@ -26,24 +34,16 @@ const eventDetails = [
         eventName: "C++ Workshop",
         eventDesc: "Science and Technology Club is organising a C++ Workshop for the students where you will be taught the concepts of C++ Programming.",
         eventImg: c_bootcamp_img,
-        eventStatus: "ongoing",
-        eventRegLink: "/events/cbootcamp23",
-        eventRegStatus: "live"
-    },
-    {
-        eventName: "C Bootcamp",
-        eventDesc: "Science and Technology Club is organising a C Bootcamp for the students where you will be taught the concepts of C Programming.",
-        eventImg: c_bootcamp_img,
         eventStatus: "past",
         eventRegLink: "/events/cbootcamp23",
         eventRegStatus: "closed"
     },
     {
-        eventName: "Windows Power User",
-        eventDesc: "Science and Technology Club is organising an event on being a Windows Power User and be a PRO.",
-        eventImg: windows_img,
+        eventName: "C Bootcamp",
+        eventDesc: "Science and Technology Club is organising a C Bootcamp for the students where you will be taught the concepts of C Programming.",
+        eventImg: aarambh_img,
         eventStatus: "past",
-        eventRegLink: "/events/windowspro",
+        eventRegLink: "/events/cbootcamp23",
         eventRegStatus: "closed"
     },
 
