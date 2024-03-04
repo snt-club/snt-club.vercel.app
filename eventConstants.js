@@ -9,16 +9,16 @@ const eventDetails = [
         eventName: "Clash of Coders - Pravah Event",
         eventDesc: "Science and Technology Club is organising a Clash of Coders. Event will be live at SKIT during Pravah 2024.",
         eventImg: flutterworkshop_img,
-        eventStatus: "upcoming",
-        eventRegLink: "",
-        eventRegStatus: "closed"
+        eventStatus: "ongoing",
+        eventRegLink: "https://pravah.skit.ac.in/events/tech/",
+        eventRegStatus: "live"
     },
     {
-        eventName: "Seminar on GenAI Tools and Alumni Tech Talk",
-        eventDesc: "Science and Technology Club is organising Seminar on GenAI Tools and Alumni Tech Talk",
+        eventName: "Introductory session on DSA",
+        eventDesc: "Science and Technology Club is organising Introductory session on DSA",
         eventImg: windows_img,
         eventStatus: "ongoing",
-        eventRegLink: "https://forms.gle/FGHGR5AkfEuLga3b6",
+        eventRegLink: "/events/dsa-session",
         eventRegStatus: "live"
     },
     {
