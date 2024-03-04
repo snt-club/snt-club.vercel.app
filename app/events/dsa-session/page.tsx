@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { cppWorkshop, dsa } from "@/assets";
+import { dsa } from "@/assets";
 
 function DSA_SESSION() {
   return (
@@ -92,13 +92,13 @@ function DSA_SESSION() {
                     <span>Registration Link</span>
                   </div>
                   <div>
-                    <a
+                    <Link
                       href="https://forms.gle/NWZ5Zrh2wTeTq9oL7"
                       target="_blank"
                       className="font-semibold underline underline-offset-2 text-[18px]"
                     >
                       Click Here
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
