@@ -3,7 +3,7 @@ import flutterworkshop_img from "./svg/flutterworkshop.svg"
 import c_bootcamp_img from "./svg/c_bootcamp.svg"
 import windows_img from "./svg/windows.svg"
 import cppWorkshop from "./images/cppWorkshop.png"
-import dsa from "./images/dsa.png"
+import dsa from "./images/dsa.webp"
 
 import instagram from "./svg/in.svg";
 import linkedin from "./svg/li.svg";

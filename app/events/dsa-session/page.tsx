@@ -11,7 +11,7 @@ function DSA_SESSION() {
         <div className="block md:flex justify-between align-middle font-bold px-8 md:px-36">
           <div>
             <Link
-              href="https://drive.google.com/file/d/1i_V1oTp9zI9YW1-4SVhTgAL7kt1eoAUr/view?usp=sharing"
+              href="https://drive.google.com/file/d/1dTZRsCOVyHm2ymLkjqDnEThisimh_lrA/view?usp=sharing"
               target="_blank"
             >
               <p className="hover:text-gray-400 p-2 text-center">Notice</p>
@@ -47,10 +47,11 @@ function DSA_SESSION() {
                 <br />
                 <p className="text-left ">
                   Join us for: <br />
-                  • What is DSA and its importance 💻 <br />
-                  • Role of DSA in placement 🧑‍💻 <br />
-                  • How to master DSA 📙 <br />• DSA best practices
-                  <br />• DSA vs Development 🧑‍💻 📚
+                  • What is DSA and its importance  💻 <br />
+                  • DSA Basics and Fundamentals 🧑‍💻 <br />
+                  • Role of DSA in Placement 📙 <br />
+                  • DSA best practices 📚<br />
+                  • How to master at DSA 🧑‍💻 
                 </p>
                 <br />
               </div>
@@ -63,7 +64,7 @@ function DSA_SESSION() {
                   </div>
                   <div>
                     <span className="font-semibold text-[18px]">
-                      06th March, 2024
+                      03rd April, 2024
                     </span>
                   </div>
                 </div>
