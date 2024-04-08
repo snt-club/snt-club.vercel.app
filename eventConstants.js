@@ -6,6 +6,14 @@ import { aarambh_img, flutterworkshop_img, c_bootcamp_img, windows_img } from "@
 const eventDetails = [
 
     {
+        eventName: "Introductory session on DSA",
+        eventDesc: "Science and Technology Club is organising Introductory session on DSA",
+        eventImg: windows_img,
+        eventStatus: "past",
+        eventRegLink: "/events/dsa-session",
+        eventRegStatus: "closed"
+    },
+    {
         eventName: "Clash of Coders - Pravah Event",
         eventDesc: "Science and Technology Club is organising a Clash of Coders. Event will be live at SKIT during Pravah 2024.",
         eventImg: flutterworkshop_img,
@@ -14,11 +22,11 @@ const eventDetails = [
         eventRegStatus: "live"
     },
     {
-        eventName: "Introductory session on DSA",
-        eventDesc: "Science and Technology Club is organising Introductory session on DSA",
+        eventName: "Web-Development Workshop",
+        eventDesc: "Science and Technology Club is organising a Web-Development for all students who want to build their portfolio.",
         eventImg: windows_img,
         eventStatus: "ongoing",
-        eventRegLink: "/events/dsa-session",
+        eventRegLink: "/events/web-dev",
         eventRegStatus: "live"
     },
     {
