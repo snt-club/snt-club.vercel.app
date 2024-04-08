@@ -40,24 +40,19 @@ function Web_Dev() {
             <div className="mx-16">
               <div className="text-lg md:text-2xl text-left lg:text-justify w-fit mx-auto">
                 <p>
-                  Web development skills offer students opportunities for
-                  freelance work and internships, providing real-world
-                  experience and potential income during studies. Understanding
-                  web development equips students with versatile skills
-                  applicable across various industries, enhancing their
-                  employability and career prospects in the digital age.
+                  Learning Web Development boosts creativity, digital presence,
+                  and Designing skills, offering opportunities for personal
+                  projects and online ventures.
                 </p>
                 <br />
                 <p className="text-left ">
                   Join us for: <br />
-                  • Introduction to Web Development: Explore all the basics. 💻{" "}
+                  • Introduction to Web Development💻
                   <br />
-                  • Importance of Web Development: Discover its crucial role in
-                  the development world.🧑‍💻 <br />
-                  • Future of Web Development: Dive into upcoming trends and
-                  innovations.📙 <br />
-                  • Hands-on: Create Portfolio Website - Get practical
-                  experience in building your own portfolio website.📚
+                  • Importance of Web Development🧑‍💻 <br />
+                  • Basics of HTML and CSS 📚 <br />
+                  • Future of Web Development 📙 <br />
+                  • Hands-on: Create Portfolio Website🌐
                   <br />
                 </p>
                 <br />
