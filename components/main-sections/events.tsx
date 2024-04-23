@@ -59,7 +59,7 @@ const events = () => {
         {UpcomingEventNumber.length === 0 ? (
           <div className="w-full mx-auto mt-[10px] md:mt-[20px] ">
             <div className="bg-[#0A146E] rounded-[20px] p-[20px] text-white text-center text-[16px] md:text-[20px] font-bold">
-              NO EVENTS FOR NOW, STAY TUNNED!
+              NO EVENTS FOR NOW, STAY TUNED!
             </div>
           </div>
         ) : (
