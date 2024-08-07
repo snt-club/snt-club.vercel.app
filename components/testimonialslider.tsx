@@ -1,44 +1,42 @@
-'use client'
+'use client';
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import { Autoplay } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import { Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 const testimonial = [
   {
-    message:
-      "All members of snt club increase our courage and support us in every queries.",
+    message: 'All members of snt club increase our courage and support us in every queries.',
   },
   {
     message:
       "It's been a journey of 8 months with this club. I was introduced to so manythings for the first time here in this community. I have received constant support and motivation from all the coordinators and team members.",
   },
   {
-    message: "All in all it was a great experience to be part of the SNT Club.",
+    message: 'All in all it was a great experience to be part of the SNT Club.',
   },
   {
     message:
-      "It was a wonderful experience with all the Coordinators and Members of S&T Club. We got to know and learn many new Technologies and because of the proper guidance and overall support of coordinators this Club is Growing.",
+      'It was a wonderful experience with all the Coordinators and Members of S&T Club. We got to know and learn many new Technologies and because of the proper guidance and overall support of coordinators this Club is Growing.',
   },
   {
     message:
-      "The sessions and bootcamps conducted by Snt club is very informative and helped me to develop my skills. I would like to thank all the working team for such amazing bootcamps.",
+      'The sessions and bootcamps conducted by Snt club is very informative and helped me to develop my skills. I would like to thank all the working team for such amazing bootcamps.',
   },
   {
     message:
-      "My experience till now in the club was awesome. Hope we would be doing such wonderful sessions in coming days.",
+      'My experience till now in the club was awesome. Hope we would be doing such wonderful sessions in coming days.',
   },
   {
     message:
-      "All the classes taken were very nice..... And every event is very well managed and amazing. Thank you SnT club.",
+      'All the classes taken were very nice..... And every event is very well managed and amazing. Thank you SnT club.',
   },
   {
-    message:
-      "All sessions were good and eager to earn more knowledge from the club.",
+    message: 'All sessions were good and eager to earn more knowledge from the club.',
   },
   {
     message:
@@ -65,9 +63,9 @@ function testimonialslider() {
       }
     };
     updateSwriperSlides();
-    window.addEventListener("resize", updateSwriperSlides);
+    window.addEventListener('resize', updateSwriperSlides);
     return () => {
-      window.removeEventListener("resize", updateSwriperSlides);
+      window.removeEventListener('resize', updateSwriperSlides);
     };
   }, []);
   return (
@@ -83,20 +81,20 @@ function testimonialslider() {
               disableOnInteraction: false,
             }}
             modules={[Autoplay]}
-            className="mt-[15px] flex justify-center z-10"
+            className="z-10 mt-[15px] flex justify-center"
           >
             {testimonial.map((message, index) => (
               <SwiperSlide key={index}>
-                <div className="p-4 md:p-8 flex justify-center items-center bg-[#0A146E] text-white text-center rounded-[10px]">
+                <div className="flex items-center justify-center rounded-[10px] bg-[#0A146E] p-4 text-center text-white md:p-8">
                   <div>
                     <div>
-                      <span className="font-extrabold text-5xl ">{'"'}</span>
+                      <span className="text-5xl font-extrabold">{'"'}</span>
                     </div>
-                    <div className="h-[180px] md:h-[160px] w-full">
+                    <div className="h-[180px] w-full md:h-[160px]">
                       <span className="text-sm md:text-base">{message.message}</span>
                     </div>
                     <div>
-                      <span className="font-extrabold text-5xl ">{'"'}</span>
+                      <span className="text-5xl font-extrabold">{'"'}</span>
                     </div>
                     <div>
                       <span>⭐⭐⭐⭐⭐</span>
