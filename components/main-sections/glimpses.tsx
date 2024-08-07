@@ -1,24 +1,21 @@
-import React from "react";
-import Glimpses from "@/components/glimpses-slider";
-
+import React from 'react';
+import Glimpses from '@/components/glimpses-slider';
 
 function section3() {
   return (
-    <section className="h-fit container mx-auto">
-      <div className="text-[#0A146E] mx-8 lg:mx-12 mt-16">
+    <section className="container mx-auto h-fit">
+      <div className="mx-8 mt-16 text-[#0A146E] lg:mx-12">
         <div>
-          <p className="text-5xl md:text-6xl font-bold pt-4">
-            Glimpses
-          </p>
-          <p className="text-justify text-sm md:text-base ml-1 lg:ml-4 sm:my-auto h-fit mt-[10px] md:mt-[20px]">
-            All the three teams work with the same motive to enhance technical
-            skills and achieve the apogee of technological advancements.
+          <p className="pt-4 text-5xl font-bold md:text-6xl">Glimpses</p>
+          <p className="ml-1 mt-[10px] h-fit text-justify text-sm sm:my-auto md:mt-[20px] md:text-base lg:ml-4">
+            All the three teams work with the same motive to enhance technical skills and achieve the apogee of
+            technological advancements.
           </p>
         </div>
       </div>
-        <div className="py-8">
-          <Glimpses/>
-        </div>
+      <div className="py-8">
+        <Glimpses />
+      </div>
     </section>
   );
 }

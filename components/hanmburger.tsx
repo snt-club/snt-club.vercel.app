@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -12,10 +12,7 @@ const MenuButton: React.FC = () => {
 
   return (
     <div className="lg:hidden">
-      <button
-        className="text-white p-2 focus:outline-none"
-        onClick={toggleMenu}
-      >
+      <button className="p-2 text-white focus:outline-none" onClick={toggleMenu}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6"
@@ -24,42 +21,42 @@ const MenuButton: React.FC = () => {
           stroke="currentColor"
         >
           {isOpen ? (
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M6 18L18 6M6 6l12 12"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           ) : (
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           )}
         </svg>
       </button>
       {isOpen && (
-        <nav className="bg-[#0A146E] mt-2 p-2 items-center absolute right-0 left-0 px-8 py-2 z-50">
-        <ul className="flex max-sm:flex-col justify-between max-sm:justify-end">
-          <li className="hover:scale-110 hover:text-[#EE4B76] ease-in-out duration-300 flex items-center w-fit">
-            <Link href="/" className='w-full'>Home</Link>
-          </li>
-          <li className="hover:scale-110 hover:text-[#EE4B76] ease-in-out duration-300 flex items-center w-fit">
-            <Link href="/#about" className='w-full'>About</Link>
-          </li>
-          <li className="hover:scale-110 hover:text-[#EE4B76] ease-in-out duration-300 flex items-center w-fit">
-            <Link href="/#resources" className='w-full'>Resources</Link>
-          </li>
-          <li className="hover:scale-110 hover:text-[#EE4B76] ease-in-out duration-300 flex items-center w-fit">
-            <Link href="/#footer" className='w-full'>Contact Us</Link>
-          </li>
-          <li className="hover:scale-110 hover:text-[#EE4B76] ease-in-out duration-300 border rounded-md bg-[#EE4B76] border-[#EE4B76] hover:bg-[#0A146E] w-fit px-2">
-            <Link href="/#events" className='w-fit'>Events</Link>
-          </li>
-        </ul>
-      </nav>
+        <nav className="absolute left-0 right-0 z-50 mt-2 items-center bg-[#0A146E] p-2 px-8 py-2">
+          <ul className="flex justify-between max-sm:flex-col max-sm:justify-end">
+            <li className="flex w-fit items-center duration-300 ease-in-out hover:scale-110 hover:text-[#EE4B76]">
+              <Link href="/" className="w-full">
+                Home
+              </Link>
+            </li>
+            <li className="flex w-fit items-center duration-300 ease-in-out hover:scale-110 hover:text-[#EE4B76]">
+              <Link href="/#about" className="w-full">
+                About
+              </Link>
+            </li>
+            <li className="flex w-fit items-center duration-300 ease-in-out hover:scale-110 hover:text-[#EE4B76]">
+              <Link href="/#resources" className="w-full">
+                Resources
+              </Link>
+            </li>
+            <li className="flex w-fit items-center duration-300 ease-in-out hover:scale-110 hover:text-[#EE4B76]">
+              <Link href="/#footer" className="w-full">
+                Contact Us
+              </Link>
+            </li>
+            <li className="w-fit rounded-md border border-[#EE4B76] bg-[#EE4B76] px-2 duration-300 ease-in-out hover:scale-110 hover:bg-[#0A146E] hover:text-[#EE4B76]">
+              <Link href="/#events" className="w-fit">
+                Events
+              </Link>
+            </li>
+          </ul>
+        </nav>
       )}
     </div>
   );

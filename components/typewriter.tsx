@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 interface TypewriterProps {
   texts: string[];
@@ -9,7 +9,7 @@ interface TypewriterProps {
 
 const Typewriter: React.FC<TypewriterProps> = ({ texts, speed }) => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  const [currentText, setCurrentText] = useState("");
+  const [currentText, setCurrentText] = useState('');
 
   useEffect(() => {
     const text = texts[currentTextIndex];
@@ -22,10 +22,8 @@ const Typewriter: React.FC<TypewriterProps> = ({ texts, speed }) => {
       } else {
         clearInterval(intervalId);
         setTimeout(() => {
-          setCurrentText("");
-          setCurrentTextIndex((prevIndex) =>
-            prevIndex === texts.length - 1 ? 0 : prevIndex + 1
-          );
+          setCurrentText('');
+          setCurrentTextIndex((prevIndex) => (prevIndex === texts.length - 1 ? 0 : prevIndex + 1));
         }, speed);
       }
     }, speed);
