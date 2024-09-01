@@ -32,7 +32,7 @@ const events = () => {
                     <p className="pb-2 text-sm md:pb-4 md:text-lg">{details.eventDesc}</p>
                   </div>
                   <div>
-                    <p className="font-semibold text-[#EE4B76]">Registrations Start Soon</p>
+                    <p className="font-semibold text-[#4bee6e]">Registrations Start Soon</p>
                   </div>
                 </div>
               </div>

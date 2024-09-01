@@ -111,17 +111,17 @@ function Footer() {
             <Link href="mailto:info.sntclub@gmail.com">
               <p className="text-sm hover:underline">info.sntclub@gmail.com</p>
             </Link>
-            <Link href="tel:8290955338">
-              <p className="text-sm hover:underline">8290955338(M)</p>
+            <Link href="tel:9214905733">
+              <p className="text-sm hover:underline">9214905733(M)</p>
             </Link>
-            <Link href="tel:6376422702">
-              <p className="text-sm hover:underline">6376422702(M)</p>
+            <Link href="tel:7877727703">
+              <p className="text-sm hover:underline">7877727703(M)</p>
             </Link>
           </div>
         </div>
       </div>
       <div className="pt-2 text-center">
-        <p className="text-xs">© Copyright 2023 @ Science and Technology Club, SKIT Jaipur</p>
+        <p className="text-xs">© Copyright {new Date().getFullYear()} @ Science and Technology Club, SKIT Jaipur</p>
       </div>
     </footer>
   );
