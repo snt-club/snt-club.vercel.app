@@ -93,7 +93,7 @@ const sntTeamMember = [
     memberPost: 'Student_Head',
     memberTeam: '',
     memberPhoto: prakhar,
-    memberRole: 'Event Head',
+    memberRole: 'Management Head',
     memberDepartment: '',
     memberYear: 'III yr',
     memberBranch: 'CSE',
