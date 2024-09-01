@@ -18,7 +18,7 @@ const eventDetails = [
     eventImg: windows_img,
     eventStatus: 'ongoing',
     eventRegLink: 'https://forms.gle/PchzxHMUSfkU68sy7',
-    eventRegStatus: 'live',
+    eventRegStatus: 'closed',
   },
   {
     eventName: 'Introductory session on DSA',
