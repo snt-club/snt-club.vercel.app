@@ -11,7 +11,7 @@ function coremembers() {
           <div className="text-center">
             <p className="pt-4 text-3xl font-bold md:text-5xl">Team Members</p>
           </div>
-          <div className="mt-[10px] flex flex-wrap justify-between gap-x-[80px] md:mt-[20px]">
+          <div className="mt-[10px] grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-x-20 md:mt-10">
             <div className="mx-auto w-fit p-4 text-center">
               <div>
                 <p className="mb-4 text-base font-semibold md:text-xl">Development Team</p>
