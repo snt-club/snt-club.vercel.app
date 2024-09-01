@@ -7,7 +7,10 @@ import {
   aman,
   puru,
   priyansh,
-  prakhar
+  prakhar,
+  prashant,
+  yatharth,
+  sagar
 } from './assets/index';
 
 const sntTeamMember = [
@@ -41,7 +44,7 @@ const sntTeamMember = [
     memberName: 'Yatharth Bajaj',
     memberPost: 'Student_Coordinator',
     memberTeam: '',
-    memberPhoto: garvit,
+    memberPhoto: yatharth,
     memberRole: 'Student Coordinator',
     memberDepartment: '',
     memberYear: 'III yr',
@@ -53,7 +56,7 @@ const sntTeamMember = [
     memberName: 'Sagar Agrawal',
     memberPost: 'Student_Coordinator',
     memberTeam: '',
-    memberPhoto: garvit,
+    memberPhoto: sagar,
     memberRole: 'Student Coordinator',
     memberDepartment: '',
     memberYear: 'III yr',
@@ -101,7 +104,7 @@ const sntTeamMember = [
     memberName: 'Prashant Singh',
     memberPost: 'Student_Head',
     memberTeam: '',
-    memberPhoto: garvit,
+    memberPhoto: prashant,
     memberRole: 'Design Head',
     memberDepartment: '',
     memberYear: 'III yr',

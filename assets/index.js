@@ -16,12 +16,19 @@ import aman from './people/aman.jpg';
 import puru from './people/puru.png';
 import priyansh from './people/priyansh.jpg';
 import prakhar from './people/prakhar.jpg';
+import prashant from './people/prashant.jpeg';
+import yatharth from './people/yatharth.jpeg';
+import sagar from './people/sagar.jpeg';
+
 
 export {
   aarambh_img,
   flutterworkshop_img,
   c_bootcamp_img,
   windows_img,
+  cppWorkshop,
+  dsa,
+  web,
   sharda_soni,
   vinay_marwal,
   garvit,
@@ -29,7 +36,8 @@ export {
   puru,
   priyansh,
   prakhar,
-  cppWorkshop,
-  dsa,
-  web,
+  prashant,
+  yatharth,
+  sagar
+
 };
