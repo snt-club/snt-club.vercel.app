@@ -185,7 +185,7 @@ const sntTeamMember = [
     memberYear: '',
     memberBranch: '',
     memberInsta: '',
-    memberLinkedin: ' https://www.linkedin.com/in/rishita-agrawal-2031692b1',
+    memberLinkedin: 'https://www.linkedin.com/in/rishita-agrawal-2031692b1',
   },
   {
     memberName: 'Yash Agrawal',
@@ -197,7 +197,7 @@ const sntTeamMember = [
     memberYear: '',
     memberBranch: '',
     memberInsta: '',
-    memberLinkedin: ' www.linkedin.com/in/yash-agarwal-5280242a7',
+    memberLinkedin: 'https://www.linkedin.com/in/yash-agarwal-5280242a7',
   },
   // Design Team
   {
