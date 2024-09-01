@@ -68,12 +68,12 @@ function coremembers() {
             </div>
             <div className="mx-auto w-fit p-4 text-center">
               <div>
-                <p className="mb-4 text-base font-semibold md:text-xl">Content Team</p>
+                <p className="mb-4 text-base font-semibold md:text-xl">Management and Event Team</p>
               </div>
               <div>
                 {sntTeamMember.map((memberDetails, index) => (
                   <>
-                    {memberDetails.memberPost === 'Student_Team' && memberDetails.memberTeam == 'Content_Team' ? (
+                    {memberDetails.memberPost === 'Student_Team' && memberDetails.memberTeam == 'event_team' ? (
                       <Link key={index} href={memberDetails.memberLinkedin} target="_blank">
                         <p className="text-xs hover:underline md:text-sm">{memberDetails.memberName}</p>
                       </Link>
@@ -86,12 +86,12 @@ function coremembers() {
             </div>
             <div className="mx-auto w-fit p-4 text-center">
               <div>
-                <p className="mb-4 text-base font-semibold md:text-xl">Management and Event Team</p>
+                <p className="mb-4 text-base font-semibold md:text-xl">Content Team</p>
               </div>
               <div>
                 {sntTeamMember.map((memberDetails, index) => (
                   <>
-                    {memberDetails.memberPost === 'Student_Team' && memberDetails.memberTeam == 'event_team' ? (
+                    {memberDetails.memberPost === 'Student_Team' && memberDetails.memberTeam == 'Content_Team' ? (
                       <Link key={index} href={memberDetails.memberLinkedin} target="_blank">
                         <p className="text-xs hover:underline md:text-sm">{memberDetails.memberName}</p>
                       </Link>
