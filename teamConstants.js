@@ -164,18 +164,6 @@ const sntTeamMember = [
   },
   // Tutor Team
   {
-    memberName: 'Nitesh Kumar',
-    memberPost: 'Student_Team',
-    memberTeam: 'Tutor_Team',
-    memberPhoto: '',
-    memberRole: '',
-    memberDepartment: '',
-    memberYear: '',
-    memberBranch: '',
-    memberInsta: '',
-    memberLinkedin: 'https://www.linkedin.com/in/niteshkumar75',
-  },
-  {
     memberName: 'Rishita Agrawal',
     memberPost: 'Student_Team',
     memberTeam: 'Tutor_Team',
