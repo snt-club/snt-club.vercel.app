@@ -74,7 +74,7 @@ const events = () => {
                   {details.eventRegStatus === 'live' ? (
                     <div>
                       <Link href={details.eventRegLink} target="_blank">
-                        <p className="w-fit rounded-[4px] border border-[#EE4B76] bg-[#EE4B76] px-2 py-1 text-center font-semibold hover:bg-opacity-0 hover:text-[#EE4B76]">
+                        <p className="w-fit rounded-[4px] border border-[#EE4B76] bg-[#EE4B76] px-2 py-1 text-center font-semibold hover:bg-opacity-0 duration-200 hover:text-[#EE4B76]">
                           Register Now
                         </p>
                       </Link>

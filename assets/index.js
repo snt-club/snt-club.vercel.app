@@ -16,8 +16,8 @@ import aman from './people/aman.jpg';
 import puru from './people/puru.png';
 import priyansh from './people/priyansh.jpg';
 import prakhar from './people/prakhar.jpg';
-import prashant from './people/prashant.jpeg';
-import yatharth from './people/yatharth.jpeg';
+import prashant from './people/prashant.jpg';
+import yatharth from './people/yatharth.jpg';
 import sagar from './people/sagar.jpeg';
 
 
