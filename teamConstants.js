@@ -50,7 +50,7 @@ const sntTeamMember = [
     memberYear: 'III yr',
     memberBranch: 'IT',
     memberInsta: 'https://www.instagram.com/yatharth_bajaj/',
-    memberLinkedin: 'https://www.linkedin.com/in/yatharth-bajaj-77aa22261/',
+    memberLinkedin: 'https://www.linkedin.com/in/yatharthbajaj/',
   },
   {
     memberName: 'Sagar Agrawal',
