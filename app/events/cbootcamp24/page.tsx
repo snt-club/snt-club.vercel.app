@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import cbootcampposter from '@/assets/images/cbootcampposter.webp';
+import cbootcampposter from '@/assets/images/CBOOTCAMP2024.png';
 
 function CBOOTCAMP() {
   return (
@@ -11,14 +11,14 @@ function CBOOTCAMP() {
         <div className="block justify-between px-8 align-middle font-bold md:flex md:px-36">
           <div>
             <Link
-              href="https://drive.google.com/file/d/10Yj7YIt464DSrsc6PrTFuwxgULbp644s/view?usp=share_link"
+              href="https://drive.google.com/file/d/1yuncS3xNWKYY9vnT7TEYx3Wbcnhgpjgm/view?usp=sharing"
               target="_blank"
             >
               <p className="p-2 text-center hover:text-gray-400">Notice</p>
             </Link>
           </div>
           <div className="max-md:mx-auto max-md:w-fit">
-            <Link href="https://forms.gle/KjCB38P1Y1XmskC47" target="_blank">
+            <Link href="https://forms.gle/c77XvcjmL52RDoyS8" target="_blank">
               <button className="rounded-full border border-white bg-white p-2 text-center text-[#0A146E] duration-300 ease-in-out hover:bg-transparent hover:text-white">
                 Register Now
               </button>
@@ -39,13 +39,18 @@ function CBOOTCAMP() {
           <div className="my-auto h-fit">
             <div className="mx-16">
               <div className="mx-auto w-fit text-left text-lg md:text-2xl lg:text-justify">
-                <p>C language is the foundation of programming, and we're here to strengthen your skills.</p>
+                <p>We're excited to announce our C Bootcamp for all coding enthusiasts! 
+                    Students who are new to coding or want to strengthen C programming skills, this bootcamp is for you. 
+                </p>
                 <br />
-                <p className="text-left md:text-center">
-                  Join us for: <br />
-                  • Both online and offline classes 💻 <br />
-                  • Fun problem-solving activities 🧑‍💻 <br />
-                  • Engaging assignments 📙 <br />• Helpful doubt-solving sessions 📚
+                <p className="text-left ">
+                ✨ <b>What's in store:</b> <br />
+                    •⁠ Flexible online & offline classes. 💻          <br />
+                    • Fun problem-solving activities.🧑🏻‍💻 <br />
+                    •⁠ Hands-on tasks to sharpen your skills.🖋 <br />
+                    •⁠ Real-time Q&A support.📚 <br />
+                    •⁠ Completion certificate upon bootcamp success!👨🏻‍🎓<br />
+
                 </p>
                 <br />
               </div>
@@ -54,12 +59,12 @@ function CBOOTCAMP() {
               <div className="mx-auto w-fit text-left md:text-center">
                 <div>
                   <p>
-                    <b>Starting:</b> 25 September, 2023
+                    <b>Starting:</b> 25 September, 2024
                   </p>
                 </div>
                 <div>
                   <p>
-                    <b>Offline:</b> Wednesday 1:30PM - 3:30PM, at 4F4
+                    <b>Offline:</b> Wednesday 1:45PM - 3:45PM, at 4F4
                   </p>
                   <p>
                     <b>Online:</b> Monday and Saturday, 5:30PM to 7:00PM
@@ -74,13 +79,13 @@ function CBOOTCAMP() {
             </div>
             <div className="mx-8 pt-4 text-center text-sm sm:text-xl">
               <p>
-                <b>C Bootcamp WhatsApp Group: </b>
+                <b>C Bootcamp Brochure: </b>
                 <a
                   className="text-blue-600 hover:underline"
-                  href="https://chat.whatsapp.com/Jl6VFqm6t7h1sgyA63hrfW"
+                  href="https://drive.google.com/file/d/1HaZ_MrklSecgDnCkxwlIGtiieiljcqtT/view?usp=sharing"
                   target="_blank"
                 >
-                  https://chat.whatsapp.com/Jl6VFqm6t7h1sgyA63hrfW
+                  Click Here
                 </a>
               </p>
             </div>

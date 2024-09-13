@@ -5,22 +5,6 @@ import { flutterworkshop_img, c_bootcamp_img, windows_img } from '@/assets/index
 
 const eventDetails = [
   {
-    eventName: 'Ask S&T',
-    eventDesc: 'Join us for ASK S&T, an interactive session where 1st-year students / (freshers) can get all their technical and non-technical questions answered by our expert club members!',
-    eventImg: windows_img,
-    eventStatus: 'upcoming',
-    eventRegLink: '/events/',
-    eventRegStatus: 'closed',
-  },
-  {
-    eventName: 'C Bootcamp',
-    eventDesc: 'Join the C Bootcamp to master C programming through flexible hybrid classes, hands-on tasks, and real-time support.',
-    eventImg: flutterworkshop_img,
-    eventStatus: 'upcoming',
-    eventRegLink: '/events/',
-    eventRegStatus: 'closed',
-  },
-  {
     eventName: 'Tech Talk With Alumni',
     eventDesc: 'Tech talk with alumni Join us for an Expert talk session, connecting students with industry pioneers for insightful tech guidance!',
     eventImg: windows_img,
@@ -35,6 +19,22 @@ const eventDetails = [
     eventStatus: 'upcoming',
     eventRegLink: '/events/',
     eventRegStatus: 'closed',
+  },
+  {
+    eventName: 'Ask S&T',
+    eventDesc: 'Join us for ASK S&T, an interactive session where 1st-year students / (freshers) can get all their technical and non-technical questions answered by our expert club members!',
+    eventImg: windows_img,
+    eventStatus: 'ongoing',
+    eventRegLink: '/events/AskSnT',
+    eventRegStatus: 'live',
+  },
+  {
+    eventName: 'C Bootcamp',
+    eventDesc: 'Join the C Bootcamp to master C programming through flexible hybrid classes, hands-on tasks, and real-time support.',
+    eventImg: windows_img,
+    eventStatus: 'ongoing',
+    eventRegLink: '/events/cbootcamp24',
+    eventRegStatus: 'live',
   },
   {
     eventName: 'Aarambh-2024',

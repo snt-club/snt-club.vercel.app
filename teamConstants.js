@@ -162,6 +162,18 @@ const sntTeamMember = [
     memberInsta: '',
     memberLinkedin: 'https://www.linkedin.com/in/mayanksharma2003/',
   },
+  {
+    memberName: 'Sanidhya Mehra',
+    memberPost: 'Student_Team',
+    memberTeam: 'Development_Team',
+    memberPhoto: '',
+    memberRole: '',
+    memberDepartment: '',
+    memberYear: '',
+    memberBranch: '',
+    memberInsta: '',
+    memberLinkedin: 'https://www.linkedin.com/in/sanidhya-mehra-a0310a25b/',
+  },
   // Tutor Team
   {
     memberName: 'Rishita Agrawal',
@@ -186,6 +198,18 @@ const sntTeamMember = [
     memberBranch: '',
     memberInsta: '',
     memberLinkedin: 'https://www.linkedin.com/in/yash-agarwal-5280242a7',
+  },
+  {
+    memberName: 'Jaideep Singh Chouhan',
+    memberPost: 'Student_Team',
+    memberTeam: 'Tutor_Team',
+    memberPhoto: '',
+    memberRole: '',
+    memberDepartment: '',
+    memberYear: '',
+    memberBranch: '',
+    memberInsta: '',
+    memberLinkedin: 'https://www.linkedin.com/in/jaideep-singh-chouhan-4537ab302/',
   },
   // Design Team
   {
