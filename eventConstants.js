@@ -60,14 +60,14 @@ const eventDetails = [
     eventRegLink: 'https://pravah.skit.ac.in/events/tech/',
     eventRegStatus: 'closed',
   },
-  {
-    eventName: 'Introductory session on DSA',
-    eventDesc: 'Science and Technology Club is organising Introductory session on DSA',
-    eventImg: windows_img,
-    eventStatus: 'past',
-    eventRegLink: '/events/dsa-session',
-    eventRegStatus: 'closed',
-  },
+  // {
+  //   eventName: 'Introductory session on DSA',
+  //   eventDesc: 'Science and Technology Club is organising Introductory session on DSA',
+  //   eventImg: windows_img,
+  //   eventStatus: 'past',
+  //   eventRegLink: '/events/dsa-session',
+  //   eventRegStatus: 'closed',
+  // },
   // {
   //   eventName: 'Web-Development Workshop',
   //   eventDesc:
