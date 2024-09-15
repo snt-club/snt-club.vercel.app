@@ -40,9 +40,9 @@ const eventDetails = [
     eventName: 'Aarambh-2024',
     eventDesc: "Join us at AARAMBH for an exciting session where we'll welcome freshers and introduce them to the Science and Technology Club, showcasing innovation, insights, and opportunities!",
     eventImg: flutterworkshop_img,
-    eventStatus: 'ongoing',
+    eventStatus: 'past',
     eventRegLink: '/events/aarambh24',
-    eventRegStatus: 'live',
+    eventRegStatus: 'closed',
   },
   {
     eventName: 'CODE WITH S&T 3.0',
