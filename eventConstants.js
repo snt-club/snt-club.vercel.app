@@ -20,21 +20,22 @@ const eventDetails = [
     eventRegLink: '/events/',
     eventRegStatus: 'closed',
   },
+
+  {
+    eventName: 'C Bootcamp',
+    eventDesc: 'Join the C Bootcamp to master C programming through flexible hybrid classes, hands-on tasks, and real-time support.',
+    eventImg: c_bootcamp_img,
+    eventStatus: 'ongoing',
+    eventRegLink: '/events/cbootcamp24',
+    eventRegStatus: 'live',
+  },
   {
     eventName: 'Ask S&T',
     eventDesc: 'Join us for ASK S&T, an interactive session where 1st-year students / (freshers) can get all their technical and non-technical questions answered by our expert club members!',
     eventImg: windows_img,
-    eventStatus: 'ongoing',
+    eventStatus: 'past',
     eventRegLink: '/events/AskSnT',
-    eventRegStatus: 'live',
-  },
-  {
-    eventName: 'C Bootcamp',
-    eventDesc: 'Join the C Bootcamp to master C programming through flexible hybrid classes, hands-on tasks, and real-time support.',
-    eventImg: windows_img,
-    eventStatus: 'ongoing',
-    eventRegLink: '/events/cbootcamp24',
-    eventRegStatus: 'live',
+    eventRegStatus: 'closed',
   },
   {
     eventName: 'Aarambh-2024',
@@ -52,14 +53,15 @@ const eventDetails = [
     eventRegLink: 'https://forms.gle/PchzxHMUSfkU68sy7',
     eventRegStatus: 'closed',
   },
-  {
-    eventName: 'Clash of Coders - Pravah Event',
-    eventDesc:'Science and Technology Club is organising a Clash of Coders. Event will be live at SKIT during Pravah 2024.',
-    eventImg: flutterworkshop_img,
-    eventStatus: 'past',
-    eventRegLink: 'https://pravah.skit.ac.in/events/tech/',
-    eventRegStatus: 'closed',
-  },
+
+  // {
+  //   eventName: 'Clash of Coders - Pravah Event',
+  //   eventDesc:'Science and Technology Club is organising a Clash of Coders. Event will be live at SKIT during Pravah 2024.',
+  //   eventImg: flutterworkshop_img,
+  //   eventStatus: 'past',
+  //   eventRegLink: 'https://pravah.skit.ac.in/events/tech/',
+  //   eventRegStatus: 'closed',
+  // },
   // {
   //   eventName: 'Introductory session on DSA',
   //   eventDesc: 'Science and Technology Club is organising Introductory session on DSA',
