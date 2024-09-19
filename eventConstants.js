@@ -16,9 +16,9 @@ const eventDetails = [
     eventName: 'CodeFormers',
     eventDesc: 'Join us for Codeformers, a thrilling monthly coding series that transforms the C programming skills, evolve and claim interesting victory taglines every month!',
     eventImg: c_bootcamp_img,
-    eventStatus: 'upcoming',
-    eventRegLink: '/events/',
-    eventRegStatus: 'closed',
+    eventStatus: 'ongoing',
+    eventRegLink: '/events/codeformers',
+    eventRegStatus: 'live',
   },
 
   {
