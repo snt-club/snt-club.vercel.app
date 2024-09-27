@@ -2,23 +2,23 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import codeformers from '@/assets/images/codeformer.jpg';
+import alumniSessionpng from '@/assets/images/alumniSession.jpg';
 
-function codeformer() {
+function alumniSession() {
   return (
     <>
       <header className="bg-[#0A146E] py-2 text-base text-white md:py-8 md:text-xl">
         <div className="block justify-between px-8 align-middle font-bold md:flex md:px-36">
           <div>
             <Link
-              href="https://drive.google.com/file/d/1AF5rmFB_RQ0qer5p_LJcPHlYr1FoD4F3/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1Ze9QRoVwlmlqxH7HVwTPjS0OqwEjdIAP/view?usp=sharing"
               target="_blank"
             >
               <p className="p-2 text-center hover:text-gray-400">Notice</p>
             </Link>
           </div>
           <div className="max-md:mx-auto max-md:w-fit">
-            <Link href="https://forms.gle/uArdA94fbAUCgbsz6" target="_blank">
+            <Link href="https://forms.gle/GQnzxZyZvfSwvh5p6" target="_blank">
               <button className="rounded-full border border-white bg-white p-2 text-center text-[#0A146E] duration-300 ease-in-out hover:bg-transparent hover:text-white">
                 Register Now
               </button>
@@ -28,22 +28,29 @@ function codeformer() {
       </header>
       <div className="container mx-auto my-4">
         <div className="mx-16 my-4 text-center">
-          <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-6xl">Codeformers</p>
+          <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-6xl">
+            Tech Talk With Alumni
+          </p>
         </div>
         <div className="block md:flex">
           <div className="mx-16 pb-8">
-            <Image src={codeformers} alt="codeformers" className="w-fit" />
+            <Image src={alumniSessionpng} alt="alumniSession" className="w-fit" />
           </div>
           <div className="my-auto h-fit">
             <div className="mx-16">
               <div className="mx-auto w-fit text-left text-lg md:text-2xl lg:text-justify">
-                <p>Codeformers , our monthly coding competition! Showcase your skill and grab the top spot.</p>
+                <p>
+                  The Science and Technology Club is excited to invite you to our Tech Talk with Alumni - an exclusive
+                  online session where you'll get to interact with our former club members who are now thriving in the
+                  tech industry! 🌐👩‍💻
+                </p>
                 <br />
-                <p className="text-left ">
+                <p className="text-left">
                   Join us for: <br />
-                  • Skill Growth 🚀 <br />
-                  • Network Opportunities 🤝 <br />
-                  • Exciting Prizes 🎉<br />• Fun Competitions 🏆
+                  • Learn from real-world experiences  🚀 <br />
+                  • Gain valuable career insights  🤝 <br />
+                  • Ask questions about career paths, projects, and industry trends 🎉<br />
+                  • Get inspired by alumni success stories! 🏆
                 </p>
                 <br />
               </div>
@@ -55,7 +62,7 @@ function codeformer() {
                     <span>Date</span>
                   </div>
                   <div>
-                    <span className="text-[18px] font-semibold">Last Wednesday Of Every Month</span>
+                    <span className="text-[18px] font-semibold">28th September 2024 </span>
                   </div>
                 </div>
                 <div className="mt-1">
@@ -63,7 +70,7 @@ function codeformer() {
                     <span>Time</span>
                   </div>
                   <div>
-                    <span className="text-[18px] font-semibold">01:45 PM - 02:45 PM</span>
+                    <span className="text-[18px] font-semibold">5:00 PM Onwards</span>
                   </div>
                 </div>
                 <div className="mt-1">
@@ -71,7 +78,7 @@ function codeformer() {
                     <span>Venue</span>
                   </div>
                   <div>
-                    <span className="text-[18px] font-semibold">CL-1 & CL-3 (CS Block)</span>
+                    <span className="text-[18px] font-semibold">Online</span>
                   </div>
                 </div>
               </div>
@@ -83,4 +90,4 @@ function codeformer() {
   );
 }
 
-export default codeformer;
+export default alumniSession;

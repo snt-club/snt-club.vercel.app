@@ -67,7 +67,7 @@ function CBOOTCAMP() {
                     <b>Offline:</b> Wednesday 1:45PM - 3:45PM, at 4F4
                   </p>
                   <p>
-                    <b>Online:</b> Monday and Saturday, 5:30PM to 7:00PM
+                    <b>Online:</b> Monday and Saturday, 5:30PM to 7:30PM
                   </p>
                 </div>
                 <div>

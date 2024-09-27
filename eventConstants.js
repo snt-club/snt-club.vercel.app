@@ -5,12 +5,20 @@ import { flutterworkshop_img, c_bootcamp_img, windows_img } from '@/assets/index
 
 const eventDetails = [
   {
-    eventName: 'Tech Talk With Alumni',
-    eventDesc: 'Tech talk with alumni Join us for an Expert talk session, connecting students with industry pioneers for insightful tech guidance!',
-    eventImg: windows_img,
+    eventName: 'Git And Github Session',
+    eventDesc: 'Want to code smarter and work together like a pro? Jump into our Git & GitHub session and get hands-on!"',
+    eventImg: c_bootcamp_img,
     eventStatus: 'upcoming',
     eventRegLink: '/events/',
     eventRegStatus: 'closed',
+  },
+  {
+    eventName: 'Tech Talk With Alumni',
+    eventDesc: 'Tech talk with alumni Join us for an Expert talk session, connecting students with industry pioneers for insightful tech guidance!',
+    eventImg: windows_img,
+    eventStatus: 'ongoing',
+    eventRegLink: '/events/techTalkWithAlumni',
+    eventRegStatus: 'live',
   },
   
   {
@@ -24,8 +32,8 @@ const eventDetails = [
   {
     eventName: 'CodeFormers',
     eventDesc: 'Join us for Codeformers, a thrilling monthly coding series that transforms the C programming skills, evolve and claim interesting victory taglines every month!',
-    eventImg: c_bootcamp_img,
-    eventStatus: 'past',
+    eventImg: windows_img,
+    eventStatus: 'ongoing',
     eventRegLink: '/events/codeformers',
     eventRegStatus: 'live',
   },
