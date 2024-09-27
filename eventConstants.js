@@ -12,21 +12,21 @@ const eventDetails = [
     eventRegLink: '/events/',
     eventRegStatus: 'closed',
   },
-  {
-    eventName: 'CodeFormers',
-    eventDesc: 'Join us for Codeformers, a thrilling monthly coding series that transforms the C programming skills, evolve and claim interesting victory taglines every month!',
-    eventImg: c_bootcamp_img,
-    eventStatus: 'ongoing',
-    eventRegLink: '/events/codeformers',
-    eventRegStatus: 'live',
-  },
-
+  
   {
     eventName: 'C Bootcamp',
     eventDesc: 'Join the C Bootcamp to master C programming through flexible hybrid classes, hands-on tasks, and real-time support.',
     eventImg: c_bootcamp_img,
     eventStatus: 'ongoing',
     eventRegLink: '/events/cbootcamp24',
+    eventRegStatus: 'live',
+  },
+  {
+    eventName: 'CodeFormers',
+    eventDesc: 'Join us for Codeformers, a thrilling monthly coding series that transforms the C programming skills, evolve and claim interesting victory taglines every month!',
+    eventImg: c_bootcamp_img,
+    eventStatus: 'past',
+    eventRegLink: '/events/codeformers',
     eventRegStatus: 'live',
   },
   {
@@ -45,14 +45,14 @@ const eventDetails = [
     eventRegLink: '/events/aarambh24',
     eventRegStatus: 'closed',
   },
-  {
-    eventName: 'CODE WITH S&T 3.0',
-    eventDesc: 'Science and Technology Club is back with next chapter of Code With S&T - this time bigger and better!',
-    eventImg: c_bootcamp_img,
-    eventStatus: 'past',
-    eventRegLink: 'https://forms.gle/PchzxHMUSfkU68sy7',
-    eventRegStatus: 'closed',
-  },
+  // {
+  //   eventName: 'CODE WITH S&T 3.0',
+  //   eventDesc: 'Science and Technology Club is back with next chapter of Code With S&T - this time bigger and better!',
+  //   eventImg: c_bootcamp_img,
+  //   eventStatus: 'past',
+  //   eventRegLink: 'https://forms.gle/PchzxHMUSfkU68sy7',
+  //   eventRegStatus: 'closed',
+  // },
 
   // {
   //   eventName: 'Clash of Coders - Pravah Event',
