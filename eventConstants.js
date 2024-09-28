@@ -12,14 +12,7 @@ const eventDetails = [
     eventRegLink: '/events/',
     eventRegStatus: 'closed',
   },
-  {
-    eventName: 'Tech Talk With Alumni',
-    eventDesc: 'Tech talk with alumni Join us for an Expert talk session, connecting students with industry pioneers for insightful tech guidance!',
-    eventImg: windows_img,
-    eventStatus: 'ongoing',
-    eventRegLink: '/events/techTalkWithAlumni',
-    eventRegStatus: 'live',
-  },
+
   
   {
     eventName: 'C Bootcamp',
@@ -51,6 +44,14 @@ const eventDetails = [
     eventImg: flutterworkshop_img,
     eventStatus: 'past',
     eventRegLink: '/events/aarambh24',
+    eventRegStatus: 'closed',
+  },
+  {
+    eventName: 'Tech Talk With Alumni',
+    eventDesc: 'Tech talk with alumni Join us for an Expert talk session, connecting students with industry pioneers for insightful tech guidance!',
+    eventImg: windows_img,
+    eventStatus: 'past',
+    eventRegLink: '/events/techTalkWithAlumni',
     eventRegStatus: 'closed',
   },
   // {
