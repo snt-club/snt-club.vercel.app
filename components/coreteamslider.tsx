@@ -9,80 +9,11 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-// import vanshaj from '@/assets/people/vanshaj.png';
-// import somya from '@/assets/people/somya.png';
-// import unique from '@/assets/people/unique.png';
-// import shailesh from '@/assets/people/shailesh.png';
-// import parth from '@/assets/people/parth.png';
-// import simran from '@/assets/people/simran.png';
-// import laveena from '@/assets/people/laveena.png';
 import instagram from '@/assets/svg/in.svg';
 import linkedin from '@/assets/svg/li.svg';
 
 import { sntTeamMember } from '@/teamConstants';
 
-// const studenthead = [
-//   {
-//     name: 'Vanshaj Kataria',
-//     profile_pic: vanshaj,
-//     alt: 'Development Head - Vanshaj Kataria',
-//     year: 'III yr',
-//     branch: 'ECE',
-//     role: 'Development Head',
-//     instagram_link: 'https://www.instagram.com/vanshaj_kataria/',
-//     linkedin_link: 'https://www.linkedin.com/in/vanshaj-kataria/',
-//   },
-//   {
-//     name: 'Somya Jain',
-//     profile_pic: somya,
-//     alt: 'Management Head - Somya Jain',
-//     year: 'III yr',
-//     branch: 'CSE',
-//     role: 'Management Head',
-//     instagram_link: 'https://www.instagram.com/somyaa_jain08/',
-//     linkedin_link: 'https://www.linkedin.com/in/somya-jain-76b230223/',
-//   },
-//   {
-//     name: 'Unique Paliwal',
-//     profile_pic: unique,
-//     alt: 'Tutor Head - Unique Paliwal',
-//     year: 'III yr',
-//     branch: 'CSE',
-//     role: 'Tutor Head',
-//     instagram_link: 'https://www.instagram.com/paliwalunique/',
-//     linkedin_link: 'https://www.linkedin.com/in/unique-paliwal-6a3456226/',
-//   },
-//   {
-//     name: 'Shailesh Purohit',
-//     profile_pic: shailesh,
-//     alt: 'Content Head - Shailesh Purohit',
-//     year: 'III yr',
-//     branch: 'CSE',
-//     role: 'Content Head',
-//     instagram_link: 'https://www.instagram.com/bhaba_shailesh.raj/',
-//     linkedin_link: 'https://www.linkedin.com/in/shailesh-purohit-9917291b7/',
-//   },
-//   {
-//     name: 'Parth Jain',
-//     profile_pic: parth,
-//     alt: 'Design Head - Parth Jain',
-//     year: 'III yr',
-//     branch: 'CSE',
-//     role: 'Design Head',
-//     instagram_link: 'https://www.instagram.com/art_at_adobe/',
-//     linkedin_link: 'https://www.linkedin.com/in/parth-jain-b95182214/',
-//   },
-//   {
-//     name: 'Simran Rawat',
-//     profile_pic: simran,
-//     alt: 'Social Media/PR Head - Simran Rawat',
-//     year: 'III yr',
-//     branch: 'CSE',
-//     role: 'Social Media/PR Head',
-//     instagram_link: 'https://www.instagram.com/simranrawat2513/',
-//     linkedin_link: 'https://www.linkedin.com/in/simran-rawat-150554214/',
-//   },
-// ];
 
 const coreteamslider = () => {
   const [swiperSlides, setSwiperSlides] = useState(1);

@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import RegisterBtn from '@/components/registerBtn';
 
 import alumniSessionpng from '@/assets/images/alumniSession.jpg';
 
@@ -19,9 +20,7 @@ function alumniSession() {
           </div>
           <div className="max-md:mx-auto max-md:w-fit">
             <Link href="https://forms.gle/LMqgfwHomr181roZ8" target="_blank">
-              <button className="rounded-full border border-white bg-white p-2 text-center text-[#0A146E] duration-300 ease-in-out hover:bg-transparent hover:text-white">
-                Register Now
-              </button>
+              <RegisterBtn/>  
             </Link>
           </div>
         </div>

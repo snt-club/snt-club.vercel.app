@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import RegisterBtn from '@/components/registerBtn';
 
 import codeformers from '@/assets/images/codeformer.jpg';
 
@@ -19,9 +20,7 @@ function codeformer() {
           </div>
           <div className="max-md:mx-auto max-md:w-fit">
             <Link href="https://forms.gle/uArdA94fbAUCgbsz6" target="_blank">
-              <button className="rounded-full border border-white bg-white p-2 text-center text-[#0A146E] duration-300 ease-in-out hover:bg-transparent hover:text-white">
-                Register Now
-              </button>
+              <RegisterBtn/>
             </Link>
           </div>
         </div>
