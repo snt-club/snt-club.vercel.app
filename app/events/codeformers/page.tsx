@@ -3,8 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import sponsorLogo1 from 'assets/images/sponsor.svg';
-
-=======
 import RegisterBtn from '@/components/registerBtn';
 
 import codeformers from '@/assets/images/codeformer.jpg';
