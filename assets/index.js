@@ -6,7 +6,6 @@ import cppWorkshop from './images/cppWorkshop.png';
 import dsa from './images/dsa.webp';
 import web from './images/web.webp';
 
-
 import sharda_soni from './people/sharda.png';
 import vinay_marwal from './people/vinay.png';
 
