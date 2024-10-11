@@ -1,6 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import sponsorLogo1 from 'assets/images/sponsor.svg';
+
+=======
 import RegisterBtn from '@/components/registerBtn';
 
 import codeformers from '@/assets/images/codeformer.jpg';
@@ -26,6 +30,7 @@ function codeformer() {
         </div>
       </header>
       <div className="container mx-auto my-4">
+        
         <div className="mx-16 my-4 text-center">
           <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-6xl">Codeformers</p>
         </div>
@@ -75,6 +80,23 @@ function codeformer() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        
+        <div className="mx-16 my-4 text-center">
+          <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-6xl w-">Sponsored By</p>
+        </div>
+        <div className="flex justify-center">
+          <div className="flex flex-wrap justify-center">
+            
+            <div className="m-4">
+              <a href='https://linktr.ee/uniartskillsacademy'>
+  <Image src={sponsorLogo1} alt="Sponsor 1"  width={500} height = {200}/></a>
+</div>
+
+
+
+            
           </div>
         </div>
       </div>
