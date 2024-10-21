@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Codeformers_glimpses from '@/components/codeformers_glimpses';
 
 import sponsorLogo1 from 'assets/images/sponsor.svg';
 import RegisterBtn from '@/components/registerBtn';
@@ -22,13 +23,12 @@ function codeformer() {
           </div>
           <div className="max-md:mx-auto max-md:w-fit">
             <Link href="https://forms.gle/uArdA94fbAUCgbsz6" target="_blank">
-              <RegisterBtn/>
+              <RegisterBtn />
             </Link>
           </div>
         </div>
       </header>
       <div className="container mx-auto my-4">
-        
         <div className="mx-16 my-4 text-center">
           <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-6xl">Codeformers</p>
         </div>
@@ -41,11 +41,12 @@ function codeformer() {
               <div className="mx-auto w-fit text-left text-lg md:text-2xl lg:text-justify">
                 <p>Codeformers , our monthly coding competition! Showcase your skill and grab the top spot.</p>
                 <br />
-                <p className="text-left ">
+                <p className="text-left">
                   Join us for: <br />
                   • Skill Growth 🚀 <br />
                   • Network Opportunities 🤝 <br />
-                  • Exciting Prizes 🎉<br />• Fun Competitions 🏆
+                  • Exciting Prizes 🎉
+                  <br />• Fun Competitions 🏆
                 </p>
                 <br />
               </div>
@@ -80,23 +81,22 @@ function codeformer() {
             </div>
           </div>
         </div>
-        
         <div className="mx-16 my-4 text-center">
-          <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-6xl w-">Sponsored By</p>
+          <p className=" rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-6xl py-2">Sponsored By</p>
         </div>
         <div className="flex justify-center">
           <div className="flex flex-wrap justify-center">
-            
-            <div className="m-4">
-              <a href='https://linktr.ee/uniartskillsacademy'>
-  <Image src={sponsorLogo1} alt="Sponsor 1"  width={500} height = {200}/></a>
-</div>
-
-
-
-            
+            <div className="m-4"> 
+                  <a href="https://linktr.ee/uniartskillsacademy">
+                <Image src={sponsorLogo1} alt="Sponsor 1" width={500} height={200} />
+              </a>
+            </div>
           </div>
         </div>
+        <div className="mx-16 my-4 text-center">
+          <p className=" rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-6xl py-2">Glimpses</p>
+        </div>
+        <Codeformers_glimpses/>
       </div>
     </>
   );
