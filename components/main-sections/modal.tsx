@@ -10,6 +10,7 @@ import close_button from '@/assets/svg/close_button.svg';
 
 
 const AarambhModal = () => {
+  const isEventActive  = false;
   const [open, setOpen] = useState(true);
 
   const onCloseModal = () => setOpen(false);
@@ -26,7 +27,9 @@ const AarambhModal = () => {
     return () => window.removeEventListener('resize', updateWidth);
   }, []);
 
-
+  if (!isEventActive) {
+    return null;
+  }
   return (
       <Modal closeIcon={<Image className='hover:scale-125 duration-300' src={close_button} alt='Close' width={20} />} open={open} onClose={onCloseModal} center styles={{modal: {width: width,backgroundColor:'transparent'}}}>
         <div className='flex flex-wrap justify-center'>

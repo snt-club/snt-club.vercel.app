@@ -18,9 +18,9 @@ const eventDetails = [
     eventName: 'C Bootcamp',
     eventDesc: 'Join the C Bootcamp to master C programming through flexible hybrid classes, hands-on tasks, and real-time support.',
     eventImg: c_bootcamp_img,
-    eventStatus: 'ongoing',
+    eventStatus: 'past',
     eventRegLink: '/events/cbootcamp24',
-    eventRegStatus: 'live',
+    eventRegStatus: 'closed',
   },
   {
     eventName: 'CodeFormers',
