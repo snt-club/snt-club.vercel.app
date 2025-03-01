@@ -213,18 +213,6 @@ const sntTeamMember = [
   },
   // Design Team
   {
-    memberName: 'Palak Soni',
-    memberPost: 'Student_Team',
-    memberTeam: 'Design_Team',
-    memberPhoto: '',
-    memberRole: '',
-    memberDepartment: '',
-    memberYear: '',
-    memberBranch: '',
-    memberInsta: '',
-    memberLinkedin: ' https://www.linkedin.com/in/palak-soni-98854b279?',
-  },
-  {
     memberName: 'Somya Roy',
     memberPost: 'Student_Team',
     memberTeam: 'Design_Team',
