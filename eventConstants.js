@@ -1,13 +1,21 @@
 // EVENT STATUS = upcoming, ongoing, past
 // EVENT REG STATUS = live, closed
 
-import { flutterworkshop_img, c_bootcamp_img, windows_img } from '@/assets/index';
+import { flutterworkshop_img, code_img , c_bootcamp_img, windows_img } from '@/assets/index';
 
 const eventDetails = [
   {
     eventName: 'Git And Github Session',
     eventDesc: 'Want to code smarter and work together like a pro? Jump into our Git & GitHub session and get hands-on!"',
     eventImg: c_bootcamp_img,
+    eventStatus: 'upcoming',
+    eventRegLink: '/events/',
+    eventRegStatus: 'closed',
+  },
+  {
+    eventName: 'CODE-A-THON',
+    eventDesc: 'A Web 2.0 based web development competition helps you to learn mordern web development skills.',
+    eventImg: code_img,
     eventStatus: 'upcoming',
     eventRegLink: '/events/',
     eventRegStatus: 'closed',
