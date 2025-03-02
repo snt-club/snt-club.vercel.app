@@ -1,13 +1,30 @@
 // EVENT STATUS = upcoming, ongoing, past
 // EVENT REG STATUS = live, closed
 
-import { flutterworkshop_img, c_bootcamp_img, windows_img } from '@/assets/index';
+import { flutterworkshop_img, code_img , c_bootcamp_img, windows_img } from '@/assets/index';
 
 const eventDetails = [
   {
     eventName: 'Git And Github Session',
     eventDesc: 'Want to code smarter and work together like a pro? Jump into our Git & GitHub session and get hands-on!"',
     eventImg: c_bootcamp_img,
+    eventStatus: 'upcoming',
+    eventRegLink: '/events/',
+    eventRegStatus: 'closed',
+  },
+  {
+    eventName: 'Web-Development Workshop',
+    eventDesc:
+      'Science and Technology Club is organising a Web-Development for all students who want to build their portfolio.',
+    eventImg: windows_img,
+    eventStatus: 'upcoming',
+    eventRegLink: '/events/web-dev',
+    eventRegStatus: 'closed',
+  },
+  {
+    eventName: 'CODE-A-THON',
+    eventDesc: 'A Web 2.0 based web development competition helps you to learn mordern web development skills.',
+    eventImg: code_img,
     eventStatus: 'upcoming',
     eventRegLink: '/events/',
     eventRegStatus: 'closed',
@@ -20,6 +37,14 @@ const eventDetails = [
     eventRegLink: '/events/codeformers',
     eventRegStatus: 'live',
   },
+  // {
+  //   eventName: 'Developer Month',
+  //   eventDesc: 'The Science and Technology Club presents a month packed with learning, coding, and innovation! 💻🔥',
+  //   eventImg: flutterworkshop_img,
+  //   eventStatus: 'ongoing',
+  //   eventRegLink: '/events/devmonth',
+  //   eventRegStatus: 'live',
+  // },
   {
     eventName: 'C Bootcamp',
     eventDesc: 'Join the C Bootcamp to master C programming through flexible hybrid classes, hands-on tasks, and real-time support.',
@@ -85,15 +110,7 @@ const eventDetails = [
   //   eventRegLink: '/events/dsa-session',
   //   eventRegStatus: 'closed',
   // },
-  // {
-  //   eventName: 'Web-Development Workshop',
-  //   eventDesc:
-  //     'Science and Technology Club is organising a Web-Development for all students who want to build their portfolio.',
-  //   eventImg: windows_img,
-  //   eventStatus: 'past',
-  //   eventRegLink: '/events/web-dev',
-  //   eventRegStatus: 'closed',
-  // },
+
   // {
   //   eventName: 'Flutter Workshop',
   //   eventDesc:

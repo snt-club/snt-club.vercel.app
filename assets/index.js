@@ -5,6 +5,7 @@ import windows_img from './svg/windows.svg';
 import cppWorkshop from './images/cppWorkshop.png';
 import dsa from './images/dsa.webp';
 import web from './images/web.webp';
+import code_img from './svg/cws2.svg';
 
 import sharda_soni from './people/sharda.png';
 import vinay_marwal from './people/vinay.png';
@@ -22,6 +23,7 @@ import sagar from './people/sagar.jpeg';
 
 export {
   aarambh_img,
+  code_img,
   flutterworkshop_img,
   c_bootcamp_img,
   windows_img,
