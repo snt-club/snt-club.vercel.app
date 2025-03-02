@@ -5,7 +5,7 @@ import { Modal } from 'react-responsive-modal';
 import Image from 'next/image';
 import Link from 'next/link'
 
-import codeFormer from '@/assets/images/codeformer.jpg';
+import dev from '@/assets/images/developer_month.webp';
 import close_button from '@/assets/svg/close_button.svg';
 
 
@@ -33,8 +33,8 @@ const AarambhModal = () => {
   return (
       <Modal closeIcon={<Image className='hover:scale-125 duration-300' src={close_button} alt='Close' width={20} />} open={open} onClose={onCloseModal} center styles={{modal: {width: width,backgroundColor:'transparent'}}}>
         <div className='flex flex-wrap justify-center'>
-            <Image src={codeFormer} alt="Aarambh Poster" className='w-fit h-fit md:w-3/2'/>
-            <Link href="/events/codeformers" className='text-sm md:text-lg text-white mt-3 bg-[#EE4B76] p-2 px-5 rounded-lg outline-none hover:bg-transparent hover:text-[#EE4B76] border-2 border-[#EE4B76] duration-300 ease-in-out'>Register Now</Link> 
+            <Image src={dev} alt="Aarambh Poster" className='w-fit h-fit md:w-3/2 md:h-3/2'/>
+            <Link href="/" className='text-sm md:text-lg text-white mt-3 bg-[#EE4B76] p-2 px-5 rounded-lg outline-none hover:bg-transparent hover:text-[#EE4B76] border-2 border-[#EE4B76] duration-300 ease-in-out'>Register Now</Link> 
         </div>
       </Modal>
   );

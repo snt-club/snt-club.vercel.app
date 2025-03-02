@@ -21,6 +21,14 @@ const eventDetails = [
     eventRegStatus: 'live',
   },
   {
+    eventName: 'Developer Month',
+    eventDesc: 'The Science and Technology Club presents a month packed with learning, coding, and innovation! 💻🔥',
+    eventImg: flutterworkshop_img,
+    eventStatus: 'ongoing',
+    eventRegLink: '/events/devmonth',
+    eventRegStatus: 'live',
+  },
+  {
     eventName: 'C Bootcamp',
     eventDesc: 'Join the C Bootcamp to master C programming through flexible hybrid classes, hands-on tasks, and real-time support.',
     eventImg: c_bootcamp_img,
