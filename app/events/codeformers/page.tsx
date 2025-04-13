@@ -28,33 +28,51 @@ function CodeformerPage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/register', { // Fixed the API route
+      // Step 1: Save data to MongoDB
+      const dbResponse = await fetch('/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
-
-      if (response.ok) {
-        alert('Registration successful!');
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          id: '',
-          year: '',
-          branch: '',
-        });
-        setError(null); // Clear error on success
-      } else {
+  
+      if (!dbResponse.ok) {
         setError('Registration failed. Please try again.');
+        return;
       }
+  
+      // Step 2: Send confirmation email
+      const mailResponse = await fetch('/api/mailregister', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (!mailResponse.ok) {
+        setError('Registration saved, but failed to send confirmation email.');
+        return;
+      }
+  
+      // Both succeeded
+      alert('Registration successful! Confirmation email sent.');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        id: '',
+        year: '',
+        branch: '',
+      });
+      setError(null); // Clear error on success
     } catch (error) {
       console.error('Error:', error);
       setError('An error occurred. Please try again later.');
     }
   };
+  
 
   return (
     <>
