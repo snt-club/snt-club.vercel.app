@@ -14,6 +14,8 @@
     "autoprefixer": "10.4.15",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
+    "mongodb": "^6.15.0",
+    "mongoose": "^8.13.2",
     "next": "13.4.19",
     "next-gallery": "^1.2.1",
     "postcss": "8.4.29",
