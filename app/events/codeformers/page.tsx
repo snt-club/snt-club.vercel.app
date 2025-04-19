@@ -132,7 +132,36 @@ function CodeformerPage() {
         </div>
 
         {/* --- Stylish Form --- */}
-        <div className="mx-16 my-8">
+        
+
+        {/* --- Sponsored Section --- */}
+        <div className="mx-16 my-4 text-center">
+          <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-6xl py-2">Sponsored By</p>
+        </div>
+        <div className="flex justify-center">
+          <div className="flex flex-wrap justify-center">
+            <div className="m-4">
+              <a href="https://linktr.ee/uniartskillsacademy">
+                <Image src={sponsorLogo1} alt="Sponsor 1" width={500} height={200} />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* --- Glimpses Section --- */}
+        <div className="mx-16 my-4 text-center">
+          <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-6xl py-2">Glimpses</p>
+        </div>
+        <Codeformers_glimpses />
+      </div>
+    </>
+  );
+}
+
+export default CodeformerPage;
+
+{/* <section>
+<div className="mx-16 my-8">
           <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-4xl py-2 text-center mb-6">
             Register Your Details
           </p>
@@ -226,38 +255,13 @@ function CodeformerPage() {
                 />
               </div>
             </div>
-            {error && <div className="text-red-500 mt-4 text-center">{error}</div>} {/* Error message */}
-            <button
-              type="submit"
-              className="mt-6 w-full bg-[#0A146E] hover:bg-[#0f1b95] text-white font-bold py-3 rounded-lg"
-            >
-              Submit
-            </button>
+            {error && <div className="text-red-500 mt-4 text-center">{error}</div>}
+            // <button
+            //   type="submit"
+            //   className="mt-6 w-full bg-[#0A146E] hover:bg-[#0f1b95] text-white font-bold py-3 rounded-lg"
+            // >
+            //   Submit
+            // </button>
           </form>
         </div>
-
-        {/* --- Sponsored Section --- */}
-        <div className="mx-16 my-4 text-center">
-          <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-6xl py-2">Sponsored By</p>
-        </div>
-        <div className="flex justify-center">
-          <div className="flex flex-wrap justify-center">
-            <div className="m-4">
-              <a href="https://linktr.ee/uniartskillsacademy">
-                <Image src={sponsorLogo1} alt="Sponsor 1" width={500} height={200} />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* --- Glimpses Section --- */}
-        <div className="mx-16 my-4 text-center">
-          <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-6xl py-2">Glimpses</p>
-        </div>
-        <Codeformers_glimpses />
-      </div>
-    </>
-  );
-}
-
-export default CodeformerPage;
+</section> */}

@@ -1,9 +1,25 @@
 // EVENT STATUS = upcoming, ongoing, past
 // EVENT REG STATUS = live, closed
 
-import { flutterworkshop_img, code_img , c_bootcamp_img, windows_img } from '@/assets/index';
+import { flutterworkshop_img, code_img , c_bootcamp_img, windows_img , s } from '@/assets/index';
 
 const eventDetails = [
+  {
+    eventName: 'CodeFormers',
+    eventDesc: 'Join us for Codeformers, a thrilling monthly coding series that transforms the C programming skills, evolve and claim interesting victory taglines every month!',
+    eventImg: windows_img,
+    eventStatus: 'ongoing',
+    eventRegLink: '/events/codeformers',
+    eventRegStatus: 'live',
+  },
+  {
+    eventName: 'Tech Talk With Alumni 3.0',
+    eventDesc: 'Chart your future with insider tips at Tech Talk with Alumni 2.0 - where experience meets inspiration!',
+    eventImg: s,
+    eventStatus: 'ongoing',
+    eventRegLink: '/events/techtalkwithalumni',
+    eventRegStatus: 'live',
+  },
   {
     eventName: 'Git And Github Session',
     eventDesc: 'Want to code smarter and work together like a pro? Jump into our Git & GitHub session and get hands-on!"',
@@ -29,14 +45,7 @@ const eventDetails = [
     eventRegLink: '/events/',
     eventRegStatus: 'closed',
   },
-  {
-    eventName: 'CodeFormers',
-    eventDesc: 'Join us for Codeformers, a thrilling monthly coding series that transforms the C programming skills, evolve and claim interesting victory taglines every month!',
-    eventImg: windows_img,
-    eventStatus: 'ongoing',
-    eventRegLink: '/events/codeformers',
-    eventRegStatus: 'live',
-  },
+
   // {
   //   eventName: 'Developer Month',
   //   eventDesc: 'The Science and Technology Club presents a month packed with learning, coding, and innovation! 💻🔥',
@@ -53,14 +62,7 @@ const eventDetails = [
     eventRegLink: '/events/cbootcamp24',
     eventRegStatus: 'closed',
   },
-  {
-    eventName: 'Tech Talk With Alumni 2.0',
-    eventDesc: 'Chart your future with insider tips at Tech Talk with Alumni 2.0 - where experience meets inspiration!',
-    eventImg: windows_img,
-    eventStatus: 'past',
-    eventRegLink: '/events/techtalkwithalumni',
-    eventRegStatus: 'closed',
-  },
+
   {
     eventName: 'Ask S&T',
     eventDesc: 'Join us for ASK S&T, an interactive session where 1st-year students / (freshers) can get all their technical and non-technical questions answered by our expert club members!',
