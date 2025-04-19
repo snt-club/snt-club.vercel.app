@@ -1,5 +1,6 @@
 import aarambh_img from './svg/aarambh.svg';
 import flutterworkshop_img from './svg/flutterworkshop.svg';
+import s from './svg/s.png';
 import c_bootcamp_img from './svg/c_bootcamp.svg';
 import windows_img from './svg/windows.svg';
 import cppWorkshop from './images/cppWorkshop.png';
@@ -25,6 +26,7 @@ export {
   aarambh_img,
   code_img,
   flutterworkshop_img,
+  s,
   c_bootcamp_img,
   windows_img,
   cppWorkshop,
