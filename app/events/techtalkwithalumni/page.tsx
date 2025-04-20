@@ -18,6 +18,7 @@ function AlumniSession() {
   });
 
   const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -25,6 +26,8 @@ function AlumniSession() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsLoading(true); // Show loading state
+
     try {
       const response = await fetch('/api/register', {
         method: 'POST',
@@ -53,6 +56,8 @@ function AlumniSession() {
       console.error('Error:', error);
       toast.error('An unexpected error occurred.');
       setError('An error occurred. Please try again later.');
+    } finally {
+      setIsLoading(false); // Hide loading state
     }
   };
 
@@ -85,27 +90,24 @@ function AlumniSession() {
 
         <div className="block md:flex">
           <div className="mx-16 pb-8">
-            <Image src={alumniSessionpng} alt="alumniSession" className="w-fit" />
+            <Image src={alumniSessionpng} alt="alumniSession" className="" />
           </div>
           <div className="my-auto h-fit">
             <div className="mx-16">
               <div className="mx-auto w-fit text-left text-lg md:text-2xl lg:text-justify">
                 <p>
-                  After getting an excellent response in the previous session, the Science and Technology Club once
-                  again conduct an expert talk 👨🏻‍🎓session. We are excited to organise the Tech Talk with Alumni 2.0
-                  where you’ll get mentorship and complete guidance from our former club member, Er. Keshav Pareek, GATE
-                  2024 qualified.
-                </p>
-                <br />
-                <p className="text-left">
-                  What's in store 🤔: <br />
-                  👉🏻 Gain valuable career insights. <br />
-                  👉🏻 Get cleared all your academic and tech related doubts. <br />
-                  👉🏻 Guidance for career paths to pursue higher studies. <br />
-                  👉🏻 Certificates will be provided to the participants. <br />
+                  After receiving an overwhelming response in the previous session, the Science and Technology Club is
+                  once again organizing an expert talk 👨🏻‍🎓 session. We are excited to present{' '}
+                  <strong>Tech Talk with Alumni 3.0</strong>, where you'll receive mentorship and in-depth guidance from
+                  our distinguished alumni:
                   <br />
-                  Get inspired by alumni success stories! 👍🏻
+                  <br />
+                  👉🏻 <strong>Saksham Sharma</strong> (SDE Intern at Juspay) <br />
+                  👉🏻 <strong>Radhika Soni</strong> (Product Engineer Intern at NammaYatri) <br />
+                  👉🏻 <strong>Aarushi Sharma</strong> (SDE at NammaYatri)
                 </p>
+
+                <br />
                 <br />
               </div>
             </div>
@@ -116,7 +118,7 @@ function AlumniSession() {
                     <span>Date</span>
                   </div>
                   <div>
-                    <span className="text-[18px] font-semibold">9th October 2024</span>
+                    <span className="text-[18px] font-semibold">23 April 2025</span>
                   </div>
                 </div>
                 <div className="mt-1">
@@ -132,7 +134,7 @@ function AlumniSession() {
                     <span>Venue</span>
                   </div>
                   <div>
-                    <span className="text-[18px] font-semibold">J.C. Bose</span>
+                    <span className="text-[18px] font-semibold">Gyan Mandir Auditorium</span>
                   </div>
                 </div>
               </div>
@@ -142,10 +144,10 @@ function AlumniSession() {
 
         {/* --- Form Section --- */}
         <div className="mx-16 my-8">
-          <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-4xl py-2 text-center mb-6">
+          <p className="mb-6 rounded-xl bg-[#0A146E] py-2 text-center text-2xl font-bold text-yellow-400 lg:text-4xl">
             Register Your Details
           </p>
-          <form onSubmit={handleSubmit} className="max-w-3xl mx-auto bg-white p-6 rounded-xl shadow-xl">
+          <form onSubmit={handleSubmit} className="mx-auto max-w-3xl rounded-xl bg-white p-6 shadow-xl">
             <div className="grid gap-4 md:grid-cols-2">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">
@@ -158,7 +160,7 @@ function AlumniSession() {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Full Name"
-                  className="p-3 border rounded-lg w-full"
+                  className="w-full rounded-lg border p-3"
                   required
                 />
               </div>
@@ -174,7 +176,7 @@ function AlumniSession() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Email Address"
-                  className="p-3 border rounded-lg w-full"
+                  className="w-full rounded-lg border p-3"
                   required
                 />
               </div>
@@ -190,7 +192,7 @@ function AlumniSession() {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="Phone Number"
-                  className="p-3 border rounded-lg w-full"
+                  className="w-full rounded-lg border p-3"
                   required
                 />
               </div>
@@ -206,7 +208,7 @@ function AlumniSession() {
                   value={formData.id}
                   onChange={handleChange}
                   placeholder="College ID"
-                  className="p-3 border rounded-lg w-full"
+                  className="w-full rounded-lg border p-3"
                   required
                 />
               </div>
@@ -220,7 +222,7 @@ function AlumniSession() {
                   name="year"
                   value={formData.year}
                   onChange={handleChange}
-                  className="p-3 border rounded-lg w-full"
+                  className="w-full rounded-lg border p-3"
                   required
                 >
                   <option value="">Select Year</option>
@@ -242,17 +244,20 @@ function AlumniSession() {
                   value={formData.branch}
                   onChange={handleChange}
                   placeholder="Branch"
-                  className="p-3 border rounded-lg w-full"
+                  className="w-full rounded-lg border p-3"
                   required
                 />
               </div>
             </div>
-            {error && <div className="text-red-500 mt-4 text-center">{error}</div>}
+            {error && <div className="mt-4 text-center text-red-500">{error}</div>}
             <button
               type="submit"
-              className="mt-6 w-full bg-[#0A146E] hover:bg-[#0f1b95] text-white font-bold py-3 rounded-lg"
+              disabled={isLoading}
+              className={`mt-6 w-full rounded-lg py-3 font-bold transition-all ${
+                isLoading ? 'cursor-not-allowed bg-gray-400' : 'bg-[#0A146E] text-white hover:bg-[#0f1b95]'
+              }`}
             >
-              Submit
+              {isLoading ? 'Submitting...' : 'Submit'}
             </button>
           </form>
         </div>
