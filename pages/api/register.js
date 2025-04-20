@@ -166,7 +166,7 @@ export default async function handler(req, res) {
                 <h3>Event Details:</h3>
                 <div class="detail-item">
                   <div class="detail-icon">📅</div>
-                  <div><strong>Date:</strong> 9th October 2024</div>
+                  <div><strong>Date:</strong> 23 April 2025</div>
                 </div>
                 <div class="detail-item">
                   <div class="detail-icon">⏰</div>
@@ -191,7 +191,7 @@ export default async function handler(req, res) {
   Add to Calendar
 </a>
               <div class="tech-decoration"></div>
-              <p>If you have any questions or need to update your registration details, please reply to this email or contact our event coordinator at <strong>techtalks@stclub.edu</strong>.</p>
+              <p>If you have any questions or need to update your registration details, please reply to this email or contact our event coordinator at .</p>
               <p>We look forward to seeing you there!</p>
               <p>Regards,<br>Science and Technology Club</p>
             </div>
