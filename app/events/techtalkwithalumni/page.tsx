@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
-
 import alumniSessionpng from '@/assets/images/alumniSession.jpg';
 
 function AlumniSession() {
@@ -25,36 +24,36 @@ function AlumniSession() {
   };
 
   const validateForm = () => {
-    const nameRegex = /^[A-Za-z\s]+$/;
+    const nameRegex = /^[a-zA-Z\s]+$/;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@skit\.ac\.in$/;
 
     if (!nameRegex.test(formData.name)) {
-      setError('Name must only contain letters and spaces.');
+      setError('Name must contain only letters and spaces.');
       return false;
     }
 
     if (!emailRegex.test(formData.email)) {
-      setError('Only @skit.ac.in email addresses are allowed.');
+      setError('Please use a valid @skit.ac.in email address.');
       return false;
     }
 
+    setError(null);
     return true;
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    setError(null);
-    if (!validateForm()) return;
-
     setIsLoading(true);
+
+    if (!validateForm()) {
+      setIsLoading(false);
+      return;
+    }
 
     try {
       const response = await fetch('/api/register', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
 
@@ -68,6 +67,7 @@ function AlumniSession() {
           year: '',
           branch: '',
         });
+        setError(null);
       } else {
         toast.error('Registration failed. Please try again.');
         setError('Registration failed. Please try again.');
@@ -83,127 +83,166 @@ function AlumniSession() {
 
   return (
     <>
-      {/* Header, Event Details ... keep same */}
+      <header className="bg-[#0A146E] py-2 text-base text-white md:py-8 md:text-xl">
+        <div className="block justify-between px-8 align-middle font-bold md:flex md:px-36">
+          <div>
+            <Link href="" target="_blank">
+              <p className="p-2 text-center hover:text-gray-400">Notice</p>
+            </Link>
+          </div>
+          <div className="max-md:mx-auto max-md:w-fit">
+            <Link href="" target="_blank" />
+          </div>
+        </div>
+      </header>
 
-      <div className="mx-16 my-8">
-        <p className="mb-6 rounded-xl bg-[#0A146E] py-2 text-center text-2xl font-bold text-yellow-400 lg:text-4xl">
-          Register Your Details
-        </p>
-        <form onSubmit={handleSubmit} className="mx-auto max-w-3xl rounded-xl bg-white p-6 shadow-xl">
-          <div className="grid gap-4 md:grid-cols-2">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                Full Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="John Doe"
-                className="w-full rounded-lg border p-3"
-                required
-              />
+      <div className="container mx-auto my-4">
+        <div className="mx-16 my-4 text-center">
+          <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-6xl">
+            Tech Talk 
+          </p>
+        </div>
+
+        <div className="block md:flex">
+          <div className="mx-16 pb-8">
+            <Image src={alumniSessionpng} alt="alumniSession" className="" />
+          </div>
+          <div className="my-auto h-fit">
+            <div className="mx-16">
+              <div className="mx-auto w-fit text-left text-lg md:text-2xl lg:text-justify">
+                <p>
+                  The Science and Technology Club is organising a Tech Talk & Guidance Session📊✨
+                  This session will be full of mentorship and guidance, clearing all your career-related doubts.{' '}
+                  <strong>Tech Talk</strong>, where you'll receive mentorship and in-depth guidance from our distinguished students:
+                  <br /><br />
+                  👉🏻 <strong>Saksham Sharma</strong> (SDE Intern at Juspay) <br />
+                  👉🏻 <strong>Radhika Soni</strong> (Product Engineer Intern at NammaYatri) <br />
+                  👉🏻 <strong>Aarushi Sharma</strong> (SDE at NammaYatri)
+                </p>
+              </div>
             </div>
-
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                Email Address
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="example@skit.ac.in"
-                className="w-full rounded-lg border p-3"
-                required
-              />
-            </div>
-
-            <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                Phone Number
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="+91 0000000000"
-                className="w-full rounded-lg border p-3"
-                required
-              />
-            </div>
-
-            <div>
-              <label htmlFor="id" className="block text-sm font-medium text-gray-700">
-                College ID
-              </label>
-              <input
-                type="text"
-                id="id"
-                name="id"
-                value={formData.id}
-                onChange={handleChange}
-                placeholder="B123456"
-                className="w-full rounded-lg border p-3"
-                required
-              />
-            </div>
-
-            <div>
-              <label htmlFor="year" className="block text-sm font-medium text-gray-700">
-                Select Year
-              </label>
-              <select
-                id="year"
-                name="year"
-                value={formData.year}
-                onChange={handleChange}
-                className="w-full rounded-lg border p-3"
-                required
-              >
-                <option value="">Select Year</option>
-                <option value="1st">1st Year</option>
-                <option value="2nd">2nd Year</option>
-                <option value="3rd">3rd Year</option>
-                <option value="4th">4th Year</option>
-              </select>
-            </div>
-
-            <div>
-              <label htmlFor="branch" className="block text-sm font-medium text-gray-700">
-                Branch
-              </label>
-              <input
-                type="text"
-                id="branch"
-                name="branch"
-                value={formData.branch}
-                onChange={handleChange}
-                placeholder="Computer Science"
-                className="w-full rounded-lg border p-3"
-                required
-              />
+            <div className="flex justify-center mt-4">
+              <div className="text-center">
+                <div className="text-[14px] text-gray-500">Date</div>
+                <div className="text-[18px] font-semibold">23 April 2025</div>
+                <div className="mt-1 text-[14px] text-gray-500">Time</div>
+                <div className="text-[18px] font-semibold">1:45 PM Onwards</div>
+                <div className="mt-1 text-[14px] text-gray-500">Venue</div>
+                <div className="text-[18px] font-semibold">Gyan Mandir Auditorium</div>
+              </div>
             </div>
           </div>
+        </div>
 
-          {error && <div className="mt-4 text-center text-red-500">{error}</div>}
+        {/* Form Section */}
+        <div className="mx-16 my-8">
+          <p className="mb-6 rounded-xl bg-[#0A146E] py-2 text-center text-2xl font-bold text-yellow-400 lg:text-4xl">
+            Register Your Details
+          </p>
+          <form onSubmit={handleSubmit} className="mx-auto max-w-3xl rounded-xl bg-white p-6 shadow-xl">
+            <div className="grid gap-4 md:grid-cols-2">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700">Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Enter your full name"
+                  className="w-full rounded-lg border p-3"
+                  required
+                />
+              </div>
 
-          <button
-            type="submit"
-            disabled={isLoading}
-            className={`mt-6 w-full rounded-lg py-3 font-bold transition-all ${
-              isLoading ? 'cursor-not-allowed bg-gray-400' : 'bg-[#0A146E] text-white hover:bg-[#0f1b95]'
-            }`}
-          >
-            {isLoading ? 'Submitting...' : 'Submit'}
-          </button>
-        </form>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="you@skit.ac.in"
+                  className="w-full rounded-lg border p-3"
+                  required
+                />
+              </div>
+
+              <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="Enter your phone number"
+                  className="w-full rounded-lg border p-3"
+                  required
+                />
+              </div>
+
+              <div>
+                <label htmlFor="id" className="block text-sm font-medium text-gray-700">College ID</label>
+                <input
+                  type="text"
+                  id="id"
+                  name="id"
+                  value={formData.id}
+                  onChange={handleChange}
+                  placeholder="Enter your college ID"
+                  className="w-full rounded-lg border p-3"
+                  required
+                />
+              </div>
+
+              <div>
+                <label htmlFor="year" className="block text-sm font-medium text-gray-700">Select Year</label>
+                <select
+                  id="year"
+                  name="year"
+                  value={formData.year}
+                  onChange={handleChange}
+                  className="w-full rounded-lg border p-3"
+                  required
+                >
+                  <option value="">Select Year</option>
+                  <option value="1st">1st Year</option>
+                  <option value="2nd">2nd Year</option>
+                  <option value="3rd">3rd Year</option>
+                  <option value="4th">4th Year</option>
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor="branch" className="block text-sm font-medium text-gray-700">Branch</label>
+                <input
+                  type="text"
+                  id="branch"
+                  name="branch"
+                  value={formData.branch}
+                  onChange={handleChange}
+                  placeholder="Enter your branch"
+                  className="w-full rounded-lg border p-3"
+                  required
+                />
+              </div>
+            </div>
+
+            {error && <div className="mt-4 text-center text-red-500">{error}</div>}
+
+            <button
+              type="submit"
+              disabled={isLoading}
+              className={`mt-6 w-full rounded-lg py-3 font-bold transition-all ${
+                isLoading ? 'cursor-not-allowed bg-gray-400' : 'bg-[#0A146E] text-white hover:bg-[#0f1b95]'
+              }`}
+            >
+              {isLoading ? 'Submitting...' : 'Submit'}
+            </button>
+          </form>
+        </div>
       </div>
     </>
   );
