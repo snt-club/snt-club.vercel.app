@@ -13,7 +13,7 @@ const eventDetails = [
     eventRegStatus: 'live',
   },
   {
-    eventName: 'Tech Talk With Alumni 3.0',
+    eventName: 'Tech Talk ',
     eventDesc: 'Chart your future with insider tips at Tech Talk with Alumni 2.0 - where experience meets inspiration!',
     eventImg: s,
     eventStatus: 'ongoing',

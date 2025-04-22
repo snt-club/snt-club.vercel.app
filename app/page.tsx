@@ -8,13 +8,13 @@ import Testimonials from '@/components/main-sections/testimonial';
 import Faculty from '@/components/main-sections/faculty';
 import CoreTeam from '@/components/main-sections/coreteam';
 import CoreMembers from '@/components/main-sections/coremembers';
-import AarambhModal from '@/components/main-sections/modal';
+// import AarambhModal from '@/components/main-sections/modal';
 
 export default function Home() {
   return (
     <main>
       <Main />
-      <AarambhModal/>
+      {/* <AarambhModal/> */}
       <WhyJoinUs />
       <Glimpses />
       

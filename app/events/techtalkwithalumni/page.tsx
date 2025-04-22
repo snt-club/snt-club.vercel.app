@@ -16,6 +16,7 @@ function AlumniSession() {
     year: '',
     branch: '',
   });
+  // fje
 
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -84,7 +85,7 @@ function AlumniSession() {
       <div className="container mx-auto my-4">
         <div className="mx-16 my-4 text-center">
           <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-6xl">
-            Tech Talk With Alumni 3.0
+            Tech Talk 
           </p>
         </div>
 
@@ -96,10 +97,11 @@ function AlumniSession() {
             <div className="mx-16">
               <div className="mx-auto w-fit text-left text-lg md:text-2xl lg:text-justify">
                 <p>
-                  After receiving an overwhelming response in the previous session, the Science and Technology Club is
-                  once again organizing an expert talk 👨🏻‍🎓 session. We are excited to present{' '}
-                  <strong>Tech Talk with Alumni 3.0</strong>, where you'll receive mentorship and in-depth guidance from
-                  our distinguished alumni:
+                The Science and Technology Club is organising a Tech Talk & Guidance Session📊✨
+This session will be full of mentorship and guidance, clearing all your career related doubts.
+{' '}
+                  <strong>Tech Talk </strong>, where you'll receive mentorship and in-depth guidance from
+                  our distinguished students:
                   <br />
                   <br />
                   👉🏻 <strong>Saksham Sharma</strong> (SDE Intern at Juspay) <br />
