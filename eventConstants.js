@@ -14,7 +14,7 @@ const eventDetails = [
   },
   {
     eventName: 'Tech Talk ',
-    eventDesc: 'Chart your future with insider tips at Tech Talk with Alumni 2.0 - where experience meets inspiration!',
+    eventDesc: 'Chart your future with insider tips at Tech Talk  - where experience meets inspiration!',
     eventImg: s,
     eventStatus: 'ongoing',
     eventRegLink: '/events/techtalkwithalumni',

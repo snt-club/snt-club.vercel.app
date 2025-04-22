@@ -68,14 +68,14 @@ function AlumniSession() {
         <div className="block justify-between px-8 align-middle font-bold md:flex md:px-36">
           <div>
             <Link
-              href="https://drive.google.com/file/d/1ju4nfey5IKXGSQ6l7vdT_Ioh8FKkqMdS/view?usp=sharing"
+              href=""
               target="_blank"
             >
               <p className="p-2 text-center hover:text-gray-400">Notice</p>
             </Link>
           </div>
           <div className="max-md:mx-auto max-md:w-fit">
-            <Link href="https://forms.gle/LMqgfwHomr181roZ8" target="_blank">
+            <Link href="" target="_blank">
               <RegisterBtn />
             </Link>
           </div>
