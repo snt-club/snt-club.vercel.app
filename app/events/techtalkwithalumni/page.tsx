@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
-import RegisterBtn from '@/components/registerBtn';
+// import RegisterBtn from '@/components/registerBtn';
 import alumniSessionpng from '@/assets/images/alumniSession.jpg';
 
 function AlumniSession() {
@@ -76,7 +76,7 @@ function AlumniSession() {
           </div>
           <div className="max-md:mx-auto max-md:w-fit">
             <Link href="" target="_blank">
-              <RegisterBtn />
+              
             </Link>
           </div>
         </div>
@@ -108,7 +108,6 @@ This session will be full of mentorship and guidance, clearing all your career r
                   👉🏻 <strong>Radhika Soni</strong> (Product Engineer Intern at NammaYatri) <br />
                   👉🏻 <strong>Aarushi Sharma</strong> (SDE at NammaYatri)
                 </p>
-
                 <br />
                 <br />
               </div>
