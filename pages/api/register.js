@@ -24,14 +24,14 @@ export default async function handler(req, res) {
     const mailOptions = {
       from: `"SNT Club" <${process.env.EMAIL_USER}>`,
       to: email,
-      subject: 'Tech Talk With Alumni 3.0 - Registration Confirmation',
+      subject: 'Tech Talk - Registration Confirmation',
       html: `
         <!DOCTYPE html>
         <html>
         <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Tech Talk With Alumni 3.0 - Registration Confirmation</title>
+          <title>Tech Talk- Registration Confirmation</title>
           <style>
             body {
                 font-family: 'Arial', sans-serif;
@@ -155,12 +155,12 @@ export default async function handler(req, res) {
         <body>
           <div class="container">
             <div class="header">
-              <h1>Tech Talk With Alumni 3.0</h1>
+              <h1>Tech Talk </h1>
               <p>Registration Confirmed!</p>
             </div>
             <div class="content">
               <h2>Hello ${name},</h2>
-              <p>Your registration for <strong>Tech Talk With Alumni 3.0</strong> has been successfully confirmed! We're excited to have you join us for this inspiring event featuring accomplished alumni from the tech industry.</p>
+              <p>Your registration for <strong>Tech Talk </strong> has been successfully confirmed! We're excited to have you join us for this inspiring event featuring accomplished student from the tech industry.</p>
               <div class="tech-decoration"></div>
               <div class="event-details">
                 <h3>Event Details:</h3>
@@ -181,9 +181,9 @@ export default async function handler(req, res) {
                 <h3>⚠️ Important Notice</h3>
                 <p>Please arrive at least <strong>15 minutes early</strong> (by 1:30 PM) to complete check-in formalities and secure your seat.</p>
               </div>
-              <p>During this exclusive session, our distinguished alumni will share insights on emerging tech trends, career opportunities, and their personal journeys in the industry.</p>
+              <p>During this exclusive session, our distinguished students will share insights on emerging tech trends, career opportunities, and their personal journeys in the industry.</p>
               <a
-  href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Alumni+Session+Event&dates=20250425T100000Z/20250425T113000Z&details=Join+us+for+an+insightful+alumni+session.&location=Online&sf=true&output=xml"
+  href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Session+Event&dates=20250425T100000Z/20250425T113000Z&details=Join+us+for+an+insightful+session.&location=Online&sf=true&output=xml"
   class="cta-button"
   target="_blank"
   rel="noopener noreferrer"
