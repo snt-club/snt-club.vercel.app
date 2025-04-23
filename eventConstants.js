@@ -16,9 +16,9 @@ const eventDetails = [
     eventName: 'Tech Talk ',
     eventDesc: 'Chart your future with insider tips at Tech Talk  - where experience meets inspiration!',
     eventImg: s,
-    eventStatus: 'ongoing',
+    eventStatus: 'past',
     eventRegLink: '/events/techtalkwithalumni',
-    eventRegStatus: 'live',
+    eventRegStatus: 'closed',
   },
   {
     eventName: 'Git And Github Session',
