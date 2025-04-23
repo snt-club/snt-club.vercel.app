@@ -45,6 +45,7 @@ const eventDetails = [
     eventRegLink: '/events/',
     eventRegStatus: 'closed',
   },
+  // events
 
   // {
   //   eventName: 'Developer Month',
