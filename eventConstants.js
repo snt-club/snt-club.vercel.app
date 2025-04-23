@@ -12,14 +12,7 @@ const eventDetails = [
     eventRegLink: '/events/codeformers',
     eventRegStatus: 'live',
   },
-  {
-    eventName: 'Tech Talk ',
-    eventDesc: 'Chart your future with insider tips at Tech Talk  - where experience meets inspiration!',
-    eventImg: s,
-    eventStatus: 'past',
-    eventRegLink: '/events/techtalkwithalumni',
-    eventRegStatus: 'closed',
-  },
+
   {
     eventName: 'Git And Github Session',
     eventDesc: 'Want to code smarter and work together like a pro? Jump into our Git & GitHub session and get hands-on!"',
@@ -43,6 +36,14 @@ const eventDetails = [
     eventImg: code_img,
     eventStatus: 'upcoming',
     eventRegLink: '/events/',
+    eventRegStatus: 'closed',
+  },
+  {
+    eventName: 'Tech Talk ',
+    eventDesc: 'Chart your future with insider tips at Tech Talk  - where experience meets inspiration!',
+    eventImg: s,
+    eventStatus: 'past',
+    eventRegLink: '/events/techtalkwithalumni',
     eventRegStatus: 'closed',
   },
   // events closed
