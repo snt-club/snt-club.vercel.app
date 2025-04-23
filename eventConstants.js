@@ -46,7 +46,7 @@ const eventDetails = [
     eventRegLink: '/events/techtalkwithalumni',
     eventRegStatus: 'closed',
   },
-  // events closed
+ 
 
   // {
   //   eventName: 'Developer Month',
