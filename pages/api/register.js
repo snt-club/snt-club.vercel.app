@@ -1,6 +1,7 @@
 import dbConnect from '@/lib/mongodb';
 import Registration from '@/lib/models/Registration';
 import nodemailer from 'nodemailer';
+import twilio from 'twilio'; // Added Twilio
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -11,8 +12,9 @@ export default async function handler(req, res) {
     await dbConnect();
     const newEntry = await Registration.create(req.body);
 
-    const { name, email } = req.body;
+    const { name, email, phone } = req.body; // Expecting phone field also
 
+    // 1. Send Email
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -24,195 +26,102 @@ export default async function handler(req, res) {
     const mailOptions = {
       from: `"SNT Club" <${process.env.EMAIL_USER}>`,
       to: email,
-      subject: 'Tech Talk - Registration Confirmation',
+      subject: 'CODEFORMERS REGISTRATION CONFIRMATION',
       html: `
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Tech Talk- Registration Confirmation</title>
-          <style>
-            body {
-                font-family: 'Arial', sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f0f3f8;
-                color: #333;
-            }
-            .container {
-                max-width: 600px;
-                margin: 0 auto;
-                padding: 20px;
-                background-color: #ffffff;
-                border-radius: 8px;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            }
-            .header {
-                background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
-                color: white;
-                padding: 20px;
-                border-radius: 6px 6px 0 0;
-                text-align: center;
-                position: relative;
-                overflow: hidden;
-            }
-            .header:before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: url('/api/placeholder/600/150') no-repeat center center;
-                opacity: 0.1;
-                z-index: 0;
-            }
-            .header h1 {
-                position: relative;
-                z-index: 1;
-                margin: 0;
-                font-size: 28px;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-            }
-            .header p {
-                position: relative;
-                z-index: 1;
-                margin: 10px 0 0;
-                font-size: 16px;
-            }
-            .content {
-                padding: 25px;
-            }
-            .event-details {
-                background-color: #f5f8ff;
-                border-left: 4px solid #4b6cb7;
-                padding: 15px;
-                margin: 20px 0;
-                border-radius: 4px;
-            }
-            .important-notice {
-                background-color: #fffbf0;
-                border-left: 4px solid #ffc107;
-                padding: 15px;
-                margin: 20px 0;
-                border-radius: 4px;
-            }
-            .detail-item {
-                display: flex;
-                align-items: center;
-                margin-bottom: 10px;
-            }
-            .detail-icon {
-                margin-right: 12px;
-                color: #4b6cb7;
-                font-weight: bold;
-                font-size: 18px;
-                min-width: 24px;
-                text-align: center;
-            }
-            .footer {
-                text-align: center;
-                padding: 15px;
-                color: #666;
-                font-size: 14px;
-                border-top: 1px solid #eee;
-            }
-            .social-icons {
-                margin-top: 15px;
-            }
-            .social-icons span {
-                display: inline-block;
-                width: 30px;
-                height: 30px;
-                line-height: 30px;
-                text-align: center;
-                background-color: #4b6cb7;
-                color: white;
-                border-radius: 50%;
-                margin: 0 5px;
-            }
-            .cta-button {
-                display: inline-block;
-                background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
-                color: white;
-                padding: 12px 25px;
-                text-decoration: none;
-                border-radius: 4px;
-                font-weight: bold;
-                margin: 20px 0;
-                text-align: center;
-            }
-            .tech-decoration {
-                height: 5px;
-                background: linear-gradient(90deg, #4b6cb7, #182848, #4b6cb7);
-                margin: 20px 0;
-                border-radius: 5px;
-            }
-          </style>
-        </head>
-        <body>
-          <div class="container">
-            <div class="header">
-              <h1>Tech Talk </h1>
-              <p>Registration Confirmed!</p>
-            </div>
-            <div class="content">
-              <h2>Hello ${name},</h2>
-              <p>Your registration for <strong>Tech Talk </strong> has been successfully confirmed! We're excited to have you join us for this inspiring event featuring accomplished student from the tech industry.</p>
-              <div class="tech-decoration"></div>
-              <div class="event-details">
-                <h3>Event Details:</h3>
-                <div class="detail-item">
-                  <div class="detail-icon">📅</div>
-                  <div><strong>Date:</strong> 23 April 2025</div>
-                </div>
-                <div class="detail-item">
-                  <div class="detail-icon">⏰</div>
-                  <div><strong>Time:</strong> 1:45 PM onwards</div>
-                </div>
-                <div class="detail-item">
-                  <div class="detail-icon">📍</div>
-                  <div><strong>Venue:</strong> Gyan Mandir Auditorium</div>
-                </div>
-              </div>
-              <div class="important-notice">
-                <h3>⚠️ Important Notice</h3>
-                <p>Please arrive at least <strong>15 minutes early</strong> (by 1:30 PM) to complete check-in formalities and secure your seat.</p>
-              </div>
-              <p>During this exclusive session, our distinguished students will share insights on emerging tech trends, career opportunities, and their personal journeys in the industry.</p>
-              <a
-  href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Session+Event&dates=20250425T100000Z/20250425T113000Z&details=Join+us+for+an+insightful+session.&location=Online&sf=true&output=xml"
-  class="cta-button"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Add to Calendar
-</a>
-              <div class="tech-decoration"></div>
-              <p>If you have any questions or need to update your registration details, please reply to this email or contact our event coordinator at .</p>
-              <p>We look forward to seeing you there!</p>
-              <p>Regards,<br>Science and Technology Club</p>
-            </div>
-            <div class="footer">
-              <p>© 2024 Science and Technology Club. All rights reserved.</p>
-              <div class="social-icons">
-                <span>f</span>
-                <span>in</span>
-                <span>ig</span>
-              </div>
-            </div>
-          </div>
-        </body>
-        </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeFormers - Registration Confirmation</title>
+  <style>
+    body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f6f8; color: #333; }
+    .container { max-width: 620px; background: #fff; margin: 30px auto; border-radius: 10px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+    .header { background: linear-gradient(135deg, #00c6ff, #0072ff); color: #fff; text-align: center; padding: 30px 20px; }
+    .header h1 { margin: 0; font-size: 32px; letter-spacing: 1px; }
+    .header p { margin-top: 10px; font-size: 18px; opacity: 0.9; }
+    .content { padding: 30px 25px; }
+    .content h2 { margin-top: 0; font-size: 26px; color: #0072ff; }
+    .info-box { background: #e8f0fe; border-left: 4px solid #0072ff; padding: 20px; margin: 20px 0; border-radius: 6px; }
+    .info-item { margin: 10px 0; display: flex; align-items: center; }
+    .info-item span { margin-right: 12px; font-size: 22px; }
+    .notice { background: #fff7e6; border-left: 4px solid #ffc107; padding: 20px; margin: 20px 0; border-radius: 6px; color: #7a5800; }
+    .cta-button { display: inline-block; margin-top: 25px; padding: 12px 28px; background: linear-gradient(135deg, #00c6ff, #0072ff); color: #fff; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 16px; transition: background 0.3s; }
+    .cta-button:hover { background: linear-gradient(135deg, #0072ff, #00c6ff); }
+    .footer { text-align: center; padding: 20px; font-size: 14px; color: #777; border-top: 1px solid #eee; background: #fafafa; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <h1>CodeFormers</h1>
+      <p>Registration Successful!</p>
+    </div>
+
+    <div class="content">
+      <h2>Hello ${name},</h2>
+      <p>Congratulations! Your registration for <strong>CodeFormers</strong> has been confirmed. Get ready to dive into a world of innovation, code, and creativity!</p>
+
+      <div class="info-box">
+        <h3>📋 Event Details:</h3>
+        <div class="info-item">
+          <span>📅</span> <strong>Date:</strong> 30 April 2025
+        </div>
+        <div class="info-item">
+          <span>⏰</span> <strong>Time:</strong> 01:45 PM onwards
+        </div>
+        <div class="info-item">
+          <span>📍</span> <strong>Venue:</strong> CL1
+        </div>
+      </div>
+
+      <div class="notice">
+        <h3>⚡ Important Reminder</h3>
+        <p>Please make sure to arrive by <strong>1:45 PM</strong> to complete check-in and grab the best spot!</p>
+      </div>
+
+      <p>Expect hands-on sessions, exciting projects, and the chance to meet passionate coders like yourself. 🚀</p>
+
+      <a 
+        href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=CodeFormers+Event&dates=20250430T043000Z/20250430T063000Z&details=Be+part+of+CodeFormers!&location=CL1&sf=true&output=xml" 
+        class="cta-button" 
+        target="_blank" 
+        rel="noopener noreferrer">
+        Add to Calendar
+      </a>
+
+    </div>
+
+    <div class="footer">
+      <p>© 2025 Science and Technology Club | All rights reserved.</p>
+    </div>
+  </div>
+
+</body>
+</html>
       `,
     };
 
     await transporter.sendMail(mailOptions);
 
-    // 4. Send success response
+    // 2. Send SMS
+    const twilioClient = twilio(
+      process.env.TWILIO_ACCOUNT_SID,
+      process.env.TWILIO_AUTH_TOKEN
+    );
+
+    const smsBody = `Hi ${name}, your registration for CodeFormers is confirmed! 📅 30 April 2025 | 🏫 Venue: CL1 | ⏰ 1:45 PM onwards. See you there! - SNT Club`;
+
+    await twilioClient.messages.create({
+      body: smsBody,
+      from: process.env.TWILIO_PHONE_NUMBER,
+      to: `+91${phone}`, // assuming it's an Indian number; adjust country code if needed
+    });
+
+    // 3. Send Success Response
     res.status(201).json({ success: true, data: newEntry });
+
   } catch (error) {
     console.error('Error in registration:', error);
     res.status(400).json({ success: false, error: error.message });
