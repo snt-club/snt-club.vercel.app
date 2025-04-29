@@ -1,6 +1,7 @@
 import dbConnect from '@/lib/mongodb';
 import Registration from '@/lib/models/Registration';
 import nodemailer from 'nodemailer';
+import twilio from 'twilio'; // Added Twilio
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -11,8 +12,9 @@ export default async function handler(req, res) {
     await dbConnect();
     const newEntry = await Registration.create(req.body);
 
-    const { name, email } = req.body;
+    const { name, email, phone } = req.body; // Expecting phone field also
 
+    // 1. Send Email
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -26,99 +28,27 @@ export default async function handler(req, res) {
       to: email,
       subject: 'CODEFORMERS REGISTRATION CONFIRMATION',
       html: `
-       <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CodeFormers - Registration Confirmation</title>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f4f6f8;
-      color: #333;
-    }
-    .container {
-      max-width: 620px;
-      background: #fff;
-      margin: 30px auto;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-    .header {
-      background: linear-gradient(135deg, #00c6ff, #0072ff);
-      color: #fff;
-      text-align: center;
-      padding: 30px 20px;
-    }
-    .header h1 {
-      margin: 0;
-      font-size: 32px;
-      letter-spacing: 1px;
-    }
-    .header p {
-      margin-top: 10px;
-      font-size: 18px;
-      opacity: 0.9;
-    }
-    .content {
-      padding: 30px 25px;
-    }
-    .content h2 {
-      margin-top: 0;
-      font-size: 26px;
-      color: #0072ff;
-    }
-    .info-box {
-      background: #e8f0fe;
-      border-left: 4px solid #0072ff;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 6px;
-    }
-    .info-item {
-      margin: 10px 0;
-      display: flex;
-      align-items: center;
-    }
-    .info-item span {
-      margin-right: 12px;
-      font-size: 22px;
-    }
-    .notice {
-      background: #fff7e6;
-      border-left: 4px solid #ffc107;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 6px;
-      color: #7a5800;
-    }
-    .cta-button {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 28px;
-      background: linear-gradient(135deg, #00c6ff, #0072ff);
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      font-size: 16px;
-      transition: background 0.3s;
-    }
-    .cta-button:hover {
-      background: linear-gradient(135deg, #0072ff, #00c6ff);
-    }
-    .footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: #777;
-      border-top: 1px solid #eee;
-      background: #fafafa;
-    }
+    body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f6f8; color: #333; }
+    .container { max-width: 620px; background: #fff; margin: 30px auto; border-radius: 10px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+    .header { background: linear-gradient(135deg, #00c6ff, #0072ff); color: #fff; text-align: center; padding: 30px 20px; }
+    .header h1 { margin: 0; font-size: 32px; letter-spacing: 1px; }
+    .header p { margin-top: 10px; font-size: 18px; opacity: 0.9; }
+    .content { padding: 30px 25px; }
+    .content h2 { margin-top: 0; font-size: 26px; color: #0072ff; }
+    .info-box { background: #e8f0fe; border-left: 4px solid #0072ff; padding: 20px; margin: 20px 0; border-radius: 6px; }
+    .info-item { margin: 10px 0; display: flex; align-items: center; }
+    .info-item span { margin-right: 12px; font-size: 22px; }
+    .notice { background: #fff7e6; border-left: 4px solid #ffc107; padding: 20px; margin: 20px 0; border-radius: 6px; color: #7a5800; }
+    .cta-button { display: inline-block; margin-top: 25px; padding: 12px 28px; background: linear-gradient(135deg, #00c6ff, #0072ff); color: #fff; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 16px; transition: background 0.3s; }
+    .cta-button:hover { background: linear-gradient(135deg, #0072ff, #00c6ff); }
+    .footer { text-align: center; padding: 20px; font-size: 14px; color: #777; border-top: 1px solid #eee; background: #fafafa; }
   </style>
 </head>
 <body>
@@ -170,14 +100,28 @@ export default async function handler(req, res) {
 
 </body>
 </html>
-
       `,
     };
 
     await transporter.sendMail(mailOptions);
 
-    // 4. Send success response
+    // 2. Send SMS
+    const twilioClient = twilio(
+      process.env.TWILIO_ACCOUNT_SID,
+      process.env.TWILIO_AUTH_TOKEN
+    );
+
+    const smsBody = `Hi ${name}, your registration for CodeFormers is confirmed! 📅 30 April 2025 | 🏫 Venue: CL1 | ⏰ 1:45 PM onwards. See you there! - SNT Club`;
+
+    await twilioClient.messages.create({
+      body: smsBody,
+      from: process.env.TWILIO_PHONE_NUMBER,
+      to: `+91${phone}`, // assuming it's an Indian number; adjust country code if needed
+    });
+
+    // 3. Send Success Response
     res.status(201).json({ success: true, data: newEntry });
+
   } catch (error) {
     console.error('Error in registration:', error);
     res.status(400).json({ success: false, error: error.message });
