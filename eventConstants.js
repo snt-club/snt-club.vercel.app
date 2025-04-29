@@ -8,9 +8,9 @@ const eventDetails = [
     eventName: 'CodeFormers',
     eventDesc: 'Join us for Codeformers, a thrilling monthly coding series that transforms the C programming skills, evolve and claim interesting victory taglines every month!',
     eventImg: windows_img,
-    eventStatus: 'ongoing',
+    eventStatus: 'past',
     eventRegLink: '/events/codeformers',
-    eventRegStatus: 'live',
+    eventRegStatus: 'post',
   },
 
   {
