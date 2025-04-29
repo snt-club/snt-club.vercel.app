@@ -1,7 +1,6 @@
 import dbConnect from '@/lib/mongodb';
 import Registration from '@/lib/models/Registration';
 import nodemailer from 'nodemailer';
-import twilio from 'twilio'; // Added Twilio
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -12,9 +11,8 @@ export default async function handler(req, res) {
     await dbConnect();
     const newEntry = await Registration.create(req.body);
 
-    const { name, email, phone } = req.body; // Expecting phone field also
+    const { name, email } = req.body;
 
-    // 1. Send Email
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -105,21 +103,6 @@ export default async function handler(req, res) {
 
     await transporter.sendMail(mailOptions);
 
-    // 2. Send SMS
-    const twilioClient = twilio(
-      process.env.TWILIO_ACCOUNT_SID,
-      process.env.TWILIO_AUTH_TOKEN
-    );
-
-    const smsBody = `Hi ${name}, your registration for CodeFormers is confirmed! 📅 30 April 2025 | 🏫 Venue: CL1 | ⏰ 1:45 PM onwards. See you there! - SNT Club`;
-
-    await twilioClient.messages.create({
-      body: smsBody,
-      from: process.env.TWILIO_PHONE_NUMBER,
-      to: `+91${phone}`, // assuming it's an Indian number; adjust country code if needed
-    });
-
-    // 3. Send Success Response
     res.status(201).json({ success: true, data: newEntry });
 
   } catch (error) {
