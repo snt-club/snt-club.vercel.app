@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { toast, Toaster } from 'react-hot-toast'; // import toast and Toaster
 import Codeformers_glimpses from '@/components/codeformers_glimpses';
-
 import sponsorLogo1 from 'assets/images/sponsor.svg';
 import RegisterBtn from '@/components/registerBtn';
 import codeformers from '@/assets/images/codeformer.jpg';
@@ -19,16 +19,30 @@ function CodeformerPage() {
     branch: '',
   });
 
-  const [error, setError] = useState<string | null>(null); // Added error state
+  const [error, setError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false); // New: disable button when submitting
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const validateEmail = (email: string) => {
+    return email.endsWith('@skit.ac.in');
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!validateEmail(formData.email)) {
+      setError('Only @skit.ac.in emails are allowed.');
+      toast.error('Please use your @skit.ac.in email address.');
+      return;
+    }
+
+    setIsSubmitting(true);
+
     try {
-      const response = await fetch('/api/register', { // Fixed the API route
+      const response = await fetch('/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -37,7 +51,7 @@ function CodeformerPage() {
       });
 
       if (response.ok) {
-        alert('Registration successful!');
+        toast.success('Registration successful! 🎉');
         setFormData({
           name: '',
           email: '',
@@ -46,18 +60,26 @@ function CodeformerPage() {
           year: '',
           branch: '',
         });
-        setError(null); // Clear error on success
+        setError(null);
       } else {
         setError('Registration failed. Please try again.');
+        toast.error('Registration failed. Please try again.');
       }
     } catch (error) {
       console.error('Error:', error);
       setError('An error occurred. Please try again later.');
+      toast.error('An error occurred. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
     <>
+      {/* Toast Container */}
+      <Toaster position="top-center" reverseOrder={false} />
+
+      {/* Header Section */}
       <header className="bg-[#0A146E] py-2 text-base text-white md:py-8 md:text-xl">
         <div className="block justify-between px-8 align-middle font-bold md:flex md:px-36">
           <div>
@@ -76,9 +98,12 @@ function CodeformerPage() {
         </div>
       </header>
 
+      {/* Main Content */}
       <div className="container mx-auto my-4">
         <div className="mx-16 my-4 text-center">
-          <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-6xl">Codeformers</p>
+          <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-6xl">
+            Codeformers
+          </p>
         </div>
 
         <div className="block md:flex">
@@ -103,65 +128,24 @@ function CodeformerPage() {
             <div className="flex justify-center">
               <div className="text-center">
                 <div>
-                  <div className="text-[14px] text-gray-500">
-                    <span>Date</span>
-                  </div>
-                  <div>
-                    <span className="text-[18px] font-semibold">Last Wednesday Of Every Month</span>
-                  </div>
+                  <div className="text-[14px] text-gray-500">Date</div>
+                  <div className="text-[18px] font-semibold">Last Wednesday Of Every Month</div>
                 </div>
                 <div className="mt-1">
-                  <div className="text-[14px] text-gray-500">
-                    <span>Time</span>
-                  </div>
-                  <div>
-                    <span className="text-[18px] font-semibold">01:45 PM - 02:45 PM</span>
-                  </div>
+                  <div className="text-[14px] text-gray-500">Time</div>
+                  <div className="text-[18px] font-semibold">01:45 PM - 02:45 PM</div>
                 </div>
                 <div className="mt-1">
-                  <div className="text-[14px] text-gray-500">
-                    <span>Venue</span>
-                  </div>
-                  <div>
-                    <span className="text-[18px] font-semibold">CL-1 & CL-3 (CS Block)</span>
-                  </div>
+                  <div className="text-[14px] text-gray-500">Venue</div>
+                  <div className="text-[18px] font-semibold">CL-1 & CL-3 (CS Block)</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* --- Stylish Form --- */}
-        
-
-        {/* --- Sponsored Section --- */}
-        <div className="mx-16 my-4 text-center">
-          <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-6xl py-2">Sponsored By</p>
-        </div>
-        <div className="flex justify-center">
-          <div className="flex flex-wrap justify-center">
-            <div className="m-4">
-              <a href="https://linktr.ee/uniartskillsacademy">
-                <Image src={sponsorLogo1} alt="Sponsor 1" width={500} height={200} />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* --- Glimpses Section --- */}
-        <div className="mx-16 my-4 text-center">
-          <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-6xl py-2">Glimpses</p>
-        </div>
-        <Codeformers_glimpses />
-      </div>
-    </>
-  );
-}
-
-export default CodeformerPage;
-
-{/* <section>
-<div className="mx-16 my-8">
+        {/* Register Form Section */}
+        <div className="mx-16 my-8">
           <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-4xl py-2 text-center mb-6">
             Register Your Details
           </p>
@@ -189,7 +173,7 @@ export default CodeformerPage;
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="Email Address"
+                  placeholder="example@skit.ac.in"
                   className="p-3 border rounded-lg w-full"
                   required
                 />
@@ -255,13 +239,41 @@ export default CodeformerPage;
                 />
               </div>
             </div>
+
             {error && <div className="text-red-500 mt-4 text-center">{error}</div>}
-            // <button
-            //   type="submit"
-            //   className="mt-6 w-full bg-[#0A146E] hover:bg-[#0f1b95] text-white font-bold py-3 rounded-lg"
-            // >
-            //   Submit
-            // </button>
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className={`mt-6 w-full ${isSubmitting ? 'bg-gray-400' : 'bg-[#0A146E] hover:bg-[#0f1b95]'} text-white font-bold py-3 rounded-lg`}
+            >
+              {isSubmitting ? 'Submitting...' : 'Submit'}
+            </button>
           </form>
         </div>
-</section> */}
+
+        {/* Sponsored Section */}
+        <div className="mx-16 my-4 text-center">
+          <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-6xl py-2">Sponsored By</p>
+        </div>
+        <div className="flex justify-center">
+          <div className="flex flex-wrap justify-center">
+            <div className="m-4">
+              <a href="https://linktr.ee/uniartskillsacademy">
+                <Image src={sponsorLogo1} alt="Sponsor 1" width={500} height={200} />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Glimpses Section */}
+        <div className="mx-16 my-4 text-center">
+          <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-6xl py-2">Glimpses</p>
+        </div>
+        <Codeformers_glimpses />
+      </div>
+    </>
+  );
+}
+
+export default CodeformerPage;
