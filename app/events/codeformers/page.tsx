@@ -7,7 +7,7 @@ import { toast, Toaster } from 'react-hot-toast'; // import toast and Toaster
 import Codeformers_glimpses from '@/components/codeformers_glimpses';
 import sponsorLogo1 from 'assets/images/sponsor.svg';
 import RegisterBtn from '@/components/registerBtn';
-import codeformers from '@/assets/images/Wallpaper.jpg';
+import codeformers from '@/assets/images/codeformer.jpg';
 
 function CodeformerPage() {
   const [formData, setFormData] = useState({
@@ -108,7 +108,7 @@ function CodeformerPage() {
 
         <div className="block md:flex">
           <div className="mx-16 pb-15">
-            <Image src={codeformers} alt="codeformers" className="w-70px h-90px" />
+            <Image src={codeformers} alt="codeformers" className="w-fit" />
           </div>
           <div className="my-auto h-fit">
             <div className="mx-16">
