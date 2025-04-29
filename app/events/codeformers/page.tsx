@@ -7,7 +7,7 @@ import { toast, Toaster } from 'react-hot-toast'; // import toast and Toaster
 import Codeformers_glimpses from '@/components/codeformers_glimpses';
 import sponsorLogo1 from 'assets/images/sponsor.svg';
 import RegisterBtn from '@/components/registerBtn';
-import codeformers from '@/assets/images/codeformer.jpg';
+import codeformers from '@/assets/images/Wallpaper.jpg';
 
 function CodeformerPage() {
   const [formData, setFormData] = useState({
@@ -107,8 +107,8 @@ function CodeformerPage() {
         </div>
 
         <div className="block md:flex">
-          <div className="mx-16 pb-8">
-            <Image src={codeformers} alt="codeformers" className="w-fit" />
+          <div className="mx-16 pb-15">
+            <Image src={codeformers} alt="codeformers" className="w-70px h-90px" />
           </div>
           <div className="my-auto h-fit">
             <div className="mx-16">
@@ -129,7 +129,7 @@ function CodeformerPage() {
               <div className="text-center">
                 <div>
                   <div className="text-[14px] text-gray-500">Date</div>
-                  <div className="text-[18px] font-semibold">Last Wednesday Of Every Month</div>
+                  <div className="text-[18px] font-semibold">April 30th, 2025</div>
                 </div>
                 <div className="mt-1">
                   <div className="text-[14px] text-gray-500">Time</div>
