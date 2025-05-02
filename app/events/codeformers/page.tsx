@@ -107,7 +107,7 @@ function CodeformerPage() {
         </div>
 
         <div className="block md:flex">
-          <div className="mx-16 pb-15">
+          <div className="mx-16 pb-8">
             <Image src={codeformers} alt="codeformers" className="w-fit" />
           </div>
           <div className="my-auto h-fit">
@@ -129,7 +129,7 @@ function CodeformerPage() {
               <div className="text-center">
                 <div>
                   <div className="text-[14px] text-gray-500">Date</div>
-                  <div className="text-[18px] font-semibold">April 30th, 2025</div>
+                  <div className="text-[18px] font-semibold">Last Wednesday Of Every Month</div>
                 </div>
                 <div className="mt-1">
                   <div className="text-[14px] text-gray-500">Time</div>
@@ -145,7 +145,7 @@ function CodeformerPage() {
         </div>
 
         {/* Register Form Section */}
-        {/* <div className="mx-16 my-8">
+        <div className="mx-16 my-8">
           <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-4xl py-2 text-center mb-6">
             Register Your Details
           </p>
@@ -250,7 +250,7 @@ function CodeformerPage() {
               {isSubmitting ? 'Submitting...' : 'Submit'}
             </button>
           </form>
-        </div> */}
+        </div>
 
         {/* Sponsored Section */}
         <div className="mx-16 my-4 text-center">
