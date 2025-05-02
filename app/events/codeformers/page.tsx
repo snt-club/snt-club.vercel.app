@@ -107,7 +107,7 @@ function CodeformerPage() {
         </div>
 
         <div className="block md:flex">
-          <div className="mx-16 pb-8">
+          <div className="mx-16 pb-15">
             <Image src={codeformers} alt="codeformers" className="w-fit" />
           </div>
           <div className="my-auto h-fit">
@@ -129,7 +129,7 @@ function CodeformerPage() {
               <div className="text-center">
                 <div>
                   <div className="text-[14px] text-gray-500">Date</div>
-                  <div className="text-[18px] font-semibold">Last Wednesday Of Every Month</div>
+                  <div className="text-[18px] font-semibold">April 30th, 2025</div>
                 </div>
                 <div className="mt-1">
                   <div className="text-[14px] text-gray-500">Time</div>
