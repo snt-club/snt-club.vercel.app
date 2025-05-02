@@ -145,7 +145,7 @@ function CodeformerPage() {
         </div>
 
         {/* Register Form Section */}
-        <div className="mx-16 my-8">
+        {/* <div className="mx-16 my-8">
           <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-4xl py-2 text-center mb-6">
             Register Your Details
           </p>
@@ -250,7 +250,7 @@ function CodeformerPage() {
               {isSubmitting ? 'Submitting...' : 'Submit'}
             </button>
           </form>
-        </div>
+        </div> */}
 
         {/* Sponsored Section */}
         <div className="mx-16 my-4 text-center">
