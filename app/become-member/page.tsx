@@ -15,19 +15,19 @@ function BecomeMember(){
   {
     name: 'Alpha',
     img: alpha,
-    join_link: 'https://chat.whatsapp.com/DgMDbnq3vlk6oscFdT23Ua',
+    join_link: 'https://chat.whatsapp.com/I3xtsTXtiJQFobcpGyvRce?mode=ems_copy_c',
     course_desc: 'For 1st Year Students Join Alpha. ',
   },
   {
     name: 'Beta',
     img: beta,
-    join_link: 'https://chat.whatsapp.com/Hgvn6rhASDK1Uu3zVHV6gP',
+    join_link: 'https://chat.whatsapp.com/DgMDbnq3vlk6oscFdT23Ua?mode=ems_copy_t',
     course_desc: 'For 2nd Year Students Join Beta.',
   },
   {
     name: 'Gamma',
     img: gamma,
-    join_link: 'https://chat.whatsapp.com/CJgIrd1HBsc4hntxEQjgSy',
+    join_link: 'https://chat.whatsapp.com/Hgvn6rhASDK1Uu3zVHV6gP?mode=ems_copy_t',
     course_desc: 'For 3rd And 4th Year Students Join Gamma.',
   },
 ];
