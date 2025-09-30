@@ -85,7 +85,7 @@ function AlumniSession() {
       <div className="container mx-auto my-4">
         <div className="mx-16 my-4 text-center">
           <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-6xl">
-          AARAMB 2025
+          AARAMBH 2025
           </p>
         </div>
 
@@ -97,8 +97,7 @@ function AlumniSession() {
             <div className="mx-16">
               <div className="mx-auto w-fit text-left text-lg md:text-2xl lg:text-justify">
                 <p>
-                  Join us at <strong>AARAMB 2025</strong> for an exciting session where we'll welcome freshers and introduce them to the Science and Technology Club, showcasing innovation, insights, and opportunities!
-
+                  Join us at <strong>AARAMBH 2025</strong> for an exciting session where we'll welcome freshers and introduce them to the Science and Technology Club, showcasing innovation, insights, and opportunities!
 {' '}
                   
                   <br />
@@ -134,7 +133,7 @@ function AlumniSession() {
                     <span>Venue</span>
                   </div>
                   <div>
-                    <span className="text-[18px] font-semibold">JC Bose Auditorium</span>
+                    <span className="text-[18px] font-semibold">J.C. Bose Auditorium</span>
                   </div>
                 </div>
               </div>
