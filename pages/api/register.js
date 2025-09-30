@@ -9,9 +9,23 @@ export default async function handler(req, res) {
 
   try {
     await dbConnect();
-    const newEntry = await Registration.create(req.body);
+    // const newEntry = await Registration.create(req.body);
 
     const { name, email } = req.body;
+
+    let user = await Registration.findOne({ email });
+
+    if (user) {
+      if (user.emailSent) {
+        return res.status(400).json({ success:false, message: 'You have already registered and confirmation email was sent.' });
+      } else {
+        console.log('Retrying email for:', email);
+      }
+    }
+    else {
+      user = await Registration.create({ ...req.body, emailSent: false });
+      await user.save();
+    }
 
     const transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -101,9 +115,19 @@ export default async function handler(req, res) {
       `,
     };
 
-    await transporter.sendMail(mailOptions);
+    try {
+      await transporter.sendMail(mailOptions);
+      user.emailSent = true;
+      await user.save();
 
-    res.status(201).json({ success: true, data: newEntry });
+      return res.status(201).json({ success: true, message: 'Registration successful, confirmation email was sent.', data: user });
+    } catch (mailError) {
+      console.error('Email failed to send:', mailError.message);
+
+      return res.status(201).json({ success: true, message: 'Registered, but email failed to send. Please retry later', data: user });
+    }
+
+    // res.status(201).json({ success: true, data: newEntry });
 
   } catch (error) {
     console.error('Error in registration:', error);
