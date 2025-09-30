@@ -73,14 +73,14 @@ const eventDetails = [
     eventRegLink: '/events/AskSnT',
     eventRegStatus: 'closed',
   },
-  // {
-  //   eventName: 'Aarambh-2024',
-  //   eventDesc: "Join us at AARAMBH for an exciting session where we'll welcome freshers and introduce them to the Science and Technology Club, showcasing innovation, insights, and opportunities!",
-  //   eventImg: flutterworkshop_img,
-  //   eventStatus: 'past',
-  //   eventRegLink: '/events/aarambh24',
-  //   eventRegStatus: 'closed',
-  // },
+  {
+    eventName: 'Aarambh-2025',
+    eventDesc: "Join us at AARAMBH for an exciting session where we'll welcome freshers and introduce them to the Science and Technology Club, showcasing innovation, insights, and opportunities!",
+    eventImg: flutterworkshop_img,
+    eventStatus: 'ongoing',
+    eventRegLink: '/events/aarambh2025',
+    eventRegStatus: 'live',
+  },
   // {
   //   eventName: 'Tech Talk With Alumni',
   //   eventDesc: 'Tech talk with alumni Join us for an Expert talk session, connecting students with industry pioneers for insightful tech guidance!',
