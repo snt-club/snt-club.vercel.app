@@ -55,19 +55,19 @@ const coreteamslider = () => {
           {/* {studenthead.map((coordinator, index) => (
           
         ))} */}
-          {sntTeamMember.map((memberDetails, index) => (
+          {sntTeamMember.filter(member => member.memberPost === 'Student_Head')
+                        .map((memberDetails, index) => (
             <>
-              {memberDetails.memberPost === 'Student_Head' ? (
                 <SwiperSlide key={index}>
                   <div className="py-[20px]">
-                    <div className="flex justify-center">
+                    {/* <div className="flex justify-center">
                       <Image
                         src={memberDetails.memberPhoto}
                         alt={index.toString()}
                         width={120}
                         className="rounded-full"
                       />
-                    </div>
+                    </div> */}
                     <div className="mt-[10px] text-center">
                       <span className="text-base font-bold md:text-xl">{memberDetails.memberName}</span>
                     </div>
@@ -98,9 +98,6 @@ const coreteamslider = () => {
                     </div>
                   </div>
                 </SwiperSlide>
-              ) : (
-                ''
-              )}
             </>
           ))}
         </Swiper>
