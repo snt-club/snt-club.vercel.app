@@ -20,14 +20,15 @@ function coreTeam() {
             <>
               {memberDetails.memberPost === 'Student_Coordinator' ? (
                 <div key={index}>
-                  {/* <div className="mx-auto w-fit">
+                  <div className="mx-auto w-fit">
                     <Image
                       src={memberDetails.memberPhoto}
                       alt={index.toString()}
                       width={150}
+                      height={80}
                       className="rounded-full"
                     />
-                  </div> */}
+                  </div>
                   <div className="mt-[10px] text-center">
                     <span className="text-base font-bold md:text-xl">{memberDetails.memberName}</span>
                   </div>

@@ -12,17 +12,27 @@ import sharda_soni from './people/sharda.png';
 import vinay_marwal from './people/vinay.png';
 
 
-import garvit from './people/garvit.jpg';
-import aman from './people/aman.jpg';
-import puru from './people/puru.png';
-import priyansh from './people/priyansh.jpg';
-import prakhar from './people/prakhar.jpg';
-import prashant from './people/prashant.jpg';
-import yatharth from './people/yatharth.jpg';
-import sagar from './people/sagar.jpeg';
+
+import aditiya from './people/aditiya.jpg';
+import sanidhya from './people/sanidhya.jpg';
+import astha from './people/astha.jpg';
+import yash from './people/yash.jpg';
+import mehul from './people/mehul.jpg';
+import Jaideep from './people/jaideep.jpg';
+// import kshitij from './people/kshitij.jpg';
+import rishita from './people/rishita.jpg';
+
 
 
 export {
+  aditiya,
+  sanidhya,
+  astha,
+  yash,
+  mehul,
+  // kshitij,
+  Jaideep,
+  rishita,
   aarambh_img,
   code_img,
   flutterworkshop_img,
@@ -33,14 +43,6 @@ export {
   dsa,
   web,
   sharda_soni,
-  vinay_marwal,
-  garvit,
-  aman,
-  puru,
-  priyansh,
-  prakhar,
-  prashant,
-  yatharth,
-  sagar
+  vinay_marwal
 
 };
