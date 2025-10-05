@@ -60,14 +60,14 @@ const coreteamslider = () => {
             <>
                 <SwiperSlide key={index}>
                   <div className="py-[20px]">
-                    {/* <div className="flex justify-center">
+                    <div className="flex justify-center">
                       <Image
                         src={memberDetails.memberPhoto}
                         alt={index.toString()}
                         width={120}
                         className="rounded-full"
                       />
-                    </div> */}
+                    </div>
                     <div className="mt-[10px] text-center">
                       <span className="text-base font-bold md:text-xl">{memberDetails.memberName}</span>
                     </div>
