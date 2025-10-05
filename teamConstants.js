@@ -2,7 +2,7 @@
 
 import {
   aditiya,
-  // kshitij,
+kshitij,
   Jaideep,
   rishita,
   sanidhya,
@@ -44,7 +44,7 @@ const sntTeamMember = [
     memberName: 'Kshitij Mathur',
     memberPost: 'Student_Coordinator',
     memberTeam: '',
-    memberPhoto: "",
+    memberPhoto: kshitij,
     memberRole: 'Student Coordinator',
     memberDepartment: '',
     memberYear: 'III yr',

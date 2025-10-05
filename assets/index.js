@@ -19,7 +19,7 @@ import astha from './people/astha.jpg';
 import yash from './people/yash.jpg';
 import mehul from './people/mehul.jpg';
 import Jaideep from './people/jaideep.jpg';
-// import kshitij from './people/kshitij.jpg';
+import kshitij from './people/kshitij.jpg';
 import rishita from './people/rishita.jpg';
 
 
@@ -30,7 +30,7 @@ export {
   astha,
   yash,
   mehul,
-  // kshitij,
+  kshitij,
   Jaideep,
   rishita,
   aarambh_img,
