@@ -55,9 +55,9 @@ const coreteamslider = () => {
           {/* {studenthead.map((coordinator, index) => (
           
         ))} */}
-          {sntTeamMember.map((memberDetails, index) => (
+          {sntTeamMember.filter(member => member.memberPost === 'Student_Head')
+                        .map((memberDetails, index) => (
             <>
-              {memberDetails.memberPost === 'Student_Head' ? (
                 <SwiperSlide key={index}>
                   <div className="py-[20px]">
                     <div className="flex justify-center">
@@ -98,9 +98,6 @@ const coreteamslider = () => {
                     </div>
                   </div>
                 </SwiperSlide>
-              ) : (
-                ''
-              )}
             </>
           ))}
         </Swiper>

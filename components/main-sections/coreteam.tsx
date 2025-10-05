@@ -25,6 +25,7 @@ function coreTeam() {
                       src={memberDetails.memberPhoto}
                       alt={index.toString()}
                       width={150}
+                      height={80}
                       className="rounded-full"
                     />
                   </div>
