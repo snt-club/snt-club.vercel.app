@@ -173,7 +173,7 @@ const sntTeamMember = [
     memberYear: '',
     memberBranch: '',
     memberInsta: '',
-    memberLinkedin: '',
+    memberLinkedin: 'https://www.linkedin.com/in/harsh-maheshwari-20a55a31b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
   },
   {
     memberName: 'Aryan Saxena',
@@ -185,20 +185,9 @@ const sntTeamMember = [
     memberYear: '',
     memberBranch: '',
     memberInsta: '',
-    memberLinkedin: '',
+    memberLinkedin: 'https://www.linkedin.com/in/aryan-saxena-95a285330?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
   },
-  {
-    memberName: 'Mehul Arya',
-    memberPost: 'Student_Team',
-    memberTeam: 'Tutor_Team',
-    memberPhoto: '',
-    memberRole: '',
-    memberDepartment: '',
-    memberYear: '',
-    memberBranch: '',
-    memberInsta: '',
-    memberLinkedin: '',
-  },
+
   // Design Team
   {
     memberName: 'Manasvi',
@@ -210,7 +199,7 @@ const sntTeamMember = [
     memberYear: '',
     memberBranch: '',
     memberInsta: '',
-    memberLinkedin: '',
+    memberLinkedin: 'https://www.linkedin.com/in/manasvi-maheshwari-639605366',
   },
   {
     memberName: 'Hemant',
@@ -222,7 +211,7 @@ const sntTeamMember = [
     memberYear: '',
     memberBranch: '',
     memberInsta: '',
-    memberLinkedin: '',
+    memberLinkedin: 'https://www.linkedin.com/in/hemant-sarswat-b94643367?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
   },
   // Content Team
   {
@@ -235,7 +224,7 @@ const sntTeamMember = [
     memberYear: '',
     memberBranch: '',
     memberInsta: '',
-    memberLinkedin: '',
+    memberLinkedin: 'https://www.linkedin.com/in/aishwarya-hada-b5955a350?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
   },
   {
     memberName: 'Vanshika Thadani',
@@ -247,7 +236,7 @@ const sntTeamMember = [
     memberYear: '',
     memberBranch: '',
     memberInsta: '',
-    memberLinkedin: '',
+    memberLinkedin: 'https://www.linkedin.com/in/vanshika-thadani-44390b320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
   },
   {
     memberName: 'Mohit Goswami',
@@ -259,7 +248,7 @@ const sntTeamMember = [
     memberYear: '',
     memberBranch: '',
     memberInsta: '',
-    memberLinkedin: '',
+    memberLinkedin: 'https://www.linkedin.com/in/mohit-goswami-697952395?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
   },
   // PR team
   // {
@@ -285,7 +274,7 @@ const sntTeamMember = [
     memberYear: '',
     memberBranch: '',
     memberInsta: '',
-    memberLinkedin: '',
+    memberLinkedin: 'https://www.linkedin.com/in/pragya-sharma-b5722a387?utm_source=share_via&utm_content=profile&utm_medium=member_android',
   },
   {
     memberName: 'Tanishq Mittal',
