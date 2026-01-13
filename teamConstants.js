@@ -162,6 +162,18 @@ const sntTeamMember = [
     memberInsta: '',
     memberLinkedin: 'https://www.linkedin.com/in/virensoni29/',
   },
+  {
+    memberName: 'Akshat Singhal',
+    memberPost: 'Student_Team',
+    memberTeam: 'Development_Team',
+    memberPhoto: '',
+    memberRole: '',
+    memberDepartment: '',
+    memberYear: '',
+    memberBranch: '',
+    memberInsta: '',
+    memberLinkedin: 'http://www.linkedin.com/in/akshat-singhal-841617328',
+  },
   // Tutor Team
   {
     memberName: 'Harsh Maheshwari',
@@ -249,6 +261,18 @@ const sntTeamMember = [
     memberBranch: '',
     memberInsta: '',
     memberLinkedin: 'https://www.linkedin.com/in/mohit-goswami-697952395?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+  },
+  {
+    memberName: 'Dinesh Ved',
+    memberPost: 'Student_Team',
+    memberTeam: 'editing_Team',
+    memberPhoto: '',
+    memberRole: '',
+    memberDepartment: '',
+    memberYear: '',
+    memberBranch: '',
+    memberInsta: '',
+    memberLinkedin: 'https://www.linkedin.com/in/dinesh-ved-ab635130a',
   },
   // PR team
   // {

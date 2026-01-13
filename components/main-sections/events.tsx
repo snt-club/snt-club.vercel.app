@@ -18,11 +18,11 @@ const events = () => {
           <p className="pt-4 text-2xl font-bold md:text-5xl">Upcoming Events</p>
         </div>
         {/* Shedular */}
-        <div className=" my-10 rounded-[20px] bg-[#EE4B76] p-[20px] text-center text-white w-fit mx-auto hover:bg-transparent hover:text-[#EE4B76] border-2 border-[#EE4B76] duration-300 ease-in-out">
+        {/* <div className=" my-10 rounded-[20px] bg-[#EE4B76] p-[20px] text-center text-white w-fit mx-auto hover:bg-transparent hover:text-[#EE4B76] border-2 border-[#EE4B76] duration-300 ease-in-out">
           <div className="text-center text-xl font-bold">
             <Link href="https://drive.google.com/file/d/1gOZ47gtvLzDcBMBklSnYNNehHjK57EK9/view?usp=sharing " target='_blank'>Download Tentative Schedule</Link>
           </div>
-        </div>
+        </div> */}
         {eventDetails.map((details, index) =>
           details.eventStatus === 'upcoming' ? (
             <div key={index} className="mx-auto mb-6 mt-[10px] w-full md:mt-[20px]">
