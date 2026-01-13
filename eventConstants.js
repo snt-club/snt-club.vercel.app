@@ -4,30 +4,39 @@
 import { flutterworkshop_img, code_img , c_bootcamp_img, windows_img , s } from '@/assets/index';
 
 const eventDetails = [
-  {
-    eventName: 'CodeFormers',
-    eventDesc: 'Join us for Codeformers, a thrilling monthly coding series that transforms the C programming skills, evolve and claim interesting victory taglines every month!',
-    eventImg: windows_img,
-    eventStatus: 'upcoming',
-    eventRegLink: '/events/codeformers',
-    eventRegStatus: 'closed',
-  },
+  // {
+  //   eventName: 'CodeFormers',
+  //   eventDesc: 'Join us for Codeformers, a thrilling monthly coding series that transforms the C programming skills, evolve and claim interesting victory taglines every month!',
+  //   eventImg: windows_img,
+  //   eventStatus: 'past',
+  //   eventRegLink: '/events/codeformers',
+  //   eventRegStatus: 'closed',
+  // },
 
   {
-    eventName: 'Git And Github Session',
-    eventDesc: 'Want to code smarter and work together like a pro? Jump into our Git & GitHub session and get hands-on!"',
-    eventImg: c_bootcamp_img,
-    eventStatus: 'past',
+    eventName: 'RoadMap to Web-Development',
+    eventDesc:
+    'It is an interactive session designed to guide students through the essential skills, tools, and paths in modern web development.',
+    eventImg: flutterworkshop_img,
+    eventStatus: 'upcoming',
     eventRegLink: '/events/',
     eventRegStatus: 'closed',
   },
   {
-    eventName: 'Web-Development Workshop',
+    eventName: 'CSS Battle',
     eventDesc:
-      'Science and Technology Club is organising a Web-Development for all students who want to build their portfolio.',
+    'CSS Battle is a fun and beginner-friendly challenge where participants recreate simple designs using CSS and learn by doing.',
     eventImg: windows_img,
-    eventStatus: 'past',
-    eventRegLink: '/events/web-dev',
+    eventStatus: 'upcoming',
+    eventRegLink: '/events/',
+    eventRegStatus: 'closed',
+  },
+  {
+    eventName: 'Git And Github Session',
+    eventDesc: 'Want to code smarter and work together like a pro? Jump into our Git & GitHub session and get hands-on!"',
+    eventImg: c_bootcamp_img,
+    eventStatus: 'upcoming',
+    eventRegLink: '/events/',
     eventRegStatus: 'closed',
   },
   // {
@@ -38,14 +47,14 @@ const eventDetails = [
   //   eventRegLink: '/events/',
   //   eventRegStatus: 'closed',
   // },
-  {
-    eventName: 'Tech Talk ',
-    eventDesc: 'Chart your future with insider tips at Tech Talk  - where experience meets inspiration!',
-    eventImg: s,
-    eventStatus: 'past',
-    eventRegLink: '/events/techtalkwithalumni',
-    eventRegStatus: 'closed',
-  },
+  // {
+  //   eventName: 'Tech Talk ',
+  //   eventDesc: 'Chart your future with insider tips at Tech Talk  - where experience meets inspiration!',
+  //   eventImg: s,
+  //   eventStatus: 'past',
+  //   eventRegLink: '/events/techtalkwithalumni',
+  //   eventRegStatus: 'closed',
+  // },
  
 
   // {
@@ -56,20 +65,20 @@ const eventDetails = [
   //   eventRegLink: '/events/devmonth',
   //   eventRegStatus: 'live',
   // },
-  {
-    eventName: 'C Bootcamp',
-    eventDesc: 'Join the C Bootcamp to master C programming through flexible hybrid classes, hands-on tasks, and real-time support.',
-    eventImg: c_bootcamp_img,
-    eventStatus: 'upcoming',
-    eventRegLink: '/events/cbootcamp24',
-    eventRegStatus: 'closed',
-  },
+  // {
+  //   eventName: 'C Bootcamp',
+  //   eventDesc: 'Join the C Bootcamp to master C programming through flexible hybrid classes, hands-on tasks, and real-time support.',
+  //   eventImg: c_bootcamp_img,
+  //   eventStatus: 'past',
+  //   eventRegLink: '/events/cbootcamp24',
+  //   eventRegStatus: 'closed',
+  // },
 
   {
     eventName: 'Ask S&T',
     eventDesc: 'Join us for ASK S&T, an interactive session where 1st-year students / (freshers) can get all their technical and non-technical questions answered by our expert club members!',
     eventImg: windows_img,
-    eventStatus: 'upcoming',
+    eventStatus: 'past',
     eventRegLink: '/events/AskSnT',
     eventRegStatus: 'closed',
   },
@@ -77,9 +86,9 @@ const eventDetails = [
     eventName: 'Aarambh-2025',
     eventDesc: "Join us at AARAMBH for an exciting session where we'll welcome freshers and introduce them to the Science and Technology Club, showcasing innovation, insights, and opportunities!",
     eventImg: flutterworkshop_img,
-    eventStatus: 'ongoing',
+    eventStatus: 'past',
     eventRegLink: '/events/aarambh2025',
-    eventRegStatus: 'live',
+    eventRegStatus: 'closed',
   },
   // {
   //   eventName: 'Tech Talk With Alumni',
