@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 import crypto from "crypto";
 import { connectDB } from "@/lib/db";
 import Otp from "@/models/otp";
-import EmailJob from "@/models/Emailjob";
 import { sendOtpMail } from "@/lib/mailer";
+import EmailJob from "@/models/Emailjob";
 import { otpRateLimit } from "@/lib/rate-limit";
 
 export async function POST(req: Request) {
@@ -16,10 +16,7 @@ export async function POST(req: Request) {
     }
 
     if (!(await otpRateLimit(email))) {
-      return NextResponse.json(
-        { message: "Too many OTP requests" },
-        { status: 429 }
-      );
+      return NextResponse.json({ message: "Too many requests" }, { status: 429 });
     }
 
     const otp = crypto.randomInt(100000, 999999).toString();
@@ -30,15 +27,11 @@ export async function POST(req: Request) {
       expiresAt: new Date(Date.now() + 5 * 60 * 1000),
     });
 
-    // 🔥 TRY IMMEDIATE EMAIL
+    // 🔥 SEND IMMEDIATELY
     try {
       await sendOtpMail(email, otp);
     } catch {
-      // fallback to queue
-      await EmailJob.create({
-        type: "OTP",
-        payload: { email, otp },
-      });
+      await EmailJob.create({ type: "OTP", payload: { email, otp } });
     }
 
     return NextResponse.json({ message: "OTP sent" });
