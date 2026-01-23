@@ -3,6 +3,7 @@ import crypto from "crypto";
 import { connectDB } from "@/lib/db";
 import Otp from "@/models/otp";
 import EmailJob from "@/models/Emailjob";
+import { sendOtpMail } from "@/lib/mailer";
 import { otpRateLimit } from "@/lib/rate-limit";
 
 export async function POST(req: Request) {
@@ -16,7 +17,7 @@ export async function POST(req: Request) {
 
     if (!(await otpRateLimit(email))) {
       return NextResponse.json(
-        { message: "Too many OTP requests. Try later." },
+        { message: "Too many OTP requests" },
         { status: 429 }
       );
     }
@@ -29,14 +30,19 @@ export async function POST(req: Request) {
       expiresAt: new Date(Date.now() + 5 * 60 * 1000),
     });
 
-    // ✅ QUEUE EMAIL (DO NOT SEND HERE)
-    await EmailJob.create({
-      type: "OTP",
-      payload: { email, otp },
-    });
+    // 🔥 TRY IMMEDIATE EMAIL
+    try {
+      await sendOtpMail(email, otp);
+    } catch {
+      // fallback to queue
+      await EmailJob.create({
+        type: "OTP",
+        payload: { email, otp },
+      });
+    }
 
     return NextResponse.json({ message: "OTP sent" });
-  } catch (err) {
+  } catch {
     return NextResponse.json({ message: "Server error" }, { status: 500 });
   }
 }
