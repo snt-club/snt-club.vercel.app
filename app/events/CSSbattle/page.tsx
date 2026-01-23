@@ -100,20 +100,20 @@ export default function AlumniSession() {
   return (
     <>
       {/* ---------------- HEADER ---------------- */}
-      <header className="bg-[#0A146E] py-4 text-white">
+      {/* <header className="bg-[#0A146E] py-4 text-white">
         <div className="mx-auto flex max-w-6xl justify-between px-4 font-bold">
           <Link href="#">Notice</Link>
           <span>Science & Technology Club</span>
         </div>
-      </header>
+      </header> */}
 
       {/* ---------------- EVENT INFO ---------------- */}
       <div className="container mx-auto my-6">
         <div className="mx-auto mb-6 w-fit rounded-xl bg-[#0A146E] px-6 py-2 text-3xl font-bold text-yellow-400 lg:text-5xl">
-          Tech Talk
+         CSS Battle 
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        {/* <div className="grid gap-6 md:grid-cols-2">
           <Image
             src={alumniSessionpng}
             alt="Tech Talk"
@@ -138,7 +138,7 @@ export default function AlumniSession() {
               <p><strong>Venue:</strong> Gyan Mandir Auditorium</p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* ---------------- REGISTRATION FORM ---------------- */}
         <div className="mx-auto my-12 max-w-xl rounded-xl bg-white p-6 shadow">
