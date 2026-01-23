@@ -18,18 +18,18 @@ const eventDetails = [
     eventDesc:
     'It is an interactive session designed to guide students through the essential skills, tools, and paths in modern web development.',
     eventImg: flutterworkshop_img,
-    eventStatus: 'upcoming',
-    eventRegLink: '/events/',
-    eventRegStatus: 'closed',
+    eventStatus: 'ongoing',
+    eventRegLink: '/events/techtalkwithalumni',
+    eventRegStatus: 'live',
   },
   {
     eventName: 'CSS Battle',
     eventDesc:
     'CSS Battle is a fun and beginner-friendly challenge where participants recreate simple designs using CSS and learn by doing.',
     eventImg: windows_img,
-    eventStatus: 'upcoming',
-    eventRegLink: '/events/',
-    eventRegStatus: 'closed',
+    eventStatus: 'ongoing',
+    eventRegLink: '/events/CSSbattle',
+    eventRegStatus: 'live',
   },
   {
     eventName: 'Git And Github Session',
