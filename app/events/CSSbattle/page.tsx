@@ -99,15 +99,15 @@ export default function CSSBattle() {
 
   return (
     <>
-      <header className="bg-[#0A146E] py-4 text-white">
+      {/* <header className="bg-[#0A146E] py-4 text-white">
         <div className="mx-auto flex max-w-6xl justify-between px-4 font-bold">
           <Link href="#">Notice</Link>
           <span>SNT Club</span>
         </div>
-      </header>
+      </header> */}
 
       <div className="container mx-auto my-6">
-        <div className="grid gap-6 md:grid-cols-2">
+        {/* <div className="grid gap-6 md:grid-cols-2">
           <Image src={alumniSessionpng} alt="CSS Battle" />
 
           <div className="space-y-4">
@@ -115,7 +115,7 @@ export default function CSSBattle() {
             <p>Date: 23 April 2025</p>
             <p>Venue: Gyan Mandir Auditorium</p>
           </div>
-        </div>
+        </div> */}
 
         <div className="mx-auto my-12 max-w-xl rounded-xl bg-white p-6 shadow">
           <h2 className="mb-6 text-center text-2xl font-bold">
