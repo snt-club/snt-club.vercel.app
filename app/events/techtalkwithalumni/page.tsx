@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
-// import RegisterBtn from '@/components/registerBtn';
 import alumniSessionpng from '@/assets/images/alumniSession.jpg';
 
 function AlumniSession() {
