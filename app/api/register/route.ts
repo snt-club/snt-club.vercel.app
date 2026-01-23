@@ -3,7 +3,7 @@ import crypto from "crypto";
 import bcrypt from "bcryptjs";
 import { connectDB } from "@/lib/db";
 import Student from "@/models/Student";
-import EmailJob from "@/models/EmailJob";
+import EmailJob from "@/models/Emailjob";
 import { sendRegistrationMail } from "@/lib/mailer";
 
 export async function POST(req: Request) {
