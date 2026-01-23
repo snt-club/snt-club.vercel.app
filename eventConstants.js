@@ -18,9 +18,9 @@ const eventDetails = [
     eventDesc:
     'It is an interactive session designed to guide students through the essential skills, tools, and paths in modern web development.',
     eventImg: flutterworkshop_img,
-    eventStatus: 'ongoing',
+    eventStatus: 'past',
     eventRegLink: '/events/techtalkwithalumni',
-    eventRegStatus: 'live',
+    eventRegStatus: 'closed',
   },
   {
     eventName: 'CSS Battle',
