@@ -4,6 +4,7 @@ import bcrypt from "bcryptjs";
 import { connectDB } from "@/lib/db";
 import Student from "@/models/Student";
 import EmailJob from "@/models/Emailjob";
+import { sendRegistrationMail } from "@/lib/mailer";
 
 export async function POST(req: Request) {
   try {
@@ -32,18 +33,20 @@ export async function POST(req: Request) {
     );
 
     if (existing) {
-      return NextResponse.json({
-        message: "Already registered. Check your email.",
+      return NextResponse.json({ message: "Already registered" });
+    }
+
+    try {
+      await sendRegistrationMail(email, name, username, rawPassword);
+    } catch {
+      await EmailJob.create({
+        type: "REGISTRATION",
+        payload: { email, name, username, password: rawPassword },
       });
     }
 
-    await EmailJob.create({
-      type: "REGISTRATION",
-      payload: { email, name, username, password: rawPassword },
-    });
-
     return NextResponse.json({ message: "Registration successful" });
-  } catch (err) {
+  } catch {
     return NextResponse.json({ message: "Server error" }, { status: 500 });
   }
 }

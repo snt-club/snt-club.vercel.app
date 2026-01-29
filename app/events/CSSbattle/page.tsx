@@ -1,12 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import React, { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
-import alumniSessionpng from '@/assets/images/alumniSession.jpg';
+import LoginModal from './login';
 
-export default function AlumniSession() {
+export default function CSSBattle() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,34 +18,44 @@ export default function AlumniSession() {
   const [emailVerified, setEmailVerified] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
+  // 🔥 PERSISTENT STATE
+  const [registered, setRegistered] = useState(false);
+  const [openLogin, setOpenLogin] = useState(false);
+
+  /* 🔄 RESTORE REGISTRATION STATE ON PAGE LOAD */
+  useEffect(() => {
+    const alreadyRegistered = localStorage.getItem('cssbattle_registered');
+    if (alreadyRegistered === 'true') {
+      setRegistered(true);
+    }
+  }, []);
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  /* ---------------- SEND OTP ---------------- */
-  const sendOtp = async () => {
+  /* SEND OTP */
+  const sendOtp = () => {
     if (!formData.email.endsWith('@skit.ac.in')) {
       toast.error('Only @skit.ac.in email allowed');
       return;
     }
 
-    const res = await fetch('/api/send-otp', {
+    setOtpSent(true);
+    toast.success('OTP is being sent to your email');
+
+    fetch('/api/send-otp', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: formData.email }),
-    });
-
-    if (res.ok) {
-      toast.success('OTP sent to email');
-      setOtpSent(true);
-    } else {
+    }).catch(() => {
       toast.error('Failed to send OTP');
-    }
+    });
   };
 
-  /* ---------------- VERIFY OTP ---------------- */
+  /* VERIFY OTP */
   const verifyOtp = async () => {
     const res = await fetch('/api/verify-otp', {
       method: 'POST',
@@ -56,14 +64,14 @@ export default function AlumniSession() {
     });
 
     if (res.ok) {
-      toast.success('Email verified successfully');
+      toast.success('Email verified');
       setEmailVerified(true);
     } else {
       toast.error('Invalid or expired OTP');
     }
   };
 
-  /* ---------------- SUBMIT FORM ---------------- */
+  /* REGISTER */
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
@@ -76,100 +84,66 @@ export default function AlumniSession() {
       });
 
       if (res.ok) {
-        toast.success('Registration successful! Credentials sent to email');
-        setFormData({
-          name: '',
-          email: '',
-          rollNo: '',
-          year: '',
-          branch: '',
-        });
-        setOtp('');
-        setOtpSent(false);
-        setEmailVerified(false);
+        toast.success('Registration successful! You can now start the test.');
+
+        // 🔥 SAVE STATE PERSISTENTLY
+        localStorage.setItem('cssbattle_registered', 'true');
+        localStorage.setItem('cssbattle_email', formData.email);
+
+        setRegistered(true);
       } else {
         toast.error('Registration failed');
       }
-    } catch (err) {
+    } catch {
       toast.error('Something went wrong');
     } finally {
       setIsLoading(false);
     }
   };
 
+  /* START TEST */
+  const handleStartTest = () => {
+    if (!registered) {
+      toast.error('Please register first to start the test');
+      return;
+    }
+    setOpenLogin(true);
+  };
+
   return (
-    <>
-      {/* ---------------- HEADER ---------------- */}
-      <header className="bg-[#0A146E] py-4 text-white">
-        <div className="mx-auto flex max-w-6xl justify-between px-4 font-bold">
-          <Link href="#">Notice</Link>
-          <span>Science & Technology Club</span>
-        </div>
-      </header>
+    <div className="flex min-h-screen items-center justify-center bg-gray-100 px-4">
+      <div className="grid w-full max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
 
-      {/* ---------------- EVENT INFO ---------------- */}
-      <div className="container mx-auto my-6">
-        <div className="mx-auto mb-6 w-fit rounded-xl bg-[#0A146E] px-6 py-2 text-3xl font-bold text-yellow-400 lg:text-5xl">
-          Tech Talk
-        </div>
-
-        <div className="grid gap-6 md:grid-cols-2">
-          <Image
-            src={alumniSessionpng}
-            alt="Tech Talk"
-            className="rounded-lg"
-          />
-
-          <div className="space-y-4 text-lg">
-            <p>
-              The Science and Technology Club is organising a{' '}
-              <strong>Tech Talk & Guidance Session</strong> 📊✨
-            </p>
-
-            <p>
-              👉 <strong>Saksham Sharma</strong> (SDE Intern at Juspay) <br />
-              👉 <strong>Radhika Soni</strong> (Product Engineer Intern at NammaYatri) <br />
-              👉 <strong>Aarushi Sharma</strong> (SDE at NammaYatri)
-            </p>
-
-            <div className="pt-4">
-              <p><strong>Date:</strong> 23 April 2025</p>
-              <p><strong>Time:</strong> 1:45 PM onwards</p>
-              <p><strong>Venue:</strong> Gyan Mandir Auditorium</p>
-            </div>
-          </div>
-        </div>
-
-        {/* ---------------- REGISTRATION FORM ---------------- */}
-        <div className="mx-auto my-12 max-w-xl rounded-xl bg-white p-6 shadow">
+        {/* LEFT: REGISTRATION */}
+        <div className="rounded-xl bg-white p-6 shadow">
           <h2 className="mb-6 text-center text-2xl font-bold">
-            Register for CSS Battle Test
+            Register for CSS Battle
           </h2>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <input
               name="name"
               placeholder="Full Name"
+              className="w-full border p-2"
               value={formData.name}
               onChange={handleChange}
-              className="w-full border p-2"
               required
             />
 
             <input
               name="rollNo"
               placeholder="University Roll No"
+              className="w-full border p-2"
               value={formData.rollNo}
               onChange={handleChange}
-              className="w-full border p-2"
               required
             />
 
             <select
               name="branch"
+              className="w-full border p-2"
               value={formData.branch}
               onChange={handleChange}
-              className="w-full border p-2"
               required
             >
               <option value="">Select Branch</option>
@@ -182,9 +156,9 @@ export default function AlumniSession() {
 
             <select
               name="year"
+              className="w-full border p-2"
               value={formData.year}
               onChange={handleChange}
-              className="w-full border p-2"
               required
             >
               <option value="">Select Year</option>
@@ -194,35 +168,32 @@ export default function AlumniSession() {
               <option value="4">4th Year</option>
             </select>
 
-            {/* EMAIL + VERIFY */}
             <div className="flex gap-2">
               <input
                 name="email"
                 placeholder="Email (@skit.ac.in)"
+                className="w-full border p-2"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full border p-2"
-                required
                 disabled={emailVerified}
+                required
               />
               <button
                 type="button"
                 onClick={sendOtp}
-                disabled={otpSent}
                 className="bg-blue-600 px-4 text-white"
               >
                 Verify
               </button>
             </div>
 
-            {/* OTP */}
             {otpSent && !emailVerified && (
               <div className="flex gap-2">
                 <input
                   placeholder="Enter OTP"
+                  className="w-full border p-2"
                   value={otp}
                   onChange={(e) => setOtp(e.target.value)}
-                  className="w-full border p-2"
                 />
                 <button
                   type="button"
@@ -237,15 +208,33 @@ export default function AlumniSession() {
             <button
               type="submit"
               disabled={!emailVerified || isLoading}
-              className={`w-full rounded p-2 text-white ${
-                emailVerified ? 'bg-[#0A146E]' : 'bg-gray-400'
-              }`}
+              className="w-full rounded bg-[#0A146E] p-2 text-white"
             >
               {isLoading ? 'Submitting...' : 'Submit Registration'}
             </button>
           </form>
         </div>
+
+        {/* RIGHT: START TEST */}
+        <div className="flex flex-col items-center justify-center rounded-xl bg-white p-6 shadow">
+          <h2 className="mb-4 text-xl font-bold">Ready to Begin?</h2>
+
+          <button
+            onClick={handleStartTest}
+            className="rounded bg-[#0A146E] px-10 py-4 text-2xl text-white"
+          >
+            Start Test
+          </button>
+
+          {!registered && (
+            <p className="mt-4 text-sm text-gray-500">
+              * You must register before starting the test
+            </p>
+          )}
+        </div>
       </div>
-    </>
+
+      {openLogin && <LoginModal onClose={() => setOpenLogin(false)} />}
+    </div>
   );
 }
