@@ -1,7 +1,7 @@
 // EVENT STATUS = upcoming, ongoing, past
 // EVENT REG STATUS = live, closed
 
-import { flutterworkshop_img, code_img , c_bootcamp_img, windows_img , s } from '@/assets/index';
+import { flutterworkshop_img, code_img , c_bootcamp_img, windows_img , s, aarambh_img, astrohunt_img } from '@/assets/index';
 
 const eventDetails = [
   // {
@@ -18,18 +18,18 @@ const eventDetails = [
     eventDesc:
     'It is an interactive session designed to guide students through the essential skills, tools, and paths in modern web development.',
     eventImg: flutterworkshop_img,
-    eventStatus: 'ongoing',
+    eventStatus: 'past',
     eventRegLink: '/events/techtalkwithalumni',
-    eventRegStatus: 'live',
+    eventRegStatus: 'closed',
   },
   {
     eventName: 'CSS Battle',
     eventDesc:
     'CSS Battle is a fun and beginner-friendly challenge where participants recreate simple designs using CSS and learn by doing.',
     eventImg: windows_img,
-    eventStatus: 'ongoing',
+    eventStatus: 'upcoming',
     eventRegLink: '/events/CSSbattle',
-    eventRegStatus: 'live',
+    eventRegStatus: 'closed',
   },
   {
     eventName: 'Git And Github Session',
@@ -38,6 +38,14 @@ const eventDetails = [
     eventStatus: 'upcoming',
     eventRegLink: '/events/',
     eventRegStatus: 'closed',
+  },
+  {
+    eventName: 'Astrohunt',
+    eventDesc: 'A thrilling cosmic hunt inspired by astronomy, blending science, strategy, and teamwork to uncover hidden treasures.',
+    eventImg: astrohunt_img,
+    eventStatus: 'ongoing',
+    eventRegLink: 'https://pravah.skit.ac.in/skit-pravah-2026-events/Technical/677e938d178f0fae20e88f33',
+    eventRegStatus: 'live',
   },
   // {
   //   eventName: 'CODE-A-THON',
@@ -76,15 +84,15 @@ const eventDetails = [
 
   {
     eventName: 'Ask S&T',
-    eventDesc: 'Join us for ASK S&T, an interactive session where 1st-year students / (freshers) can get all their technical and non-technical questions answered by our expert club members!',
-    eventImg: windows_img,
+    eventDesc: 'Join us for ASK S&T, an interactive session where 1st-year students / (freshers) can get all their technical and non-technical questions answered by our expert club members!',
+    eventImg: aarambh_img,
     eventStatus: 'past',
     eventRegLink: '/events/AskSnT',
     eventRegStatus: 'closed',
   },
   {
     eventName: 'Aarambh-2025',
-    eventDesc: "Join us at AARAMBH for an exciting session where we'll welcome freshers and introduce them to the Science and Technology Club, showcasing innovation, insights, and opportunities!",
+    eventDesc: "Join us at AARAMBH for an exciting session where we'll welcome freshers and introduce them to the Science and Technology Club, showcasing innovation, insights, and opportunities!",
     eventImg: flutterworkshop_img,
     eventStatus: 'past',
     eventRegLink: '/events/aarambh2025',

@@ -7,6 +7,7 @@ import cppWorkshop from './images/cppWorkshop.png';
 import dsa from './images/dsa.webp';
 import web from './images/web.webp';
 import code_img from './svg/cws2.svg';
+import astrohunt_img from './svg/astrohunt.svg';
 
 import sharda_soni from './people/sharda.png';
 import vinay_marwal from './people/vinay.png';
@@ -37,6 +38,7 @@ export {
   code_img,
   flutterworkshop_img,
   s,
+  astrohunt_img,
   c_bootcamp_img,
   windows_img,
   cppWorkshop,
