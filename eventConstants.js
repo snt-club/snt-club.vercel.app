@@ -47,6 +47,14 @@ const eventDetails = [
     eventRegLink: 'https://pravah.skit.ac.in/skit-pravah-2026-events/Technical/677e938d178f0fae20e88f33',
     eventRegStatus: 'live',
   },
+  {
+    eventName: 'Design Workshop',
+    eventDesc: 'The Science & Technology Club presents a hands-on Design Workshop to explore creativity and innovation.',
+    eventImg: c_bootcamp_img,
+    eventStatus: 'ongoing',
+    eventRegLink: '/events/DesignWorkshop',
+    eventRegStatus: 'live',
+  },
   // {
   //   eventName: 'CODE-A-THON',
   //   eventDesc: 'A Web 2.0 based web development competition helps you to learn mordern web development skills.',
