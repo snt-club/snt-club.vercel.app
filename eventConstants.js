@@ -52,7 +52,7 @@ const eventDetails = [
     eventDesc: 'The Science & Technology Club presents a hands-on Design Workshop to explore creativity and innovation.',
     eventImg: c_bootcamp_img,
     eventStatus: 'ongoing',
-    eventRegLink: '/events/DesignWorkshop',
+    eventRegLink: '/events/DesignwithS&T',
     eventRegStatus: 'live',
   },
   // {
