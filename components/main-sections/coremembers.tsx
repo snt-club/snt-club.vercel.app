@@ -104,12 +104,12 @@ function coremembers() {
             </div>
             <div className="mx-auto w-fit p-4 text-center">
               <div>
-                <p className="mb-4 text-base font-semibold md:text-xl">Editing Team</p>
+                <p className="mb-4 text-base font-semibold md:text-xl">Social Media Team</p>
               </div>
               <div>
                 {sntTeamMember.map((memberDetails, index) => (
                   <>
-                    {memberDetails.memberPost === 'Student_Team' && memberDetails.memberTeam == 'editing_Team' ? (
+                    {memberDetails.memberPost === 'Student_Team' && memberDetails.memberTeam == 'social_media_Team' ? (
                       <Link key={index} href={memberDetails.memberLinkedin} target="_blank">
                         <p className="text-xs hover:underline md:text-sm">{memberDetails.memberName}</p>
                       </Link>
