@@ -111,11 +111,11 @@ function Footer() {
             <Link href="mailto:info.sntclub@gmail.com">
               <p className="text-sm hover:underline">info.sntclub@gmail.com</p>
             </Link>
-            <Link href="tel:9214905733">
-              <p className="text-sm hover:underline">9214905733(M)</p>
+            <Link href="tel:9024153992">
+              <p className="text-sm hover:underline">9024153992(M)</p>
             </Link>
-            <Link href="tel:7877727703">
-              <p className="text-sm hover:underline">7877727703(M)</p>
+            <Link href="tel:8949567359">
+              <p className="text-sm hover:underline">8949567359(M)</p>
             </Link>
           </div>
         </div>
