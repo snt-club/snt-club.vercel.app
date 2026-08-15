@@ -12,28 +12,30 @@ import astrohunt_img from './svg/astrohunt.svg';
 import sharda_soni from './people/sharda.png';
 import vinay_marwal from './people/vinay.png';
 
-
-
-import aditiya from './people/aditiya.jpg';
-import sanidhya from './people/sanidhya.jpg';
-import astha from './people/astha.jpg';
-import yash from './people/yash.jpg';
-import mehul from './people/mehul.jpg';
-import Jaideep from './people/jaideep.jpg';
-import kshitij from './people/kshitij.jpg';
-import rishita from './people/rishita.jpg';
+import harsh from './people/harsh.jpeg';
+import akshat from './people/akshat.jpeg';
+import aryan from './people/aryan.jpeg';
+import dinesh from './people/dinesh.jpeg';
+import manasvi from './people/manasvi.jpeg';
+import tanishq from './people/tanishq.jpeg';
+import vanshika from './people/vanshika.jpeg';
+import hemant from './people/hemant.jpeg'
+import mohit from './people/mohit.jpeg'
+import viren from './people/viren.jpeg'
 
 
 
 export {
-  aditiya,
-  sanidhya,
-  astha,
-  yash,
-  mehul,
-  kshitij,
-  Jaideep,
-  rishita,
+  harsh,
+  akshat,
+  aryan,
+  dinesh,
+  manasvi,
+  tanishq,
+  vanshika,
+  hemant,
+  mohit,
+  viren,
   aarambh_img,
   code_img,
   flutterworkshop_img,
