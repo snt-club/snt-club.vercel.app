@@ -14,9 +14,10 @@ import linkedin from '@/assets/svg/li.svg';
 
 import { sntTeamMember } from '@/teamConstants';
 
-
 const coreteamslider = () => {
   const [swiperSlides, setSwiperSlides] = useState(1);
+
+  const heads = sntTeamMember.filter((member) => member.memberPost === 'Student_Head');
 
   useEffect(() => {
     const updateSwriperSlides = () => {
@@ -44,7 +45,7 @@ const coreteamslider = () => {
         <Swiper
           slidesPerView={swiperSlides}
           spaceBetween={50}
-          loop={true}
+          loop={heads.length > swiperSlides}
           autoplay={{
             delay: 3000,
             disableOnInteraction: false,
@@ -52,53 +53,47 @@ const coreteamslider = () => {
           modules={[Autoplay]}
           className="z-10 mt-[15px] flex justify-center"
         >
-          {/* {studenthead.map((coordinator, index) => (
-          
-        ))} */}
-          {sntTeamMember.filter(member => member.memberPost === 'Student_Head')
-                        .map((memberDetails, index) => (
-            <>
-                <SwiperSlide key={index}>
-                  <div className="py-[20px]">
-                    <div className="flex justify-center">
-                      <Image
-                        src={memberDetails.memberPhoto}
-                        alt={index.toString()}
-                        width={120}
-                        className="rounded-full"
-                      />
-                    </div>
-                    <div className="mt-[10px] text-center">
-                      <span className="text-base font-bold md:text-xl">{memberDetails.memberName}</span>
-                    </div>
-                    <div className="flex justify-center">
-                      <div>
-                        <span>{memberDetails.memberYear},</span>
-                      </div>
-                      <div>
-                        <span>&nbsp;{memberDetails.memberBranch}</span>
-                      </div>
-                    </div>
-                    <div className="flex justify-center">
-                      <div>
-                        <span>{memberDetails.memberRole}</span>
-                      </div>
-                    </div>
-                    <div className="mt-[10px] flex justify-center gap-5">
-                      <div>
-                        <Link href={memberDetails.memberInsta} target="_blank">
-                          <Image src={instagram} alt="Instagram" width={30} className="duration-150 hover:scale-110" />
-                        </Link>
-                      </div>
-                      <div>
-                        <Link href={memberDetails.memberLinkedin} target="_blank">
-                          <Image src={linkedin} alt="LinkedIn" width={30} className="duration-150 hover:scale-110" />
-                        </Link>
-                      </div>
-                    </div>
+          {heads.map((memberDetails, index) => (
+            <SwiperSlide key={index}>
+              <div className="py-[20px]">
+                <div className="flex justify-center">
+                  <Image
+                    src={memberDetails.memberPhoto}
+                    alt={index.toString()}
+                    width={120}
+                    className="rounded-full"
+                  />
+                </div>
+                <div className="mt-[10px] text-center">
+                  <span className="text-base font-bold md:text-xl">{memberDetails.memberName}</span>
+                </div>
+                <div className="flex justify-center">
+                  <div>
+                    <span>{memberDetails.memberYear},</span>
                   </div>
-                </SwiperSlide>
-            </>
+                  <div>
+                    <span>&nbsp;{memberDetails.memberBranch}</span>
+                  </div>
+                </div>
+                <div className="flex justify-center">
+                  <div>
+                    <span>{memberDetails.memberRole}</span>
+                  </div>
+                </div>
+                <div className="mt-[10px] flex justify-center gap-5">
+                  <div>
+                    <Link href={memberDetails.memberInsta} target="_blank">
+                      <Image src={instagram} alt="Instagram" width={30} className="duration-150 hover:scale-110" />
+                    </Link>
+                  </div>
+                  <div>
+                    <Link href={memberDetails.memberLinkedin} target="_blank">
+                      <Image src={linkedin} alt="LinkedIn" width={30} className="duration-150 hover:scale-110" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
           ))}
         </Swiper>
       </div>
