@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 
-const BRANCHES = ['CSE', 'DS', 'AI', 'IT', 'IOT'];
+const BRANCHES = ['CSE', 'DS', 'AI', 'IT', 'IOT', 'ECE', 'EE', 'ME', 'CE'];
 const YEARS = [1, 2, 3, 4];
 
 type FormState = {
@@ -44,7 +44,7 @@ export default function EventRegistrationForm({ event, title }: Props) {
 
   const validate = () => {
     if (!form.name.trim()) return 'Please enter your name';
-    if (!/^[a-zA-Z0-9._%+-]+@skit\.ac\.in$/.test(form.email.trim()))
+    if (!/^[a-zA-Z0-9._%+-]+@(gmail\.com|skit\.ac\.in)$/.test(form.email.trim()))
       return 'Please use your @skit.ac.in email';
     if (!form.rollNo.trim()) return 'Please enter your roll number';
     if (!/^[6-9]\d{9}$/.test(form.phone.trim()))
@@ -94,10 +94,6 @@ export default function EventRegistrationForm({ event, title }: Props) {
     <div className="mx-auto max-w-[640px] text-[#0A146E]">
       <div className="text-center">
         <p className="text-2xl font-bold md:text-4xl">Register for {title}</p>
-        <p className="mt-2 text-sm text-[#0A146E]/70">
-          Use your college email (@skit.ac.in). A confirmation mail will be sent
-          to you.
-        </p>
       </div>
 
       {done ? (
@@ -137,14 +133,14 @@ export default function EventRegistrationForm({ event, title }: Props) {
               type="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="you@skit.ac.in"
+              placeholder="you@skit.ac.in or you@gmail.com"
               className={inputClass}
             />
           </div>
 
           <div>
             <label className="mb-1 block text-sm font-semibold">
-              Roll Number
+              Roll Number or Enrollment Number (B26XXXX)
             </label>
             <input
               name="rollNo"

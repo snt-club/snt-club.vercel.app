@@ -103,7 +103,7 @@ const eventDetails = [
     eventDesc: "Join us at AARAMBH for an exciting session where we'll welcome freshers and introduce them to the Science and Technology Club, showcasing innovation, insights, and opportunities!",
     eventImg: flutterworkshop_img,
     eventStatus: 'ongoing',
-    eventRegLink: '/events/aarambh2026',
+    eventRegLink: '/events/Aarambh2026',
     eventRegStatus: 'live',
   },
   // {
