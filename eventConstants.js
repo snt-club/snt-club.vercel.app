@@ -102,9 +102,9 @@ const eventDetails = [
     eventName: 'Aarambh 2026',
     eventDesc: "Join us at AARAMBH for an exciting session where we'll welcome freshers and introduce them to the Science and Technology Club, showcasing innovation, insights, and opportunities!",
     eventImg: flutterworkshop_img,
-    eventStatus: 'upcoming',
+    eventStatus: 'ongoing',
     eventRegLink: '/events/aarambh2026',
-    eventRegStatus: 'closed',
+    eventRegStatus: 'live',
   },
   // {
   //   eventName: 'Tech Talk With Alumni',

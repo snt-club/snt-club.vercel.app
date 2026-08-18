@@ -47,10 +47,37 @@ export async function sendRegistrationMail(
         <p><strong>Username:</strong> ${username}</p>
         <p><strong>Password:</strong> ${password}</p>
 
-
-
         <br/>
         <p>All the best! 🚀</p>
+        <p><strong>SNT Club</strong></p>
+      </div>
+    `,
+  });
+}
+
+/* ---------- EVENT CONFIRMATION MAIL ---------- */
+export async function sendEventConfirmationMail(
+  to: string,
+  name: string,
+  eventTitle: string
+) {
+  await transporter.sendMail({
+    from: `"SNT Club" <${process.env.EMAIL_USER}>`,
+    to,
+    subject: `✅ Registration Confirmed | ${eventTitle}`,
+    html: `
+      <div style="font-family: Arial">
+        <h2>Hello ${name}, 👋</h2>
+
+        <p>Your registration for
+        <strong>${eventTitle}</strong> has been
+        <strong style="color:green">CONFIRMED</strong>.</p>
+
+        <p>We're excited to have you join us. Keep an eye on your inbox
+        for further details about the event.</p>
+
+        <br/>
+        <p>See you there! 🚀</p>
         <p><strong>SNT Club</strong></p>
       </div>
     `,

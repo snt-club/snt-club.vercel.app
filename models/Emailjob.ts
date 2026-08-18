@@ -4,7 +4,7 @@ const EmailJobSchema = new mongoose.Schema(
   {
     type: {
       type: String,
-      enum: ["OTP", "REGISTRATION"],
+      enum: ["OTP", "REGISTRATION", "EVENT"],
       required: true,
     },
     payload: {

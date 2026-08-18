@@ -1,7 +1,11 @@
 import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/db";
 import EmailJob from "@/models/Emailjob";
-import { sendOtpMail, sendRegistrationMail } from "@/lib/mailer";
+import {
+  sendOtpMail,
+  sendRegistrationMail,
+  sendEventConfirmationMail,
+} from "@/lib/mailer";
 
 export const dynamic = "force-dynamic";
 
@@ -16,6 +20,10 @@ export async function GET() {
       if (job.type === "REGISTRATION") {
         const { email, name, username, password } = job.payload;
         await sendRegistrationMail(email, name, username, password);
+      }
+      if (job.type === "EVENT") {
+        const { email, name, eventTitle } = job.payload;
+        await sendEventConfirmationMail(email, name, eventTitle);
       }
       job.status = "SENT";
       await job.save();
