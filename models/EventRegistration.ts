@@ -22,7 +22,7 @@ const EventRegistrationSchema = new Schema(
     },
     branch: {
       type: String,
-      enum: ["CSE", "DS", "AI", "IT", "IOT"],
+      enum: ['CSE', 'DS', 'AI', 'IT', 'IOT', 'ECE', 'EE', 'ME', 'CE'],
       required: true,
     },
     year: {

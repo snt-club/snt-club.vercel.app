@@ -4,7 +4,7 @@ import EventRegistration from "@/models/EventRegistration";
 import EmailJob from "@/models/Emailjob";
 import { getEventConfig } from "@/lib/eventRegistrations";
 
-const BRANCHES = ["CSE", "DS", "AI", "IT", "IOT"];
+const BRANCHES = ['CSE', 'DS', 'AI', 'IT', 'IOT', 'ECE', 'EE', 'ME', 'CE'];
 
 export async function POST(
   req: Request,
