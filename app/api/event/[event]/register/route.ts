@@ -86,6 +86,6 @@ export async function POST(
         { status: 409 }
       );
     }
-    return NextResponse.json({ message: "Server error" }, { status: 500 });
+    return NextResponse.json({ message: err.message }, { status: 500 });
   }
 }
