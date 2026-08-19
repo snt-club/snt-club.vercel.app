@@ -34,7 +34,7 @@ function AarambhPage() {
 
         {/* SHARED REGISTRATION FORM */}
         <div className="mt-10">
-          <EventRegistrationForm event="aarambh2026" title="Aarambh" />
+          <EventRegistrationForm event="Aarambh2026" title="Aarambh" />
         </div>
       </div>
     </section>
