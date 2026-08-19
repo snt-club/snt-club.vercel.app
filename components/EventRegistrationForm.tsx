@@ -44,7 +44,7 @@ export default function EventRegistrationForm({ event, title }: Props) {
 
   const validate = () => {
     if (!form.name.trim()) return 'Please enter your name';
-    if (!/^[a-zA-Z0-9._%+-]+@(gmail\.com|skit\.ac\.in)$/.test(form.email.trim()))
+    if (!(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(form.email.trim())))
       return 'Please use your @skit.ac.in email';
     if (!form.rollNo.trim()) return 'Please enter your roll number';
     if (!/^[6-9]\d{9}$/.test(form.phone.trim()))
