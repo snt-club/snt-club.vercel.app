@@ -69,7 +69,7 @@ export async function POST(
       year,
     });
 
-    // ---- Queue confirmation mail, respond immediately (no waiting on SMTP) ----
+    // ---- Queue confirmation mail ----
     await EmailJob.create({
       type: "EVENT",
       payload: { email, name, eventTitle: config.title },

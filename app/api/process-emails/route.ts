@@ -22,7 +22,8 @@ export async function GET() {
         await sendRegistrationMail(email, name, username, password);
       }
       if (job.type === "EVENT") {
-        const { email, name, eventTitle } = job.payload;
+        const payload = job.toObject().payload as Record<string, string>;
+        const { email, name, eventTitle } = payload;
         await sendEventConfirmationMail(email, name, eventTitle);
       }
       job.status = "SENT";
