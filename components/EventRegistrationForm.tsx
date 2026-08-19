@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 
 const BRANCHES = ['CSE', 'DS', 'AI', 'IT', 'IOT', 'ECE', 'EE', 'ME', 'CE'];
 const YEARS = [1, 2, 3, 4];
+const ALLOWED_EMAIL = /^[a-zA-Z0-9._%+-]+@(gmail\.com|skit\.ac\.in)$/;
 
 type FormState = {
   name: string;
@@ -25,16 +26,19 @@ const initialForm: FormState = {
 };
 
 type Props = {
-  /** Event slug, must match a key in lib/eventRegistrations.ts (e.g. "aarambh") */
+  /** Event slug, must match a key in lib/eventRegistrations.ts */
   event: string;
   /** Display title, used in headings and success copy */
   title: string;
 };
 
+type Step = 'details' | 'otp' | 'done';
+
 export default function EventRegistrationForm({ event, title }: Props) {
   const [form, setForm] = useState<FormState>(initialForm);
+  const [otp, setOtp] = useState('');
+  const [step, setStep] = useState<Step>('details');
   const [loading, setLoading] = useState(false);
-  const [done, setDone] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
@@ -44,8 +48,8 @@ export default function EventRegistrationForm({ event, title }: Props) {
 
   const validate = () => {
     if (!form.name.trim()) return 'Please enter your name';
-    if (!(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(form.email.trim())))
-      return 'Please use your @skit.ac.in email';
+    if (!ALLOWED_EMAIL.test(form.email.trim()))
+      return 'Please use a valid @gmail.com or @skit.ac.in email';
     if (!form.rollNo.trim()) return 'Please enter your roll number';
     if (!/^[6-9]\d{9}$/.test(form.phone.trim()))
       return 'Please enter a valid 10-digit phone number';
@@ -54,7 +58,8 @@ export default function EventRegistrationForm({ event, title }: Props) {
     return null;
   };
 
-  const handleSubmit = async () => {
+  // Step 1 -> send OTP
+  const handleSendOtp = async () => {
     const error = validate();
     if (error) {
       toast.error(error);
@@ -62,12 +67,47 @@ export default function EventRegistrationForm({ event, title }: Props) {
     }
 
     setLoading(true);
-    const t = toast.loading('Submitting registration...');
+    const t = toast.loading('Sending OTP...');
+    try {
+      const res = await fetch(`/api/event/${event}/send-otp`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: form.email.trim().toLowerCase() }),
+      });
+      const data = await res.json();
+
+      if (res.ok) {
+        toast.success('OTP sent! Check your email.', { id: t });
+        setStep('otp');
+      } else {
+        toast.error(data.message || 'Could not send OTP', { id: t });
+      }
+    } catch {
+      toast.error('Network error. Please try again.', { id: t });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Step 2 -> verify OTP + register
+  const handleVerifyAndRegister = async () => {
+    if (!/^\d{6}$/.test(otp.trim())) {
+      toast.error('Please enter the 6-digit OTP');
+      return;
+    }
+
+    setLoading(true);
+    const t = toast.loading('Verifying & registering...');
     try {
       const res = await fetch(`/api/event/${event}/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, year: Number(form.year) }),
+        body: JSON.stringify({
+          ...form,
+          email: form.email.trim().toLowerCase(),
+          year: Number(form.year),
+          otp: otp.trim(),
+        }),
       });
       const data = await res.json();
 
@@ -75,8 +115,9 @@ export default function EventRegistrationForm({ event, title }: Props) {
         toast.success('Registered! Check your email for confirmation.', {
           id: t,
         });
-        setDone(true);
+        setStep('done');
         setForm(initialForm);
+        setOtp('');
       } else {
         toast.error(data.message || 'Something went wrong', { id: t });
       }
@@ -85,6 +126,12 @@ export default function EventRegistrationForm({ event, title }: Props) {
     } finally {
       setLoading(false);
     }
+  };
+
+  const resetAll = () => {
+    setForm(initialForm);
+    setOtp('');
+    setStep('details');
   };
 
   const inputClass =
@@ -96,7 +143,7 @@ export default function EventRegistrationForm({ event, title }: Props) {
         <p className="text-2xl font-bold md:text-4xl">Register for {title}</p>
       </div>
 
-      {done ? (
+      {step === 'done' ? (
         <div className="mt-8 rounded-[20px] border-2 border-[#4bee6e] bg-[#4bee6e]/10 p-8 text-center">
           <p className="text-xl font-bold text-[#0A146E]">
             🎉 You&apos;re registered!
@@ -105,11 +152,59 @@ export default function EventRegistrationForm({ event, title }: Props) {
             We&apos;ve sent a confirmation to your email. See you at {title}!
           </p>
           <button
-            onClick={() => setDone(false)}
+            onClick={resetAll}
             className="mt-4 rounded-lg border-2 border-[#0A146E] px-4 py-2 text-sm font-semibold text-[#0A146E] transition hover:bg-[#0A146E] hover:text-white"
           >
             Register another
           </button>
+        </div>
+      ) : step === 'otp' ? (
+        <div className="mt-8 rounded-[20px] border-2 border-[#0A146E]/10 p-6 md:p-8">
+          <p className="text-center text-lg font-bold text-[#0A146E]">
+            Verify your email
+          </p>
+          <p className="mt-2 text-center text-sm text-[#0A146E]/70">
+            We sent a 6-digit code to{' '}
+            <strong className="text-[#0A146E]">{form.email}</strong>. Enter it
+            below to complete your registration.
+          </p>
+
+          <div className="mt-6">
+            <label className="mb-1 block text-sm font-semibold">OTP</label>
+            <input
+              name="otp"
+              inputMode="numeric"
+              maxLength={6}
+              value={otp}
+              onChange={(e) => setOtp(e.target.value.replace(/\D/g, ''))}
+              placeholder="Enter 6-digit code"
+              className={`${inputClass} text-center text-xl tracking-[0.5em]`}
+            />
+          </div>
+
+          <button
+            onClick={handleVerifyAndRegister}
+            disabled={loading}
+            className="mt-4 w-full rounded-lg border-2 border-[#EE4B76] bg-[#EE4B76] px-4 py-3 font-semibold text-white transition duration-200 hover:bg-transparent hover:text-[#EE4B76] disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            {loading ? 'Verifying...' : 'Verify & Register'}
+          </button>
+
+          <div className="mt-4 flex items-center justify-between text-sm">
+            <button
+              onClick={() => setStep('details')}
+              className="font-semibold text-[#0A146E] underline"
+            >
+              ← Edit details
+            </button>
+            <button
+              onClick={handleSendOtp}
+              disabled={loading}
+              className="font-semibold text-[#0A146E] underline disabled:opacity-60"
+            >
+              Resend OTP
+            </button>
+          </div>
         </div>
       ) : (
         <div className="mt-8 grid grid-cols-1 gap-4 rounded-[20px] border-2 border-[#0A146E]/10 p-6 md:grid-cols-2 md:p-8">
@@ -201,11 +296,11 @@ export default function EventRegistrationForm({ event, title }: Props) {
 
           <div className="mt-2 md:col-span-2">
             <button
-              onClick={handleSubmit}
+              onClick={handleSendOtp}
               disabled={loading}
               className="w-full rounded-lg border-2 border-[#EE4B76] bg-[#EE4B76] px-4 py-3 font-semibold text-white transition duration-200 hover:bg-transparent hover:text-[#EE4B76] disabled:cursor-not-allowed disabled:opacity-60"
             >
-              {loading ? 'Submitting...' : 'Register Now'}
+              {loading ? 'Sending OTP...' : 'Send OTP'}
             </button>
           </div>
         </div>
