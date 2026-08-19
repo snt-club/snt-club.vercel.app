@@ -39,7 +39,7 @@ export async function POST(
         { status: 400 }
       );
     }
-    if (!/^[a-zA-Z0-9._%+-]+@(gmail\.com|skit\.ac\.in)$/.test(email)) {
+    if (!(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email))) {
       return NextResponse.json(
         { message: "Please use your @skit.ac.in email" },
         { status: 400 }
