@@ -11,7 +11,7 @@ const EventRegistrationSchema = new Schema(
       required: true,
       lowercase: true,
       trim: true,
-      match: [/^[a-zA-Z0-9._%+-]+@skit\.ac\.in$/, "Invalid domain"],
+      match: [/^[a-zA-Z0-9._%+-]+@(gmail\.com|skit\.ac\.in)$/, "Invalid domain"],
     },
     rollNo: { type: String, required: true, trim: true },
     phone: {
