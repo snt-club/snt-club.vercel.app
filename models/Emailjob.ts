@@ -27,7 +27,7 @@ const EmailJobSchema = new mongoose.Schema(
 // 🔥 Auto-delete after 1 hour
 EmailJobSchema.index(
   { createdAt: 1 },
-  { expireAfterSeconds: 3600 }
+  { expireAfterSeconds: 86400 }
 );
 
 export default mongoose.models.EmailJob ||
