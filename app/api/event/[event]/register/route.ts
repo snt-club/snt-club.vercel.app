@@ -1,10 +1,14 @@
 import { NextResponse } from "next/server";
+import bcrypt from "bcryptjs";
 import { connectDB } from "@/lib/db";
 import EventRegistration from "@/models/EventRegistration";
 import EmailJob from "@/models/Emailjob";
+import Otp from "@/models/otp";
 import { getEventConfig } from "@/lib/eventRegistrations";
+import { sendEventConfirmationMail } from "@/lib/mailer";
 
 const BRANCHES = ['CSE', 'DS', 'AI', 'IT', 'IOT', 'ECE', 'EE', 'ME', 'CE'];
+const ALLOWED_EMAIL = /^[a-zA-Z0-9._%+-]+@(gmail\.com|skit\.ac\.in)$/;
 
 export async function POST(
   req: Request,
@@ -31,6 +35,7 @@ export async function POST(
     const phone = (body.phone ?? "").trim();
     const branch = (body.branch ?? "").trim();
     const year = Number(body.year);
+    const otp = (body.otp ?? "").trim();
 
     // ---- Validation ----
     if (!name || !email || !rollNo || !phone || !branch || !year) {
@@ -39,9 +44,9 @@ export async function POST(
         { status: 400 }
       );
     }
-    if (!(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email))) {
+    if (!ALLOWED_EMAIL.test(email)) {
       return NextResponse.json(
-        { message: "Please use your @skit.ac.in email" },
+        { message: "Please use a valid @gmail.com or @skit.ac.in email" },
         { status: 400 }
       );
     }
@@ -57,8 +62,32 @@ export async function POST(
     if (![1, 2, 3, 4].includes(year)) {
       return NextResponse.json({ message: "Invalid year" }, { status: 400 });
     }
+    if (!/^\d{6}$/.test(otp)) {
+      return NextResponse.json(
+        { message: "Please enter the 6-digit OTP sent to your email" },
+        { status: 400 }
+      );
+    }
 
-    // ---- Create directly; unique indexes handle duplicates (no extra findOne) ----
+    // ---- Verify OTP (most recent one for this email+event) ----
+    const record = await Otp.findOne({ email, event: config.slug }).sort({
+      createdAt: -1,
+    });
+    if (!record) {
+      return NextResponse.json(
+        { message: "OTP expired or not found. Please request a new one." },
+        { status: 400 }
+      );
+    }
+    const ok = await bcrypt.compare(otp, record.otp);
+    if (!ok) {
+      return NextResponse.json(
+        { message: "Incorrect OTP. Please try again." },
+        { status: 400 }
+      );
+    }
+
+    // ---- Create registration; unique indexes are the final duplicate guard ----
     await EventRegistration.create({
       event: config.slug,
       name,
@@ -69,11 +98,18 @@ export async function POST(
       year,
     });
 
-    // ---- Queue confirmation mail ----
-    await EmailJob.create({
-      type: "EVENT",
-      payload: { email, name, eventTitle: config.title },
-    });
+    // ---- OTP consumed: remove all OTPs for this email+event ----
+    await Otp.deleteMany({ email, event: config.slug });
+
+    // ---- Send confirmation mail immediately; queue as fallback on failure ----
+    try {
+      await sendEventConfirmationMail(email, name, config.title);
+    } catch {
+      await EmailJob.create({
+        type: "EVENT",
+        payload: { email, name, eventTitle: config.title },
+      });
+    }
 
     return NextResponse.json({ message: "Registration successful" });
   } catch (err: any) {

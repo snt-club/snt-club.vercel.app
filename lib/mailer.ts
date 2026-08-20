@@ -230,10 +230,24 @@ export async function sendEventConfirmationMail(
   name: string,
   eventTitle: string
 ) {
+  const text =
+    `Hi ${name},\n\n` +
+    `Your registration for ${eventTitle} is confirmed.\n\n` +
+    `Event: ${eventTitle}\n` +
+    `Date: August 26, 2026\n` +
+    `Time: 10:00 AM - 1:00 PM IST\n` +
+    `Venue: SKIT Campus, Jaipur\n\n` +
+    `No further action is required. Please keep this email for your reference.\n\n` +
+    `Regards,\n` +
+    `Science & Technology Club, SKIT Jaipur\n` +
+    `https://snt-club.vercel.app`;
+
   await transporter.sendMail({
-    from: `"SNT Club" <${process.env.EMAIL_USER}>`,
+    from: `"Science & Technology Club, SKIT" <${process.env.EMAIL_USER}>`,
     to,
-    subject: `You're Registered — ${eventTitle} | SNT Club`,
+    replyTo: process.env.EMAIL_USER,
+    subject: `Registration Confirmed: ${eventTitle}`,
+    text,
     html: `
       <!DOCTYPE html>
       <html lang="en">
@@ -241,144 +255,91 @@ export async function sendEventConfirmationMail(
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="color-scheme" content="light">
+        <meta name="supported-color-schemes" content="light">
       </head>
-      <body style="margin:0;padding:0;background-color:#eef0f8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
-        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color:#eef0f8;padding:48px 16px;">
+      <body style="margin:0;padding:0;background-color:#f2f3f5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#1a1a1a;">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color:#f2f3f5;padding:40px 16px;">
           <tr>
             <td align="center">
-              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:540px;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:560px;background-color:#ffffff;border:1px solid #e4e7eb;border-radius:8px;overflow:hidden;">
 
-                <!-- Logo bar -->
+                <!-- Header -->
                 <tr>
-                  <td style="padding-bottom:20px;text-align:center;">
-                    <div style="display:inline-block;background-color:#0A146E;border-radius:12px;padding:8px 20px;">
-                      <span style="font-size:13px;font-weight:800;color:#ffffff;letter-spacing:2px;text-transform:uppercase;">S&amp;T CLUB</span>
-                      <span style="font-size:13px;font-weight:400;color:rgba(255,255,255,0.6);margin-left:6px;letter-spacing:1px;">SKIT</span>
-                    </div>
+                  <td style="background-color:#0A146E;padding:24px 32px;">
+                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td style="vertical-align:middle;">
+                          <span style="font-size:16px;font-weight:700;color:#ffffff;letter-spacing:0.5px;">Science &amp; Technology Club</span>
+                          <span style="font-size:13px;color:rgba(255,255,255,0.65);margin-left:8px;">SKIT Jaipur</span>
+                        </td>
+                      </tr>
+                    </table>
                   </td>
                 </tr>
 
-                <!-- Card -->
+                <!-- Confirmation strip -->
                 <tr>
-                  <td style="background-color:#ffffff;border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(10,20,110,0.10);">
+                  <td style="padding:28px 32px 8px;">
+                    <div style="font-size:13px;font-weight:600;color:#0f7b3f;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:6px;">Registration Confirmed</div>
+                    <div style="font-size:22px;font-weight:700;color:#0A146E;line-height:1.3;">${eventTitle}</div>
+                  </td>
+                </tr>
 
-                    <!-- Header with checkmark accent -->
-                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                <!-- Body -->
+                <tr>
+                  <td style="padding:16px 32px 8px;">
+                    <p style="font-size:15px;color:#333333;margin:0 0 16px 0;line-height:1.6;">
+                      Hi ${name},
+                    </p>
+                    <p style="font-size:15px;color:#333333;margin:0 0 24px 0;line-height:1.6;">
+                      Your registration for <strong style="color:#0A146E;">${eventTitle}</strong>, organized by the Science &amp; Technology Club, SKIT, has been received and confirmed. The event details are below.
+                    </p>
+                  </td>
+                </tr>
+
+                <!-- Details table -->
+                <tr>
+                  <td style="padding:0 32px 8px;">
+                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border:1px solid #e4e7eb;border-radius:6px;">
                       <tr>
-                        <td style="background:linear-gradient(135deg,#0A146E 0%,#1a27b0 100%);padding:36px 40px 32px;">
-                          <table role="presentation" cellspacing="0" cellpadding="0">
-                            <tr>
-                              <td style="vertical-align:middle;">
-                                <div style="font-size:11px;font-weight:700;color:#EE4B76;text-transform:uppercase;letter-spacing:2px;margin-bottom:4px;">Registration Confirmed</div>
-                                <div style="font-size:22px;font-weight:800;color:#ffffff;line-height:1.2;">${eventTitle}</div>
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
+                        <td style="padding:14px 20px;border-bottom:1px solid #eef0f2;width:110px;font-size:13px;color:#6b7280;font-weight:600;">Event</td>
+                        <td style="padding:14px 20px;border-bottom:1px solid #eef0f2;font-size:14px;color:#1a1a1a;font-weight:600;">${eventTitle}</td>
+                      </tr>
+                      <tr>
+                        <td style="padding:14px 20px;border-bottom:1px solid #eef0f2;font-size:13px;color:#6b7280;font-weight:600;">Date</td>
+                        <td style="padding:14px 20px;border-bottom:1px solid #eef0f2;font-size:14px;color:#1a1a1a;">August 26, 2026</td>
+                      </tr>
+                      <tr>
+                        <td style="padding:14px 20px;border-bottom:1px solid #eef0f2;font-size:13px;color:#6b7280;font-weight:600;">Time</td>
+                        <td style="padding:14px 20px;border-bottom:1px solid #eef0f2;font-size:14px;color:#1a1a1a;">10:00 AM &ndash; 1:00 PM IST</td>
+                      </tr>
+                      <tr>
+                        <td style="padding:14px 20px;font-size:13px;color:#6b7280;font-weight:600;">Venue</td>
+                        <td style="padding:14px 20px;font-size:14px;color:#1a1a1a;">SKIT Campus, Jaipur</td>
                       </tr>
                     </table>
+                  </td>
+                </tr>
 
-                    <!-- Body -->
-                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
-                      <tr>
-                        <td style="padding:36px 40px 32px;">
-
-                          <p style="font-size:17px;font-weight:700;color:#0A146E;margin:0 0 8px 0;">Hi ${name} 👋</p>
-                          <p style="font-size:15px;color:#475569;margin:0 0 28px 0;line-height:1.7;">
-                            Great news — your spot at <strong style="color:#0A146E;">${eventTitle}</strong> is secured. We're thrilled to have you join us for this event organized by <strong style="color:#0A146E;">Science &amp; Technology Club, SKIT</strong>.
-                          </p>
-
-                          <!-- Event details card -->
-                          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-radius:14px;overflow:hidden;margin-bottom:28px;border:1px solid #e2e8f0;">
-
-                            <!-- Event title row -->
-                            <tr>
-                              <td style="background:linear-gradient(135deg,#f0f3ff 0%,#e8ecff 100%);padding:20px 24px;border-bottom:1px solid #e2e8f0;">
-                                <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#64748b;margin-bottom:4px;">Event</div>
-                                <div style="font-size:20px;font-weight:800;color:#0A146E;">${eventTitle}</div>
-                              </td>
-                            </tr>
-
-                            <!-- Details rows -->
-                            <tr>
-                              <td style="padding:0;">
-                                <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
-                                  <tr>
-                                    <td style="padding:16px 24px;border-bottom:1px solid #f1f5f9;">
-                                      <table role="presentation" cellspacing="0" cellpadding="0">
-                                        <tr>
-                                          <td style="font-size:20px;padding-right:14px;vertical-align:middle;">📅</td>
-                                          <td>
-                                            <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:#94a3b8;margin-bottom:2px;">Date</div>
-                                            <div style="font-size:15px;font-weight:700;color:#1e293b;">August 26, 2026</div>
-                                          </td>
-                                        </tr>
-                                      </table>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td style="padding:16px 24px;border-bottom:1px solid #f1f5f9;">
-                                      <table role="presentation" cellspacing="0" cellpadding="0">
-                                        <tr>
-                                          <td style="font-size:20px;padding-right:14px;vertical-align:middle;">⏰</td>
-                                          <td>
-                                            <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:#94a3b8;margin-bottom:2px;">Time</div>
-                                            <div style="font-size:15px;font-weight:700;color:#1e293b;">10:00 AM – 1:00 PM IST</div>
-                                          </td>
-                                        </tr>
-                                      </table>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td style="padding:16px 24px;">
-                                      <table role="presentation" cellspacing="0" cellpadding="0">
-                                        <tr>
-                                          <td style="font-size:20px;padding-right:14px;vertical-align:middle;">📍</td>
-                                          <td>
-                                            <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:#94a3b8;margin-bottom:2px;">Venue</div>
-                                            <div style="font-size:15px;font-weight:700;color:#1e293b;">SKIT Campus, Jaipur</div>
-                                          </td>
-                                        </tr>
-                                      </table>
-                                    </td>
-                                  </tr>
-                                </table>
-                              </td>
-                            </tr>
-
-                          </table>
-
-                          <!-- Status badge -->
-                          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-bottom:28px;">
-                            <tr>
-                              <td align="center" style="background:linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%);border:1px solid #bbf7d0;border-radius:12px;padding:16px 20px;">
-                                <div style="font-size:15px;font-weight:700;color:#15803d;">✅ &nbsp;Your seat is confirmed</div>
-                                <div style="font-size:12px;color:#16a34a;margin-top:4px;">No further action required. See you there!</div>
-                              </td>
-                            </tr>
-                          </table>
-
-                          <!-- Closing -->
-                          <div style="border-top:1px solid #f1f5f9;padding-top:24px;">
-                            <p style="font-size:15px;font-weight:700;color:#0A146E;margin:0 0 4px 0;">Can't wait to see you there 🚀</p>
-                            <p style="font-size:13px;color:#64748b;margin:0;"><strong style="color:#0A146E;">SNT Club Team</strong> · Science &amp; Technology Club, SKIT</p>
-                          </div>
-
-                        </td>
-                      </tr>
-                    </table>
-
+                <!-- Note -->
+                <tr>
+                  <td style="padding:20px 32px 28px;">
+                    <p style="font-size:14px;color:#333333;margin:0 0 16px 0;line-height:1.6;">
+                      No further action is required. Please keep this email for your reference and arrive a few minutes early.
+                    </p>
+                    <p style="font-size:14px;color:#333333;margin:0;line-height:1.6;">
+                      Regards,<br>
+                      <strong style="color:#0A146E;">Science &amp; Technology Club</strong>, SKIT Jaipur
+                    </p>
                   </td>
                 </tr>
 
                 <!-- Footer -->
                 <tr>
-                  <td style="padding:24px 0 0 0;text-align:center;">
-                    <p style="font-size:12px;color:#94a3b8;margin:0 0 4px 0;">
-                      <strong style="color:#0A146E;">Science &amp; Technology Club</strong> · SKIT Jaipur
-                    </p>
-                    <p style="font-size:12px;margin:0;">
-                      <a href="https://snt-club.vercel.app" style="color:#0A146E;text-decoration:none;font-weight:600;">snt-club.vercel.app</a>
+                  <td style="background-color:#f7f8fa;border-top:1px solid #e4e7eb;padding:18px 32px;">
+                    <p style="font-size:12px;color:#8a919e;margin:0;line-height:1.5;">
+                      This is an automated confirmation from the Science &amp; Technology Club, SKIT Jaipur.
+                      Visit <a href="https://snt-club.vercel.app" style="color:#0A146E;text-decoration:none;">snt-club.vercel.app</a>.
                     </p>
                   </td>
                 </tr>
