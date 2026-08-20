@@ -311,11 +311,11 @@ export async function sendEventConfirmationMail(
                       </tr>
                       <tr>
                         <td style="padding:14px 20px;border-bottom:1px solid #eef0f2;font-size:13px;color:#6b7280;font-weight:600;">Time</td>
-                        <td style="padding:14px 20px;border-bottom:1px solid #eef0f2;font-size:14px;color:#1a1a1a;">10:00 AM &ndash; 1:00 PM IST</td>
+                        <td style="padding:14px 20px;border-bottom:1px solid #eef0f2;font-size:14px;color:#1a1a1a;">Will be shared soon</td>
                       </tr>
                       <tr>
                         <td style="padding:14px 20px;font-size:13px;color:#6b7280;font-weight:600;">Venue</td>
-                        <td style="padding:14px 20px;font-size:14px;color:#1a1a1a;">SKIT Campus, Jaipur</td>
+                        <td style="padding:14px 20px;font-size:14px;color:#1a1a1a;">Will be shared soon</td>
                       </tr>
                     </table>
                   </td>
