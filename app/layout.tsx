@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 import { Toaster } from 'react-hot-toast'; // 👈 Add this line
+import { Analytics } from '@vercel/analytics/next';
 
 // Components
 import Navbar from '@/components/navbar';
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <Toaster position="top-center" reverseOrder={false} /> 
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
