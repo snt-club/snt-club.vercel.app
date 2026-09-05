@@ -1,15 +1,11 @@
 'use client';
-import React from 'react';
+import React, { Suspense } from 'react';
 import Image from 'next/image';
 
 import { aarambh_img } from '@/assets/index';
-import EventRegistrationForm from '@/components/EventRegistrationForm';
-import { useSearchParams } from 'next/navigation';
-import EventAttendanceForm from '@/components/EventAttendaceForm';
+import EventFormSwitcher from '@/components/EventFormSwitcher';
 
 function AarambhPage() {
-  const eventParams = useSearchParams();
-  const attendance = eventParams.get('attendance');
 
   return (
     <section className="container mx-auto py-10" id="aarambh">
@@ -34,11 +30,9 @@ function AarambhPage() {
 
         {/* SHARED REGISTRATION FORM */}
         <div className="mt-10">
-          {attendance ? (
-            <EventAttendanceForm event="Aarambh2026" title="Aarambh" />
-          ) : (
-            <EventRegistrationForm event="Aarambh2026" title="Aarambh" />
-          )}
+          <Suspense fallback={<div className="text-center py-8">Loading form...</div>}>
+            <EventFormSwitcher event='Aarambh2026' title='Aarambh' />
+          </Suspense>
         </div>
       </div>
     </section>

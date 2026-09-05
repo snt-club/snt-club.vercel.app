@@ -41,7 +41,6 @@ export async function GET(req: Request) {
     "Phone",
     "Branch",
     "Year",
-    "Mail Sent",
     "Registered At",
   ];
 
@@ -54,7 +53,6 @@ export async function GET(req: Request) {
     r.phone ?? "",
     r.branch ?? "",
     r.year ?? "",
-    r.mailSent ? "Yes" : "No",
     r.createdAt ? new Date(r.createdAt).toISOString() : "",
   ]);
 

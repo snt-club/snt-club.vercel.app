@@ -1,15 +1,11 @@
 'use client';
-import React from 'react';
+import React, { Suspense } from 'react';
 import Image from 'next/image';
 
 import { flutterworkshop_img } from '@/assets/index';
-import EventRegistrationForm from '@/components/EventRegistrationForm';
-import { useSearchParams } from 'next/navigation';
-import EventAttendanceForm from '@/components/EventAttendaceForm';
+import EventFormSwitcher from '@/components/EventFormSwitcher';
 
 function AskSnTPage() {
-  const eventParams = useSearchParams();
-  const attendance = eventParams.get('attendance');
 
   return (
     <section className="container mx-auto py-10" id="aarambh">
@@ -32,11 +28,9 @@ function AskSnTPage() {
 
         {/* SHARED REGISTRATION FORM */}
         <div className="mt-10">
-          {attendance ? (
-            <EventAttendanceForm event="AskSnT" title="Ask S&T" />
-          ) : (
-            <EventRegistrationForm event="AskSnT" title="Ask S&T" />
-          )}
+          <Suspense fallback={<div className="text-center py-8">Loading form...</div>}>
+            <EventFormSwitcher event='AskSnT' title='Ask S&T' />
+          </Suspense>
         </div>
       </div>
     </section>

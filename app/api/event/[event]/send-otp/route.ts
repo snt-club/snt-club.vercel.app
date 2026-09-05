@@ -20,7 +20,7 @@ export async function POST(
     if (!config) {
       return NextResponse.json({ message: "Unknown event" }, { status: 404 });
     }
-    if (!config.open) {
+    if (!config.open || config.done) {
       return NextResponse.json(
         { message: "Registrations are closed for this event" },
         { status: 403 }

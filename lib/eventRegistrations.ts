@@ -9,6 +9,7 @@ export type EventConfig = {
   formattedDate?: string;
   formattedTime?: string;
   venue?: string;
+  done?: boolean;
 };
 
 // Converts "/events/Aarambh2026" -> "aarambh2026"
@@ -32,6 +33,7 @@ export function getEventConfig(event: string): EventConfig | null {
     formattedDate: match.eventDate,
     formattedTime: match.eventTime,
     venue: match.eventVenue,
+    done: new Date() > new Date(match.startDateTime)
   };
 }
 
