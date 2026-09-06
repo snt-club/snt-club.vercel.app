@@ -1,0 +1,27 @@
+name: Cron — Send Event Reminders
+
+on:
+  schedule:
+    # Runs every hour at :00. Reminder windows are 3d / 2d / 1d / 1h so hourly is enough.
+    - cron: '0 * * * *'
+  workflow_dispatch: # allow manual trigger from GitHub UI
+
+jobs:
+  send-reminders:
+    name: Send event reminders
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      - name: Call /api/reminders
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            -X POST \
+            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}" \
+            -H "Content-Type: application/json" \
+            "${{ secrets.VERCEL_PROD_URL }}/api/reminders")
+          echo "HTTP $STATUS"
+          if [ "$STATUS" != "200" ]; then
+            echo "Unexpected status code: $STATUS"
+            exit 1
+          fi

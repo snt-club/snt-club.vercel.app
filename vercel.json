@@ -2,15 +2,5 @@
   "github": {
     "enabled": true,
     "autoJobCancelation": true
-  },
-  "crons": [
-    {
-      "path": "/api/process-emails",
-      "schedule": "*/5 * * * *"
-    },
-    {
-      "path": "/api/reminders",
-      "schedule": "0 * * * *"
-    }
-  ]
+  }
 }

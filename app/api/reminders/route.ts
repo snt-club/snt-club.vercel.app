@@ -7,7 +7,6 @@ import { getAllEvents } from "@/lib/eventRegistrations";
 import { sendEventReminderMail } from "@/lib/mailer";
 
 export const dynamic = "force-dynamic";
-export const maxDuration = 60;
 
 const REMINDER_WINDOWS = [
   { key: "3d", label: "Starts in 3 Days", minHours: 48, maxHours: 72 },
@@ -54,15 +53,17 @@ export async function POST(req: Request) {
 
     if (!targetWindow) continue;
 
-    // Find registered users who have NOT received this interval yet
+    // Find registered users who have NOT received this interval yet.
+    // Limit to 8 per invocation so the function finishes within the 10s Hobby plan cap.
+    // GitHub Actions calls this endpoint every hour, so the backlog drains across runs.
     const attendees = await EventRegistration.find({
       event: event.slug,
       remindersSent: { $ne: targetWindow.key },
-    }).limit(50);
+    }).limit(8);
 
     const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-    const CONCURRENCY = 2; // Send 2 emails concurrently at a time
+    const CONCURRENCY = 2;
     for (let i = 0; i < attendees.length; i += CONCURRENCY) {
       const chunk = attendees.slice(i, i + CONCURRENCY);
 

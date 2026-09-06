@@ -1,0 +1,26 @@
+name: Cron — Process Email Queue
+
+on:
+  schedule:
+    # Runs every 5 minutes. GitHub Actions minimum interval is 5 min.
+    - cron: '*/5 * * * *'
+  workflow_dispatch: # allow manual trigger from GitHub UI
+
+jobs:
+  drain-queue:
+    name: Drain email job queue
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      - name: Call /api/process-emails
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            -X GET \
+            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}" \
+            "${{ secrets.VERCEL_PROD_URL }}/api/process-emails")
+          echo "HTTP $STATUS"
+          if [ "$STATUS" != "200" ]; then
+            echo "Unexpected status code: $STATUS"
+            exit 1
+          fi
