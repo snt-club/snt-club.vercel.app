@@ -3,7 +3,6 @@ import { connectDB } from "@/lib/db";
 import EventRegistration from "@/models/EventRegistration";
 
 export const dynamic = "force-dynamic";
-export const maxDuration = 30;
 
 // ---- Registration data feed for the Google Sheet ----
 // Secured with CRON_SECRET. Google Apps Script calls this every 5 min:

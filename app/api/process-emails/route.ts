@@ -9,7 +9,6 @@ import {
 } from "@/lib/mailer";
 
 export const dynamic = "force-dynamic";
-export const maxDuration = 60; // give the sweep room to send a batch
 
 async function sendForJob(job: any) {
   if (job.type === "OTP") {
@@ -31,10 +30,11 @@ const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 async function processQueue() {
   await connectDB();
 
-  // Pull a batch of pending jobs that have not exceeded retry limits
+  // Pull a small batch per invocation to stay within the 10s Hobby plan cap.
+  // GitHub Actions calls this endpoint every 5 minutes so the queue drains quickly.
   const jobs = await EmailJob.find({
     status: "PENDING",
-  }).limit(50);
+  }).limit(6);
 
   // Send in pairs with a small jitter to avoid throttling Gmail SMTP connections
   const CONCURRENCY = 2;
