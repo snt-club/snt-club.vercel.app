@@ -13,12 +13,12 @@ jobs:
     timeout-minutes: 2
 
     steps:
-      - name: Call /api/process-emails
+      - name: Drain email queue
         run: |
           STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
             -X GET \
             -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}" \
-            "${{ secrets.VERCEL_PROD_URL }}/api/process-emails")
+            "${{ secrets.VERCEL_PROD_URL }}/api/z9x4p7/t4bj9vc3")
           echo "HTTP $STATUS"
           if [ "$STATUS" != "200" ]; then
             echo "Unexpected status code: $STATUS"

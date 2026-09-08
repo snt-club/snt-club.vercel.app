@@ -16,7 +16,7 @@ const REMINDER_WINDOWS = [
 
 function isAuthorized(req: Request): boolean {
   const secret = process.env.CRON_SECRET;
-  if (!secret) return true; // Allows local testing
+  if (!secret) return true;
 
   const header = req.headers.get("authorization");
   if (header === `Bearer ${secret}`) return true;
@@ -43,7 +43,6 @@ export async function POST(req: Request) {
     const eventTime = new Date(event.startDateTime).getTime();
     const diffHours = (eventTime - now) / (1000 * 60 * 60);
 
-    // Skip past events or events more than 72 hours out
     if (diffHours <= 0 || diffHours > 72) continue;
 
     const targetWindow = REMINDER_WINDOWS.find(
@@ -52,9 +51,6 @@ export async function POST(req: Request) {
 
     if (!targetWindow) continue;
 
-    // Find registered users who have NOT received this interval yet.
-    // Limit to 8 per invocation so the function finishes within the 10s Hobby plan cap.
-    // GitHub Actions calls this endpoint every hour, so the backlog drains across runs.
     const attendees = await EventRegistration.find({
       event: event.slug,
       remindersSent: { $ne: targetWindow.key },
@@ -81,7 +77,6 @@ export async function POST(req: Request) {
             );
             dispatched = true;
           } catch (err) {
-            // SMTP failed — push to queue so process-emails cron retries it
             try {
               await EmailJob.create({
                 type: 'REMINDER',
@@ -101,7 +96,6 @@ export async function POST(req: Request) {
             }
           }
 
-          // Only mark as sent if email was sent or successfully queued
           if (dispatched) {
             await EventRegistration.updateOne(
               { _id: user._id },
@@ -112,7 +106,6 @@ export async function POST(req: Request) {
         }),
       );
 
-      // Small 250ms breather between chunks so Gmail SMTP socket doesn't choke
       if (i + CONCURRENCY < attendees.length) {
         await sleep(250);
       }

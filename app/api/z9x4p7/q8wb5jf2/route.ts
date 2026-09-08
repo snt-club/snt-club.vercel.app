@@ -4,9 +4,6 @@ import EventRegistration from "@/models/EventRegistration";
 
 export const dynamic = "force-dynamic";
 
-// Secured with CRON_SECRET. Google Apps Script calls this every 5 min:
-//   /api/admin/export-sheet?secret=YOUR_SECRET
-//   /api/admin/export-sheet?secret=YOUR_SECRET&event=AskSnT  (filter by event)
 export async function GET(req: Request) {
   const secret = process.env.CRON_SECRET;
   if (!secret) {
@@ -42,7 +39,6 @@ export async function GET(req: Request) {
     r.createdAt ? new Date(r.createdAt).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }) : "",
   ]);
 
-  // Per-event registration counts
   const countMap: Record<string, number> = {};
   for (const r of regs as any[]) {
     const ev = r.event ?? "unknown";

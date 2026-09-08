@@ -8,7 +8,6 @@ import { getEventConfig } from "@/lib/eventRegistrations";
 import { otpRateLimit } from "@/lib/rate-limit";
 import { sendOtpMail } from "@/lib/mailer";
 
-// Only these domains are allowed
 const ALLOWED_EMAIL = /^[a-zA-Z0-9._%+-]+@(gmail\.com|skit\.ac\.in)$/;
 
 export async function POST(
@@ -38,7 +37,6 @@ export async function POST(
       );
     }
 
-    // ---- Duplicate check: fail fast before sending any OTP ----
     const already = await EventRegistration.findOne({
       event: config.slug,
       email,
@@ -50,7 +48,6 @@ export async function POST(
       );
     }
 
-    // ---- Rate limit ----
     const allowed = await otpRateLimit(email, config.slug);
     if (!allowed) {
       return NextResponse.json(
@@ -59,14 +56,12 @@ export async function POST(
       );
     }
 
-    // ---- Generate 6-digit OTP, store hashed, 10-min expiry ----
-    const code = crypto.randomInt(40000, 1000000).toString().padStart(6, '0'); // 6 digits
+    const code = crypto.randomInt(40000, 1000000).toString().padStart(6, '0');
     const hashed = await bcrypt.hash(code, 10);
     const expiresAt = new Date(Date.now() + 10 * 60 * 1000);
 
     await Otp.create({ email, event: config.slug, otp: hashed, expiresAt });
 
-    // ---- Email the OTP (inline; user is waiting on this screen) ----
     await sendOtpMail(email, code);
 
     return NextResponse.json({ message: "OTP sent to your email" });

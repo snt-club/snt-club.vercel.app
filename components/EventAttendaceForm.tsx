@@ -122,7 +122,7 @@ export default function EventAttendanceForm({ event, title }: Props) {
     const t = toast.loading('Verifying location & marking attendance...');
 
     try {
-      const res = await fetch('/api/attendance', {
+      const res = await fetch('/api/z9x4p7/r3mk8nt6', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

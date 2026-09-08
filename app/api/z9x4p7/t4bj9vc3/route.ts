@@ -30,13 +30,10 @@ const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 async function processQueue() {
   await connectDB();
 
-  // Pull a small batch per invocation to stay within the 10s Hobby plan cap.
-  // GitHub Actions calls this endpoint every 5 minutes so the queue drains quickly.
   const jobs = await EmailJob.find({
     status: "PENDING",
   }).limit(6);
 
-  // Send in pairs with a small jitter to avoid throttling Gmail SMTP connections
   const CONCURRENCY = 2;
   let sent = 0;
   let failed = 0;
@@ -70,7 +67,6 @@ async function processQueue() {
       })
     );
 
-    // 250ms breather between chunks so the SMTP socket doesn't choke
     if (i + CONCURRENCY < jobs.length) {
       await sleep(250);
     }
@@ -79,15 +75,10 @@ async function processQueue() {
   return { processed: jobs.length, sent, failed };
 }
 
-// Verify the caller is Vercel Cron (or an authorized trigger) before doing work.
 function isAuthorized(req: Request): boolean {
   const secret = process.env.CRON_SECRET;
-  // If no secret is configured, don't block (keeps local/dev working).
   if (!secret) return true;
 
-  // Accept the secret two ways so it works with any external scheduler:
-  //  1. Authorization: Bearer <secret>   (cron-job.org custom header, Vercel Cron)
-  //  2. ?secret=<secret> in the URL       (simpler schedulers that only allow a URL)
   const header = req.headers.get("authorization");
   if (header === `Bearer ${secret}`) return true;
 

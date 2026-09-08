@@ -69,7 +69,7 @@ export default function EventRegistrationForm({ event, title }: Props) {
     setLoading(true);
     const t = toast.loading('Sending OTP...');
     try {
-      const res = await fetch(`/api/event/${event}/send-otp`, {
+      const res = await fetch(`/api/z9x4p7/${event}/gp1mq5xh`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: form.email.trim().toLowerCase() }),
@@ -99,7 +99,7 @@ export default function EventRegistrationForm({ event, title }: Props) {
     setLoading(true);
     const t = toast.loading('Verifying & registering...');
     try {
-      const res = await fetch(`/api/event/${event}/register`, {
+      const res = await fetch(`/api/z9x4p7/${event}/ly7k4pg2`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

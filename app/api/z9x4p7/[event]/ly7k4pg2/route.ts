@@ -37,7 +37,6 @@ export async function POST(
     const year = Number(body.year);
     const otp = (body.otp ?? "").trim();
 
-    // ---- Validation ----
     if (!name || !email || !rollNo || !phone || !branch || !year) {
       return NextResponse.json(
         { message: "All fields are required" },
@@ -69,7 +68,6 @@ export async function POST(
       );
     }
 
-    // ---- Verify OTP (most recent one for this email+event) ----
     const record = await Otp.findOne({ email, event: config.slug }).sort({
       createdAt: -1,
     });
@@ -87,7 +85,6 @@ export async function POST(
       );
     }
 
-    // ---- Create registration; unique indexes are the final duplicate guard ----
     await EventRegistration.create({
       event: config.slug,
       name,
@@ -98,10 +95,8 @@ export async function POST(
       year,
     });
 
-    // ---- OTP consumed: remove all OTPs for this email+event ----
     await Otp.deleteMany({ email, event: config.slug });
 
-    // ---- Send confirmation mail immediately; queue as fallback on failure ----
     try {
       await sendEventConfirmationMail(email, name, config.title, config.formattedDate ?? "", config.formattedTime ?? "", config.venue ?? "", config.startDateTime ?? "");
     } catch {
