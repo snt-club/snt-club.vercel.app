@@ -12,9 +12,8 @@ const transporter = nodemailer.createTransport({
 });
 
 /* ---------- OTP MAIL ---------- */
-/* ---------- OTP MAIL (OPTIMIZED FOR INBOX DELIVERY) ---------- */
 export async function sendOtpMail(to: string, otp: string) {
-  const textContent = `Hi,\n\nYour confirmation code for Science & Technology Club (SKIT) is: ${otp}\n\nThis code is valid for 5 minutes.\n\nBest regards,\nScience & Technology Club, SKIT Jaipur\nhttps://snt-club.vercel.app`;
+  const textContent = `Hi,\n\nYour confirmation code for Science & Technology Club (SKIT) is: ${otp}\n\nThis code is valid for 10 minutes.\n\nBest regards,\nScience & Technology Club, SKIT Jaipur\nhttps://snt-club.vercel.app`;
 
   const htmlContent = `
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -68,7 +67,7 @@ export async function sendOtpMail(to: string, otp: string) {
 
                   <!-- Expiry Note -->
                   <p style="margin: 0; font-size: 13px; color: #64748b; line-height: 1.5;">
-                    ⏱️ This code remains valid for <strong>5 minutes</strong>. If you did not make this request, you can safely ignore this message.
+                    ⏱️ This code remains valid for <strong>10 minutes</strong>. If you did not make this request, you can safely ignore this message.
                   </p>
                 </td>
               </tr>
@@ -100,15 +99,10 @@ export async function sendOtpMail(to: string, otp: string) {
   `.trim();
 
   await transporter.sendMail({
-    from: `"Science & Technology Club, SKIT" <${process.env.EMAIL_USER}>`,
+    from: `"S&T Club, SKIT" <${process.env.EMAIL_USER}>`,
     to,
     replyTo: process.env.EMAIL_USER,
-    subject: `${otp} is your S&T Club verification code`,
-    headers: {
-      'X-Priority': '1 (Highest)',
-      'X-MSMail-Priority': 'High',
-      Importance: 'High',
-    },
+    subject: `${otp} — your S&T Club verification code`,
     text: textContent,
     html: htmlContent,
   });
@@ -117,9 +111,9 @@ export async function sendOtpMail(to: string, otp: string) {
 /* ---------- REGISTRATION SUCCESS MAIL ---------- */
 export async function sendRegistrationMail(to: string, name: string, username: string, password: string) {
   await transporter.sendMail({
-    from: `"SNT Club" <${process.env.EMAIL_USER}>`,
+    from: `"S&T Club, SKIT" <${process.env.EMAIL_USER}>`,
     to,
-    subject: 'Welcome to SNT Club — Registration Successful',
+    subject: 'Welcome to S&T Club — Registration Confirmed',
     html: `
       <!DOCTYPE html>
       <html lang="en">
@@ -378,10 +372,10 @@ export async function sendEventConfirmationMail(
   }
 
   await transporter.sendMail({
-    from: `"Science & Technology Club" <${process.env.EMAIL_USER}>`,
+    from: `"S&T Club, SKIT" <${process.env.EMAIL_USER}>`,
     to,
     replyTo: process.env.EMAIL_USER,
-    subject: `Registration Confirmed: ${eventTitle}`,
+    subject: `Registered: ${eventTitle} — See you there!`,
     text: textContent,
     html: htmlContent,
     // Native calendar invite payload
@@ -550,10 +544,14 @@ export async function sendEventReminderMail(
   `.trim();
 
   await transporter.sendMail({
-    from: `"Science & Technology Club, SKIT" <${process.env.EMAIL_USER}>`,
+    from: `"S&T Club, SKIT" <${process.env.EMAIL_USER}>`,
     to,
     replyTo: process.env.EMAIL_USER,
-    subject: `Reminder: ${eventTitle} (${timeframeLabel})`,
+    subject: `Reminder: ${eventTitle} — ${timeframeLabel}`,
+    headers: {
+      'List-Unsubscribe': `<mailto:${process.env.EMAIL_USER}?subject=unsubscribe>`,
+      'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
+    },
     text: textContent,
     html: htmlContent,
   });

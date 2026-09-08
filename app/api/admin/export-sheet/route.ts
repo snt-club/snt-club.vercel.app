@@ -4,18 +4,15 @@ import EventRegistration from "@/models/EventRegistration";
 
 export const dynamic = "force-dynamic";
 
-// ---- Registration data feed for the Google Sheet ----
 // Secured with CRON_SECRET. Google Apps Script calls this every 5 min:
 //   /api/admin/export-sheet?secret=YOUR_SECRET
-// Returns clean JSON rows that the script writes into the sheet.
+//   /api/admin/export-sheet?secret=YOUR_SECRET&event=AskSnT  (filter by event)
 export async function GET(req: Request) {
   const secret = process.env.CRON_SECRET;
   if (!secret) {
-    return NextResponse.json(
-      { message: "CRON_SECRET not configured" },
-      { status: 500 }
-    );
+    return NextResponse.json({ message: "CRON_SECRET not configured" }, { status: 500 });
   }
+
   const url = new URL(req.url);
   const header = req.headers.get("authorization");
   const authorized =
@@ -26,22 +23,12 @@ export async function GET(req: Request) {
 
   await connectDB();
 
-  const regs = await EventRegistration.find({})
-    .sort({ createdAt: 1 })
-    .lean();
+  const eventFilter = url.searchParams.get("event");
+  const query = eventFilter ? { event: eventFilter } : {};
 
-  // Fixed column order so the sheet stays consistent.
-  const headers = [
-    "S.No",
-    "Event",
-    "Name",
-    "Email",
-    "Roll No",
-    "Phone",
-    "Branch",
-    "Year",
-    "Registered At",
-  ];
+  const regs = await EventRegistration.find(query).sort({ createdAt: 1 }).lean();
+
+  const headers = ["S.No", "Event", "Name", "Email", "Roll No", "Phone", "Branch", "Year", "Registered At"];
 
   const rows = regs.map((r: any, i: number) => [
     i + 1,
@@ -52,12 +39,21 @@ export async function GET(req: Request) {
     r.phone ?? "",
     r.branch ?? "",
     r.year ?? "",
-    r.createdAt ? new Date(r.createdAt).toISOString() : "",
+    r.createdAt ? new Date(r.createdAt).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }) : "",
   ]);
 
+  // Per-event registration counts
+  const countMap: Record<string, number> = {};
+  for (const r of regs as any[]) {
+    const ev = r.event ?? "unknown";
+    countMap[ev] = (countMap[ev] ?? 0) + 1;
+  }
+  const eventCounts = Object.entries(countMap).map(([event, count]) => ({ event, count }));
+
   return NextResponse.json({
-    generatedAt: new Date().toISOString(),
-    count: rows.length,
+    generatedAt: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+    totalCount: rows.length,
+    eventCounts,
     headers,
     rows,
   });

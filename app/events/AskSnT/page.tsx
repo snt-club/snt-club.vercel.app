@@ -1,39 +1,101 @@
 'use client';
 import React, { Suspense } from 'react';
-import Image from 'next/image';
+import Link from 'next/link';
+// import Image from 'next/image';
+// import asksnt from '@/assets/images/asksnt.jpg'; // uncomment when image is ready
 
-import { flutterworkshop_img } from '@/assets/index';
 import EventFormSwitcher from '@/components/EventFormSwitcher';
 
 function AskSnTPage() {
-
   return (
-    <section className="container mx-auto py-10" id="aarambh">
-      <div className="mx-8 mt-6 text-[#0A146E] lg:mx-12">
-        {/* HERO */}
-        <div className="grid grid-cols-12 items-center gap-6 rounded-[24px] bg-[#0A146E] p-6 text-white md:p-10">
-          <div className="col-span-12 mx-auto md:col-span-4">
-            <Image src={flutterworkshop_img} alt="AskSnT" className="w-[220px] md:w-[280px]" priority />
+    <>
+      <header className="bg-[#0A146E] py-2 text-base text-white md:py-8 md:text-xl">
+        <div className="block justify-between px-8 align-middle font-bold md:flex md:px-36">
+          <div>
+            <Link href="#" target="_blank">
+              <p className="p-2 text-center hover:text-gray-400">Notice</p>
+            </Link>
           </div>
-          <div className="col-span-12 md:col-span-8">
-            <p className="text-3xl font-bold md:text-5xl">Ask S&amp;T</p>
-            <p className="mt-3 text-sm text-white/80 md:text-lg">
-              Got questions? ASK S&T! Join us for an interactive session with the Science & Technology Club where you can bring your technical and non-technical questions, clear your doubts, and get insights from experienced club members. Whether you’re curious about technology, the club, or anything in between, ASK S&T is your space to ask, explore, and learn. Register below and come get your questions answered!
-            </p>
-            <p className="mt-4 inline-block rounded-full bg-[#EE4B76] px-4 py-1 text-sm font-semibold">
-              Registrations Open
-            </p>
+          <div className="max-md:mx-auto max-md:w-fit">
+            <a href="#register">
+              <button className="rounded-full border border-white bg-white p-2 text-center text-[#0A146E] duration-300 ease-in-out hover:bg-transparent hover:text-white">
+                Register Now
+              </button>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <div className="container mx-auto my-4">
+        <div className="mx-16 my-4 text-center">
+          <p className="rounded-xl bg-[#0A146E] text-2xl font-bold text-yellow-400 lg:text-6xl">Ask S&amp;T</p>
+        </div>
+
+        <div className="block md:flex">
+          {/* Image — replace div with <Image> when image is ready */}
+          <div className="mx-16 pb-8">
+            <div className="flex h-64 w-64 items-center justify-center rounded-xl border-2 border-dashed border-[#0A146E]/30 bg-[#0A146E]/5 md:h-72 md:w-72">
+              <div className="text-center text-[#0A146E]/40">
+                <p className="text-5xl">📸</p>
+                <p className="mt-2 text-sm font-medium">Image coming soon</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="my-auto h-fit">
+            <div className="mx-16">
+              <div className="mx-auto w-fit text-left text-lg md:text-2xl lg:text-justify">
+                <p>Ask S&amp;T, our open Q&amp;A session! Bring your questions and get answers from experienced club members.</p>
+                <br />
+                <p className="text-left md:text-center">
+                  Join us for: <br />
+                  • Live Q&amp;A with club members 💬 <br />
+                  • Technical &amp; non-technical discussions 💻 <br />
+                  • Career &amp; project guidance 🚀 <br />
+                  • Open doubt-solving sessions 📚
+                </p>
+                <br />
+              </div>
+            </div>
+
+            <div className="flex justify-center">
+              <div className="text-center">
+                <div>
+                  <div className="text-[14px] text-gray-500">
+                    <span>Date</span>
+                  </div>
+                  <div>
+                    <span className="text-[18px] font-semibold">To be declared</span>
+                  </div>
+                </div>
+                <div className="mt-1">
+                  <div className="text-[14px] text-gray-500">
+                    <span>Time</span>
+                  </div>
+                  <div>
+                    <span className="text-[18px] font-semibold">To be declared</span>
+                  </div>
+                </div>
+                <div className="mt-1">
+                  <div className="text-[14px] text-gray-500">
+                    <span>Venue</span>
+                  </div>
+                  <div>
+                    <span className="text-[18px] font-semibold">To be declared</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* SHARED REGISTRATION FORM */}
-        <div className="mt-10">
-          <Suspense fallback={<div className="text-center py-8">Loading form...</div>}>
-            <EventFormSwitcher event='AskSnT' title='Ask S&T' />
+        <div id="register" className="mx-16 mt-8">
+          <Suspense fallback={<div className="py-8 text-center">Loading form...</div>}>
+            <EventFormSwitcher event="AskSnT" title="Ask S&T" />
           </Suspense>
         </div>
       </div>
-    </section>
+    </>
   );
 }
 

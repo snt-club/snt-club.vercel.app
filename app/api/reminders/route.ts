@@ -1,4 +1,3 @@
-// app/api/cron/reminders/route.ts
 import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/db";
 import EventRegistration from "@/models/EventRegistration";
@@ -69,6 +68,7 @@ export async function POST(req: Request) {
 
       await Promise.all(
         chunk.map(async (user) => {
+          let dispatched = false;
           try {
             await sendEventReminderMail(
               user.email,
@@ -79,26 +79,36 @@ export async function POST(req: Request) {
               event.formattedTime || 'Refer Schedule',
               event.venue || 'SKIT Campus',
             );
+            dispatched = true;
           } catch (err) {
-            console.error(`[SMTP ERROR] Failed for ${user.email}:`, err);
-            // Fallback to queue if SMTP hiccups
-            await EmailJob.create({
-              type: 'REMINDER',
-              payload: {
-                email: user.email,
-                name: user.name,
-                eventTitle: event.title,
-                timeframeLabel: targetWindow.label,
-                eventDate: event.formattedDate,
-                eventTime: event.formattedTime,
-                venue: event.venue,
-              },
-            });
+            // SMTP failed — push to queue so process-emails cron retries it
+            try {
+              await EmailJob.create({
+                type: 'REMINDER',
+                payload: {
+                  email: user.email,
+                  name: user.name,
+                  eventTitle: event.title,
+                  timeframeLabel: targetWindow.label,
+                  eventDate: event.formattedDate,
+                  eventTime: event.formattedTime,
+                  venue: event.venue,
+                },
+              });
+              dispatched = true;
+            } catch {
+              // Queue creation failed — don't mark as sent so next run retries
+            }
           }
 
-          // Mark sent so it never duplicates
-          await EventRegistration.updateOne({ _id: user._id }, { $addToSet: { remindersSent: targetWindow.key } });
-          dispatchedCount++;
+          // Only mark as sent if email was sent or successfully queued
+          if (dispatched) {
+            await EventRegistration.updateOne(
+              { _id: user._id },
+              { $addToSet: { remindersSent: targetWindow.key } },
+            );
+            dispatchedCount++;
+          }
         }),
       );
 
