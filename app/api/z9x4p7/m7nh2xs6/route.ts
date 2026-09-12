@@ -88,6 +88,7 @@ export async function POST(req: Request) {
                   eventDate: event.formattedDate,
                   eventTime: event.formattedTime,
                   venue: event.venue,
+                  startDateTime: event.startDateTime,
                 },
               });
               dispatched = true;

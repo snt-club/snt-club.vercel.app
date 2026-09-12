@@ -20,7 +20,8 @@ async function sendForJob(job: any) {
     const { email, name, eventTitle, eventDate, eventTime, venue, startDateTime } = job.payload;
     await sendEventConfirmationMail(email, name, eventTitle, eventDate, eventTime, venue, startDateTime);
   } else if (job.type === "REMINDER") {
-    const { email, name, eventTitle, timeframeLabel, eventDate, eventTime, venue } = job.payload;
+    const { email, name, eventTitle, timeframeLabel, eventDate, eventTime, venue, startDateTime } = job.payload;
+    if (startDateTime && new Date(startDateTime) <= new Date()) return;
     await sendEventReminderMail(email, name, eventTitle, timeframeLabel, eventDate, eventTime, venue);
   }
 }
