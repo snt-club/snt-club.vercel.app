@@ -14,6 +14,7 @@ const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
  */
 export async function autoAnnounceIfNew(event: EventConfig): Promise<void> {
   const announcementId = `${event.slug}-launch`;
+  console.log(`[announce] checking event="${event.slug}" announcementId="${announcementId}"`);
 
   // Atomically claim the announcement — only one registration wins this
   const alreadyClaimed = await AnnouncementLog.findOneAndUpdate(
@@ -21,7 +22,10 @@ export async function autoAnnounceIfNew(event: EventConfig): Promise<void> {
     { $setOnInsert: { announcementId, email: "__trigger__" } },
     { upsert: true, new: false }
   );
-  if (alreadyClaimed) return; // another request already triggered it
+  if (alreadyClaimed) {
+    console.log(`[announce] already triggered for "${announcementId}" — skipping`);
+    return;
+  }
 
   // All distinct (email, name) from previous events — exclude current event registrants
   const recipients: { email: string; name: string }[] =
@@ -32,11 +36,13 @@ export async function autoAnnounceIfNew(event: EventConfig): Promise<void> {
       { $project: { _id: 0, email: "$_id", name: 1 } },
     ]);
 
+  console.log(`[announce] found ${recipients.length} previous registrant(s) to notify`);
   if (recipients.length === 0) return;
 
   const registerLink = `${BASE_URL}/events/${event.slug}`;
   const description = `Registrations are now open for ${event.title}. Join us for an exciting session at SKIT — seats are limited, so register early to secure your spot!`;
 
+  let sent = 0;
   for (let i = 0; i < recipients.length; i += CONCURRENCY) {
     const batch = recipients.slice(i, i + CONCURRENCY);
     await Promise.all(
@@ -50,9 +56,12 @@ export async function autoAnnounceIfNew(event: EventConfig): Promise<void> {
           event.venue || "SKIT Campus, Jaipur",
           registerLink,
           description
-        ).catch(() => {}) // skip failed sends silently
+        )
+          .then(() => { sent++; console.log(`[announce] sent to ${r.email}`); })
+          .catch((err) => console.error(`[announce] failed for ${r.email}:`, err?.message))
       )
     );
     if (i + CONCURRENCY < recipients.length) await sleep(200);
   }
+  console.log(`[announce] done — ${sent}/${recipients.length} sent`);
 }
