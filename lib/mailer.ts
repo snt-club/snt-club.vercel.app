@@ -11,6 +11,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+
 /* ---------- OTP MAIL ---------- */
 export async function sendOtpMail(to: string, otp: string) {
   const textContent = `Hi,\n\nYour confirmation code for Science & Technology Club (SKIT) is: ${otp}\n\nThis code is valid for 10 minutes.\n\nBest regards,\nScience & Technology Club, SKIT Jaipur\nhttps://snt-club.vercel.app`;
@@ -551,6 +552,171 @@ export async function sendEventReminderMail(
     headers: {
       'List-Unsubscribe': `<mailto:${process.env.EMAIL_USER}?subject=unsubscribe>`,
       'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
+    },
+    text: textContent,
+    html: htmlContent,
+  });
+}
+
+/* ---------- EVENT ANNOUNCEMENT MAIL ---------- */
+export async function sendEventAnnouncementMail(
+  to: string,
+  name: string,
+  eventTitle: string,
+  eventDate: string,
+  eventTime: string,
+  venue: string,
+  registerLink: string,
+  description: string,
+) {
+  const fromAddress = process.env.EMAIL_USER;
+
+  const textContent =
+    `Hi ${name},\n\n` +
+    `We're excited to announce a new event from Science & Technology Club, SKIT!\n\n` +
+    `${eventTitle}\n\n` +
+    `${description}\n\n` +
+    `Event Details:\n` +
+    `• Date: ${eventDate}\n` +
+    `• Time: ${eventTime}\n` +
+    `• Venue: ${venue}\n\n` +
+    `Register here: ${registerLink}\n\n` +
+    `Seats are limited — register early!\n\n` +
+    `Regards,\n` +
+    `Science & Technology Club, SKIT Jaipur\n` +
+    `https://snt-club.vercel.app\n\n` +
+    `---\n` +
+    `You are receiving this because you previously registered for an S&T Club event.\n` +
+    `To unsubscribe, reply with subject "unsubscribe".`;
+
+  const htmlContent = `
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
+  <title>New Event: ${eventTitle}</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f1f5f9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">
+
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f1f5f9; width: 100%; margin: 0; padding: 32px 16px;">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width: 560px; width: 100%; background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06);">
+
+          <!-- Club Header -->
+          <tr>
+            <td style="background-color: #0A146E; padding: 22px 32px;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td>
+                    <span style="font-size: 16px; font-weight: 700; color: #ffffff; letter-spacing: 0.3px;">Science &amp; Technology Club</span>
+                    <span style="font-size: 13px; color: #93c5fd; margin-left: 6px;">&bull; SKIT Jaipur</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- NEW EVENT badge + title -->
+          <tr>
+            <td style="padding: 28px 32px 12px 32px; background-color: #ffffff;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin-bottom: 14px;">
+                <tr>
+                  <td style="background-color: #EE4B76; border-radius: 6px; padding: 4px 12px; font-size: 11px; font-weight: 800; color: #ffffff; letter-spacing: 1.5px; text-transform: uppercase;">
+                    &#10022; New Event
+                  </td>
+                </tr>
+              </table>
+              <h1 style="margin: 0 0 10px 0; font-size: 24px; font-weight: 800; color: #0A146E; line-height: 1.25;">${eventTitle}</h1>
+              <p style="margin: 0; font-size: 15px; color: #334155; line-height: 1.7;">
+                Hi <strong>${name}</strong>, we have something exciting for you.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Description -->
+          <tr>
+            <td style="padding: 4px 32px 20px 32px; background-color: #ffffff;">
+              <p style="margin: 0; font-size: 15px; color: #475569; line-height: 1.75;">${description}</p>
+            </td>
+          </tr>
+
+          <!-- Event Details Table -->
+          <tr>
+            <td style="padding: 0 32px 24px 32px; background-color: #ffffff;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden;">
+                <tr>
+                  <td style="padding: 13px 18px; border-bottom: 1px solid #e2e8f0; width: 80px; font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.6px;">Date</td>
+                  <td style="padding: 13px 18px; border-bottom: 1px solid #e2e8f0; font-size: 14px; font-weight: 700; color: #0f172a;">${eventDate}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 13px 18px; border-bottom: 1px solid #e2e8f0; font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.6px;">Time</td>
+                  <td style="padding: 13px 18px; border-bottom: 1px solid #e2e8f0; font-size: 14px; font-weight: 700; color: #0f172a;">${eventTime}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 13px 18px; font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.6px;">Venue</td>
+                  <td style="padding: 13px 18px; font-size: 14px; font-weight: 600; color: #0f172a;">${venue}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- CTA Button -->
+          <tr>
+            <td style="padding: 0 32px 28px 32px; background-color: #ffffff; text-align: center;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
+                <tr>
+                  <td style="border-radius: 8px; background-color: #0A146E;">
+                    <a href="${registerLink}" target="_blank" style="display: inline-block; padding: 14px 36px; font-size: 15px; font-weight: 700; color: #ffffff; text-decoration: none; letter-spacing: 0.3px; border-radius: 8px;">
+                      Register Now &rarr;
+                    </a>
+                  </td>
+                </tr>
+              </table>
+              <p style="margin: 14px 0 0 0; font-size: 13px; color: #94a3b8;">Seats are limited. Register early to secure your spot.</p>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background-color: #f8fafc; border-top: 1px solid #e2e8f0; padding: 16px 32px;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td style="font-size: 12px; color: #94a3b8; line-height: 1.6;">
+                    You are receiving this because you previously registered for an S&amp;T Club event.
+                    To unsubscribe, reply with subject <em>unsubscribe</em>.
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-top: 6px; font-size: 12px;">
+                    <a href="https://snt-club.vercel.app" target="_blank" style="color: #0A146E; font-weight: 600; text-decoration: underline;">snt-club.vercel.app</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
+  `.trim();
+
+  await transporter.sendMail({
+    from: `"S&T Club, SKIT" <${fromAddress}>`,
+    to,
+    replyTo: fromAddress,
+    subject: `New Event: ${eventTitle} — Register Now!`,
+    headers: {
+      'List-Unsubscribe': `<mailto:${fromAddress}?subject=unsubscribe>`,
+      'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
+      'Precedence': 'bulk',
+      'X-Mailer': 'SNT-Club-Mailer',
     },
     text: textContent,
     html: htmlContent,
