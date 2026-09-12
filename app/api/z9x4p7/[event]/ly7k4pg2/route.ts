@@ -6,7 +6,6 @@ import EmailJob from "@/models/Emailjob";
 import Otp from "@/models/otp";
 import { getEventConfig } from "@/lib/eventRegistrations";
 import { sendEventConfirmationMail } from "@/lib/mailer";
-import { autoAnnounceIfNew } from "@/lib/announcements";
 
 const BRANCHES = ['CSE', 'DS', 'AI', 'IT', 'IOT', 'ECE', 'EE', 'ME', 'CE'];
 const ALLOWED_EMAIL = /^[a-zA-Z0-9._%+-]+@(gmail\.com|skit\.ac\.in)$/;
@@ -106,9 +105,6 @@ export async function POST(
         payload: { email, name, eventTitle: config.title, eventDate: config.formattedDate, eventTime: config.formattedTime, venue: config.venue, startDateTime: config.startDateTime },
       });
     }
-
-    // Fire-and-forget: announce new event to all previous registrants (runs in background)
-    autoAnnounceIfNew(config).catch(() => {});
 
     return NextResponse.json({ message: "Registration successful" });
   } catch (err: any) {

@@ -91,7 +91,7 @@ function AskSnTPage() {
 
         <div id="register" className="mx-16 mt-8">
           <Suspense fallback={<div className="py-8 text-center">Loading form...</div>}>
-            <EventFormSwitcher event="AskSnT" title="Ask S&T" />
+            <EventFormSwitcher event="p7x2k9nt" title="Ask S&T" />
           </Suspense>
         </div>
       </div>

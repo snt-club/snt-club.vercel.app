@@ -7,6 +7,7 @@ import EventRegistration from "@/models/EventRegistration";
 import { getEventConfig } from "@/lib/eventRegistrations";
 import { otpRateLimit } from "@/lib/rate-limit";
 import { sendOtpMail } from "@/lib/mailer";
+import { autoAnnounceIfNew } from "@/lib/announcements";
 
 const ALLOWED_EMAIL = /^[a-zA-Z0-9._%+-]+@(gmail\.com|skit\.ac\.in)$/;
 
@@ -63,6 +64,9 @@ export async function POST(
     await Otp.create({ email, event: config.slug, otp: hashed, expiresAt });
 
     await sendOtpMail(email, code);
+
+    // Fire-and-forget: first OTP request = event is live → announce to previous registrants
+    autoAnnounceIfNew(config).catch(() => {});
 
     return NextResponse.json({ message: "OTP sent to your email" });
   } catch (err: any) {
