@@ -8,6 +8,7 @@ import dsa from './images/dsa.webp';
 import web from './images/web.webp';
 import code_img from './svg/cws2.svg';
 import astrohunt_img from './svg/astrohunt.svg';
+import cBootcamp26Poster from './images/cbootcamp26.png';
 
 import sharda_soni from './people/sharda.png';
 import vinay_marwal from './people/vinay.png';
@@ -42,6 +43,7 @@ export {
   s,
   astrohunt_img,
   c_bootcamp_img,
+  cBootcamp26Poster,
   windows_img,
   cppWorkshop,
   dsa,
