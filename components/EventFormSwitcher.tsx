@@ -8,15 +8,16 @@ import EventAttendanceForm from '@/components/EventAttendaceForm';
 type Props = {
   event: string;
   title: string;
+  whatsappGroupUrl?: string;
 };
 
-export default function EventFormSwitcher({ event, title }: Props) {
+export default function EventFormSwitcher({ event, title, whatsappGroupUrl }: Props) {
   const eventParams = useSearchParams();
   const attendance = eventParams.get('attendance');
 
   return attendance ? (
     <EventAttendanceForm event={event} title={title} />
   ) : (
-    <EventRegistrationForm event={event} title={title} />
+    <EventRegistrationForm event={event} title={title} whatsappGroupUrl={whatsappGroupUrl} />
   );
 }

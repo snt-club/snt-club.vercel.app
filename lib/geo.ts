@@ -2,8 +2,8 @@
 export function getDistanceFromVenueInMeters(
   lat1: number,
   lon1: number,
-  lat2: number = 26.82207167365986, // Target Venue Lat
-  lon2: number = 75.86574735697235  // Target Venue Lon
+  lat2: number = 26.82213668010962, // Target Venue Lat
+  lon2: number = 75.86559453090123  // Target Venue Lon
 ): number {
   console.log(lat1, lon1)
   const R = 6371e3; // Earth's radius in meters

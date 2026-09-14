@@ -30,11 +30,13 @@ type Props = {
   event: string;
   /** Display title, used in headings and success copy */
   title: string;
+  /** Optional WhatsApp invite link for participants */
+  whatsappGroupUrl?: string;
 };
 
 type Step = 'details' | 'otp' | 'done';
 
-export default function EventRegistrationForm({ event, title }: Props) {
+export default function EventRegistrationForm({ event, title, whatsappGroupUrl }: Props) {
   const [form, setForm] = useState<FormState>(initialForm);
   const [otp, setOtp] = useState('');
   const [step, setStep] = useState<Step>('details');
@@ -151,6 +153,44 @@ export default function EventRegistrationForm({ event, title }: Props) {
           <p className="mt-2 text-sm text-[#0A146E]/70">
             We&apos;ve sent a confirmation to your email. See you at {title}!
           </p>
+
+          {/* WhatsApp Group Invite Card (Shown only if URL is provided) */}
+          {whatsappGroupUrl && (
+            <div className="mt-6 rounded-xl border-2 border-[#25D366]/40 bg-white p-5 shadow-sm">
+              <div className="flex items-center justify-center gap-2">
+                <span className="text-2xl">💬</span>
+                <p className="font-bold text-[#0A146E] text-base md:text-lg">
+                  Join the Official Participant Group
+                </p>
+              </div>
+              <p className="mt-1 text-xs md:text-sm text-gray-600">
+                All information regarding the classes and announcements regarding the bootcamp will be shared in the provided group.
+              </p>
+              <a
+                href={whatsappGroupUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 border-2 border-[#11a447] inline-flex items-center justify-center gap-2 rounded-lg text-[#11a447] px-6 py-3 font-semibold transition hover:text-white hover:bg-[#11a447]"
+              >
+                <span>Join WhatsApp Group</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </a>
+            </div>
+          )}
+          
           <button
             onClick={resetAll}
             className="mt-4 rounded-lg border-2 border-[#0A146E] px-4 py-2 text-sm font-semibold text-[#0A146E] transition hover:bg-[#0A146E] hover:text-white"
