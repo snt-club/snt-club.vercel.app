@@ -3,6 +3,8 @@ import React, { Suspense } from 'react';
 import Link from 'next/link';
 import EventFormSwitcher from '@/components/EventFormSwitcher';
 import { getEventConfig } from '@/lib/eventRegistrations';
+import Image from 'next/image';
+import { cBootcamp26Poster } from '@/assets';
 
 function CBootcampPage() {
   const eventDetails = getEventConfig('c5bt3kp8');
@@ -46,13 +48,15 @@ function CBootcampPage() {
           
           {/* POSTER / IMAGE PLACEHOLDER */}
           <div className="col-span-12 flex justify-center lg:col-span-4 lg:justify-start">
-            <div className="flex aspect-square w-full max-w-[320px] items-center justify-center rounded-2xl border-2 border-dashed border-[#0A146E]/20 bg-[#0A146E]/[0.02] shadow-inner transition hover:border-[#0A146E]/40 lg:max-w-none">
-              <div className="text-center text-[#0A146E]/50">
-                <p className="text-5xl md:text-6xl">📸</p>
-                <p className="mt-2.5 text-xs font-semibold uppercase tracking-wider text-[#0A146E]/70">
-                  Poster Coming Soon
-                </p>
-              </div>
+            <div className="relative w-full max-w-[340px] overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-50 shadow-md transition duration-300 hover:shadow-lg lg:max-w-none">
+              <Image
+                src={cBootcamp26Poster}
+                alt="C Bootcamp Poster"
+                width={600}
+                height={600}
+                className="h-auto w-full object-contain"
+                priority
+              />
             </div>
           </div>
 
