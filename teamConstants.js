@@ -278,7 +278,7 @@ const sntTeamMember = [
     memberLinkedin: 'https://www.linkedin.com/in/mansh-kumar-bb3844373?utm_source=share_via&utm_content=profile&utm_medium=member_android',
   },
   {
-    memberName: 'Subnidhi Mittal',
+    memberName: 'Sunidhi Mittal',
     memberPost: 'Student_Team',
     memberTeam: 'content_Team',
     memberPhoto: '',
