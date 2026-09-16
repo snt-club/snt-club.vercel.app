@@ -6,6 +6,7 @@ export type EventConfig = {
   title: string;
   open: boolean;
   startDateTime?: string;
+  endDateTime?: string;
   formattedDate?: string;
   formattedTime?: string;
   venue?: string;
@@ -30,6 +31,7 @@ export function getEventConfig(event: string): EventConfig | null {
     title: match.eventName,
     open: match.eventRegStatus === "live",
     startDateTime: match.startDateTime,
+    endDateTime: match.endDateTime,
     formattedDate: match.eventDate,
     formattedTime: match.eventTime,
     venue: match.eventVenue,
@@ -43,6 +45,7 @@ export function getAllEvents(): EventConfig[] {
     title: e.eventName,
     open: e.eventRegStatus === "live",
     startDateTime: e.startDateTime,
+    endDateTime: e.endDateTime,
     formattedDate: matchSchedule(e).date,
     formattedTime: matchSchedule(e).time,
     venue: matchSchedule(e).venue,

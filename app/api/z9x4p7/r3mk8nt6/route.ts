@@ -3,12 +3,25 @@ import { connectDB } from "@/lib/db";
 import EventRegistration from "@/models/EventRegistration";
 import { getDistanceFromVenueInMeters } from "@/lib/geo";
 import Attendance from "@/models/Attendance";
+import { getEventConfig } from "@/lib/eventRegistrations";
 
 export async function POST(req: Request) {
   try {
     const { event, email, rollNo, name, rating, feedback, lat, lng, deviceId } =
       await req.json();
 
+    const eventConfig = getEventConfig(event);
+if (!eventConfig) {
+  return NextResponse.json({ error: "Invalid event." }, { status: 400 });
+}
+
+if (eventConfig.endDateTime) {
+  const deadline = new Date(eventConfig.endDateTime);
+  if (!isNaN(deadline.getTime()) && new Date() > deadline) {
+    return NextResponse.json({ error: "Attendance expired." }, { status: 403 });
+  }
+}
+    
     if (!deviceId) {
       return NextResponse.json(
         { error: "Location and Device verification required." },
