@@ -57,39 +57,39 @@ export default function EventAttendanceForm({ event, title }: Props) {
         setDeviceId(fallbackId);
       });
 
-    requestLocation();
+    // requestLocation();
   }, []);
 
-  const requestLocation = () => {
-    if (!navigator.geolocation) {
-      toast.error('Geolocation is not supported by your browser');
-      setLocationStatus('denied');
-      return;
-    }
+  // const requestLocation = () => {
+  //   if (!navigator.geolocation) {
+  //     toast.error('Geolocation is not supported by your browser');
+  //     setLocationStatus('denied');
+  //     return;
+  //   }
 
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        setCoords({
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-        });
-        setLocationStatus('granted');
-      },
-      (error) => {
-        setLocationStatus('denied');
-        if (error.code === error.PERMISSION_DENIED) {
-          toast.error('Location permission is required to mark attendance.');
-        } else {
-          toast.error('Unable to fetch precise location. Please enable GPS.');
-        }
-      },
-      {
-        enableHighAccuracy: true,
-        timeout: 10000,
-        maximumAge: 0,
-      }
-    );
-  };
+  //   navigator.geolocation.getCurrentPosition(
+  //     (position) => {
+  //       setCoords({
+  //         lat: position.coords.latitude,
+  //         lng: position.coords.longitude,
+  //       });
+  //       setLocationStatus('granted');
+  //     },
+  //     (error) => {
+  //       setLocationStatus('denied');
+  //       if (error.code === error.PERMISSION_DENIED) {
+  //         toast.error('Location permission is required to mark attendance.');
+  //       } else {
+  //         toast.error('Unable to fetch precise location. Please enable GPS.');
+  //       }
+  //     },
+  //     {
+  //       enableHighAccuracy: true,
+  //       timeout: 10000,
+  //       maximumAge: 0,
+  //     }
+  //   );
+  // };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -105,7 +105,7 @@ export default function EventAttendanceForm({ event, title }: Props) {
     if (!form.rating) return 'Please select a session rating';
     if (!form.feedback) return 'Please give us some feedback';
     if (!deviceId) return 'Initializing device security check... please wait 2 seconds';
-    if (!coords) return 'GPS Location is required. Please grant location access.';
+    // if (!coords) return 'GPS Location is required. Please grant location access.';
     return null;
   };
 
@@ -188,7 +188,7 @@ export default function EventAttendanceForm({ event, title }: Props) {
                 <span>⚠️ Location permission denied. Required for 50m check.</span>
                 <button
                   type="button"
-                  onClick={requestLocation}
+                  // onClick={requestLocation}
                   className="underline font-bold"
                 >
                   Retry

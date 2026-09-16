@@ -15,7 +15,7 @@ function CBootcampPage() {
       <header className="w-full bg-[#0A146E] py-4 text-white shadow-md">
         <div className="mx-auto flex w-full max-w-[94%] flex-col items-center justify-center gap-3 px-2 sm:flex-row sm:justify-between sm:px-6 xl:max-w-7xl">
           <div>
-            <Link href="#" target="_blank">
+            <Link href="#" target="_blank" download="NOTICE_C_BOOTCAMP .pdf">
               <span className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1 text-sm font-medium text-white/90 transition hover:bg-white/10 hover:text-white md:text-base">
                 📌 Notice
               </span>
