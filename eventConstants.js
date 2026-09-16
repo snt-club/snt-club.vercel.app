@@ -119,7 +119,7 @@ const eventDetails = [
     eventStatus: 'ongoing',
     eventRegLink: '/events/c5bt3kp8',
     eventRegStatus: 'live',
-    startDateTime: '2026-09-16T13:30:00+05:30',
+    startDateTime: '2026-09-16T14:45:00+05:30',
     eventDate: 'September 16, 2026',
     eventTime: '1:30 PM - 3:00 PM',
     eventVenue: '4F-L4, Civil Block',
