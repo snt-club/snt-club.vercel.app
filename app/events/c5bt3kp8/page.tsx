@@ -108,7 +108,7 @@ function CBootcampPage() {
               <div className="rounded-xl border border-[#0A146E]/15 bg-white p-3.5 shadow-sm">
                 <span className="text-xs font-medium uppercase tracking-wider text-slate-400">Time</span>
                 <p className="mt-0.5 text-sm font-semibold text-[#0A146E] md:text-base">
-                  {eventDetails?.formattedTime || "1:30 PM - 3:00 PM"}
+                  {eventDetails?.formattedTime || "Will be specified"}
                 </p>
               </div>
 
