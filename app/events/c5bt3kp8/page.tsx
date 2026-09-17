@@ -15,7 +15,7 @@ function CBootcampPage() {
       <header className="w-full bg-[#0A146E] py-4 text-white shadow-md">
         <div className="mx-auto flex w-full max-w-[94%] flex-col items-center justify-center gap-3 px-2 sm:flex-row sm:justify-between sm:px-6 xl:max-w-7xl">
           <div>
-            <Link href="#" target="_blank">
+            <Link href="#" target="_blank" download="NOTICE_C_BOOTCAMP .pdf">
               <span className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1 text-sm font-medium text-white/90 transition hover:bg-white/10 hover:text-white md:text-base">
                 📌 Notice
               </span>
@@ -108,7 +108,7 @@ function CBootcampPage() {
               <div className="rounded-xl border border-[#0A146E]/15 bg-white p-3.5 shadow-sm">
                 <span className="text-xs font-medium uppercase tracking-wider text-slate-400">Time</span>
                 <p className="mt-0.5 text-sm font-semibold text-[#0A146E] md:text-base">
-                  {eventDetails?.formattedTime || "1:30 PM - 3:00 PM"}
+                  {eventDetails?.formattedTime || "Will be specified"}
                 </p>
               </div>
 

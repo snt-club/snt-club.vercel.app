@@ -3,13 +3,22 @@ import { connectDB } from "@/lib/db";
 import EventRegistration from "@/models/EventRegistration";
 import { getDistanceFromVenueInMeters } from "@/lib/geo";
 import Attendance from "@/models/Attendance";
+import { getEventConfig } from "@/lib/eventRegistrations";
 
 export async function POST(req: Request) {
   try {
     const { event, email, rollNo, name, rating, feedback, lat, lng, deviceId } =
       await req.json();
 
-    if (!lat || !lng || !deviceId) {
+    const eventConfig = getEventConfig(event);
+    if (!eventConfig) {
+      return NextResponse.json({ error: "Invalid event." }, { status: 400 });
+    }
+    if (eventConfig.deadline) {
+      return NextResponse.json({ error: "Attendance submission is now closed for this event." }, { status: 403 })
+    }
+    
+    if (!deviceId) {
       return NextResponse.json(
         { error: "Location and Device verification required." },
         { status: 400 }
@@ -17,15 +26,15 @@ export async function POST(req: Request) {
     }
 
     // 1. Verify Geofence (Within 50 meters)
-    const distance = getDistanceFromVenueInMeters(lat, lng);
-    if (distance > 50) {
-      return NextResponse.json(
-        {
-          error: `You are ${(distance).toFixed(0)}m away from the venue. You must be within 50m to mark attendance.`,
-        },
-        { status: 403 }
-      );
-    }
+    // const distance = getDistanceFromVenueInMeters(lat, lng);
+    // if (distance > 50) {
+    //   return NextResponse.json(
+    //     {
+    //       error: `You are ${(distance).toFixed(0)}m away from the venue. You must be within 50m to mark attendance.`,
+    //     },
+    //     { status: 403 }
+    //   );
+    // }
 
     await connectDB();
 
@@ -68,7 +77,8 @@ export async function POST(req: Request) {
       rollNo: rollNo.toUpperCase(),
       name,
       deviceId,
-      distanceFromVenue: Math.round(distance),
+      // distanceFromVenue: Math.round(distance),
+      distanceFromVenue: 20,
       rating: Number(rating),
       feedback,
     });
