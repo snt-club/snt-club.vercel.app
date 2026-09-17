@@ -9,6 +9,7 @@ import web from './images/web.webp';
 import code_img from './svg/cws2.svg';
 import astrohunt_img from './svg/astrohunt.svg';
 import cBootcamp26Poster from './images/cbootcamp26.png';
+import codeWithSnt_img from './images/code with S&T 5.0.png';
 
 import sharda_soni from './people/sharda.png';
 import vinay_marwal from './people/vinay.png';
@@ -38,6 +39,7 @@ export {
   mohit,
   viren,
   aarambh_img,
+  codeWithSnt_img,
   code_img,
   flutterworkshop_img,
   s,

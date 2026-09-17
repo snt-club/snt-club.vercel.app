@@ -70,6 +70,7 @@ export async function POST(
 
     return NextResponse.json({ message: "OTP sent to your email" });
   } catch (err: any) {
+    console.log(err);
     return NextResponse.json(
       { message: "Could not send OTP. Please try again." },
       { status: 500 }
