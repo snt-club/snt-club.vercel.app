@@ -11,16 +11,12 @@ export async function POST(req: Request) {
       await req.json();
 
     const eventConfig = getEventConfig(event);
-if (!eventConfig) {
-  return NextResponse.json({ error: "Invalid event." }, { status: 400 });
-}
-
-if (eventConfig.endDateTime) {
-  const deadline = new Date(eventConfig.endDateTime);
-  if (!isNaN(deadline.getTime()) && new Date() > deadline) {
-    return NextResponse.json({ error: "Attendance expired." }, { status: 403 });
-  }
-}
+    if (!eventConfig) {
+      return NextResponse.json({ error: "Invalid event." }, { status: 400 });
+    }
+    if (eventConfig.deadline) {
+      return NextResponse.json({ error: "Attendance submission is now closed for this event." }, { status: 403 })
+    }
     
     if (!deviceId) {
       return NextResponse.json(

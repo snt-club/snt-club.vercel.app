@@ -4,10 +4,10 @@ import Link from 'next/link';
 import EventFormSwitcher from '@/components/EventFormSwitcher';
 import { getEventConfig } from '@/lib/eventRegistrations';
 import Image from 'next/image';
-import { cBootcamp26Poster } from '@/assets';
+import { cBootcamp26Poster, codeWithSnt_img } from '@/assets';
 
-function CBootcampPage() {
-  const eventDetails = getEventConfig('c5bt3kp8');
+function codeWithSntPage() {
+  const eventDetails = getEventConfig('a1sk5sn7');
 
   return (
     <>
@@ -15,7 +15,7 @@ function CBootcampPage() {
       <header className="w-full bg-[#0A146E] py-4 text-white shadow-md">
         <div className="mx-auto flex w-full max-w-[94%] flex-col items-center justify-center gap-3 px-2 sm:flex-row sm:justify-between sm:px-6 xl:max-w-7xl">
           <div>
-            <Link href="#" target="_blank" download="NOTICE_C_BOOTCAMP .pdf">
+            <Link href="#" target="_blank" download="/CODE WITH S&T 5.0 Notice.pdf">
               <span className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1 text-sm font-medium text-white/90 transition hover:bg-white/10 hover:text-white md:text-base">
                 📌 Notice
               </span>
@@ -38,7 +38,7 @@ function CBootcampPage() {
         <div className="mb-8 w-full text-center md:mb-10">
           <div className="relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-[#0A146E] via-[#12209e] to-[#0A146E] px-6 py-3.5 shadow-md shadow-[#0A146E]/10 md:py-4">
             <h1 className="text-2xl font-extrabold tracking-normal text-amber-300 md:text-3xl lg:text-4xl">
-              {eventDetails?.title || "C Bootcamp"}
+              {eventDetails?.title || "Code with Snt 5.0"}
             </h1>
           </div>
         </div>
@@ -50,7 +50,7 @@ function CBootcampPage() {
           <div className="col-span-12 flex justify-center lg:col-span-4 lg:justify-start">
             <div className="relative w-full max-w-[340px] overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-50 shadow-md transition duration-300 hover:shadow-lg lg:max-w-none">
               <Image
-                src={cBootcamp26Poster}
+                src={codeWithSnt_img}
                 alt="C Bootcamp Poster"
                 width={600}
                 height={600}
@@ -64,7 +64,7 @@ function CBootcampPage() {
           <div className="col-span-12 space-y-6 text-[#0A146E] lg:col-span-8">
             {/* Main Lead Paragraph (Normal readable weight) */}
             <p className="text-base font-normal leading-relaxed text-slate-700 md:text-lg">
-              We&apos;re excited to announce our <strong className="font-semibold text-[#0A146E]">C Bootcamp</strong> for all coding enthusiasts! Students new to coding or looking to strengthen their C programming fundamentals — this bootcamp is for you.
+              <strong className="font-semibold text-[#0A146E]">CODE WITH S&T 5.0</strong> is back — brought to you by the Science & Technology Club! <br />Got what it takes? No lectures 👩🏼‍🏫, no boring theory — just you, your keyboard, and some genuinely fun problems waiting to be cracked.
             </p>
 
             {/* Structured Bullet Section (Regular font weight) */}
@@ -74,24 +74,24 @@ function CBootcampPage() {
               </p>
               <ul className="space-y-3 text-sm font-normal leading-relaxed text-slate-700 md:text-base">
                 <li className="flex items-start gap-3">
-                  <span className="text-lg">📆</span>
-                  <span>Hybrid mode classes to fit your schedule.</span>
+                  <span className="text-lg">⚡</span>
+                  <span>Open the problem ➔ Crack the code ➔ Claim the glory!</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-lg">🧑🏻‍💻</span>
-                  <span>Problem-solving activities that make learning fun and interactive</span>
+                  <span className="text-lg">🧩</span>
+                  <span>Mix of tricky puzzles and real coding problems</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-lg">🖋️</span>
-                  <span>Sharpen your skills with guided, hands-on tasks</span>
+                  <span className="text-lg">🕕</span>
+                  <span>Clock ticking away while you figure it out. </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-lg">📚</span>
-                  <span>Get your questions answered in real-time</span>
+                  <span className="text-lg">👨🏼‍💻</span>
+                  <span>Beat the other coders.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-lg">👨🏻‍🎓</span>
-                  <span>Earn a completion certificate after successfully finishing the bootcamp!</span>
+                  <span className="text-lg">🏆</span>
+                  <span>Snag your prizes and certificates.</span>
                 </li>
               </ul>
             </div>
@@ -101,21 +101,21 @@ function CBootcampPage() {
               <div className="rounded-xl border border-[#0A146E]/15 bg-white p-3.5 shadow-sm">
                 <span className="text-xs font-medium uppercase tracking-wider text-slate-400">Date</span>
                 <p className="mt-0.5 text-sm font-semibold text-[#0A146E] md:text-base">
-                  {eventDetails?.formattedDate || "September 16, 2026"}
+                  {eventDetails?.formattedDate || "September 20, 2026"}
                 </p>
               </div>
               
               <div className="rounded-xl border border-[#0A146E]/15 bg-white p-3.5 shadow-sm">
                 <span className="text-xs font-medium uppercase tracking-wider text-slate-400">Time</span>
                 <p className="mt-0.5 text-sm font-semibold text-[#0A146E] md:text-base">
-                  {eventDetails?.formattedTime || "Will be specified"}
+                  {eventDetails?.formattedTime || "4:00 PM - 5:00 PM"}
                 </p>
               </div>
 
               <div className="rounded-xl border border-[#0A146E]/15 bg-white p-3.5 shadow-sm">
                 <span className="text-xs font-medium uppercase tracking-wider text-slate-400">Venue</span>
                 <p className="mt-0.5 text-sm font-semibold text-[#0A146E] md:text-base">
-                  {eventDetails?.venue || "4F-L4, Civil Block"}
+                  {eventDetails?.venue || "Online Mode"}
                 </p>
               </div>
             </div>
@@ -127,9 +127,9 @@ function CBootcampPage() {
         <div id="register" className="mx-auto mt-14 w-full max-w-4xl pt-4">
           <Suspense fallback={<div className="py-10 text-center text-base font-semibold text-[#0A146E]">Loading form...</div>}>
             <EventFormSwitcher
-              event="c5bt3kp8"
-              title="C Bootcamp"
-              whatsappGroupUrl="https://chat.whatsapp.com/FUc84Zn2rrEFV3BkBaJOdp"
+              event="a1sk5sn7"
+              title="Code with Snt 5.0 "
+              // whatsappGroupUrl="https://chat.whatsapp.com/K6NItBmGjbAB0d2wBy88hm?s=sw&p=a&mlu=4&ilr=4"
             />
           </Suspense>
         </div>
@@ -139,4 +139,4 @@ function CBootcampPage() {
   );
 }
 
-export default CBootcampPage;
+export default codeWithSntPage;

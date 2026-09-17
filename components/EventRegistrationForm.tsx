@@ -6,6 +6,7 @@ import toast from 'react-hot-toast';
 const BRANCHES = ['CSE', 'DS', 'AI', 'IT', 'IOT', 'ECE', 'EE', 'ME', 'CE'];
 const YEARS = [1, 2, 3, 4];
 const ALLOWED_EMAIL = /^[a-zA-Z0-9._%+-]+@(gmail\.com|skit\.ac\.in)$/;
+const NOT_ALLOWED_ROLLNO = /^(B23\d{4}|23ESK[A-Z]{2}\d{3})$/i;
 
 type FormState = {
   name: string;
@@ -53,6 +54,7 @@ export default function EventRegistrationForm({ event, title, whatsappGroupUrl }
     if (!ALLOWED_EMAIL.test(form.email.trim()))
       return 'Please use a valid @gmail.com or @skit.ac.in email';
     if (!form.rollNo.trim()) return 'Please enter your roll number';
+    if (NOT_ALLOWED_ROLLNO.test(form.rollNo.trim())) return 'Registrations from this year students is not allowed';
     if (!/^[6-9]\d{9}$/.test(form.phone.trim()))
       return 'Please enter a valid 10-digit phone number';
     if (!BRANCHES.includes(form.branch)) return 'Please select your branch';
