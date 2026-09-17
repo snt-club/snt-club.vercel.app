@@ -91,14 +91,13 @@ const eventDetails = [
     eventName: 'CODE WITH S&T 5.0',
     eventDesc: 'Science and Technology Club is back with next chapter of Code With S&T - this time bigger and better!',
     eventImg: code_img,
-    eventStatus: 'upcoming',
-    eventRegLink: '/events/c8hs9kup',
-    eventRegStatus: 'closed',
-    startDateTime: '',
-    endDateTime: '',
-    eventDate: '',
-    eventTime: '',
-    eventVenue: '',
+    eventStatus: 'ongoing',
+    eventRegLink: '/events/a1sk5sn7',
+    eventRegStatus: 'live',
+    startDateTime: '2026-09-20T16:00:00+05:30',
+    eventDate: 'September 20, 2026',
+    eventTime: '4:00 PM - 5:00 PM',
+    eventVenue: 'Online Mode',
   },
 
   {
@@ -153,6 +152,7 @@ const eventDetails = [
     eventTime: '',
     eventVenue: '',
   },
+ 
   // {
   //   eventName: 'Tech Talk With Alumni',
   //   eventDesc: 'Tech talk with alumni Join us for an Expert talk session, connecting students with industry pioneers for insightful tech guidance!',
