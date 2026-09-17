@@ -128,8 +128,7 @@ function codeWithSntPage() {
           <Suspense fallback={<div className="py-10 text-center text-base font-semibold text-[#0A146E]">Loading form...</div>}>
             <EventFormSwitcher
               event="a1sk5sn7"
-              title="Code with Snt 5.0 "
-              // whatsappGroupUrl="https://chat.whatsapp.com/K6NItBmGjbAB0d2wBy88hm?s=sw&p=a&mlu=4&ilr=4"
+              title="Code With S&T 5.0"
             />
           </Suspense>
         </div>
