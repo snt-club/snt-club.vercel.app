@@ -15,7 +15,7 @@ function codeWithSntPage() {
       <header className="w-full bg-[#0A146E] py-4 text-white shadow-md">
         <div className="mx-auto flex w-full max-w-[94%] flex-col items-center justify-center gap-3 px-2 sm:flex-row sm:justify-between sm:px-6 xl:max-w-7xl">
           <div>
-            <Link href="#" target="_blank">
+            <Link href="#" target="_blank" download="/CODE WITH S&T 5.0 Notice.pdf">
               <span className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1 text-sm font-medium text-white/90 transition hover:bg-white/10 hover:text-white md:text-base">
                 📌 Notice
               </span>
@@ -64,7 +64,7 @@ function codeWithSntPage() {
           <div className="col-span-12 space-y-6 text-[#0A146E] lg:col-span-8">
             {/* Main Lead Paragraph (Normal readable weight) */}
             <p className="text-base font-normal leading-relaxed text-slate-700 md:text-lg">
-              We&apos;re excited to announce our <strong className="font-semibold text-[#0A146E]">Code with SnT 5.0</strong> for all coding enthusiasts! <br />Students new to programming or looking to strengthen their coding skills — this event is for you!
+              <strong className="font-semibold text-[#0A146E]">CODE WITH S&T 5.0</strong> is back — brought to you by the Science & Technology Club! <br />Got what it takes? No lectures 👩🏼‍🏫, no boring theory — just you, your keyboard, and some genuinely fun problems waiting to be cracked.
             </p>
 
             {/* Structured Bullet Section (Regular font weight) */}

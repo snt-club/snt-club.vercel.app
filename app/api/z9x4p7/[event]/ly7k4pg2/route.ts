@@ -9,6 +9,7 @@ import { sendEventConfirmationMail } from "@/lib/mailer";
 
 const BRANCHES = ['CSE', 'DS', 'AI', 'IT', 'IOT', 'ECE', 'EE', 'ME', 'CE'];
 const ALLOWED_EMAIL = /^[a-zA-Z0-9._%+-]+@(gmail\.com|skit\.ac\.in)$/;
+const NOT_ALLOWED_ROLLNO = /^(B23\d{4}|23ESK[A-Z]{2}\d{3})$/i;
 
 export async function POST(
   req: Request,
@@ -48,6 +49,12 @@ export async function POST(
         { message: "Please use a valid @gmail.com or @skit.ac.in email" },
         { status: 400 }
       );
+    }
+    if (NOT_ALLOWED_ROLLNO.test(rollNo)) {
+      return NextResponse.json(
+        { message: "Registration from this year students is not allowed" },
+        { status: 400 }
+      )
     }
     if (!/^[6-9]\d{9}$/.test(phone)) {
       return NextResponse.json(
