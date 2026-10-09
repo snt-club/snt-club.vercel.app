@@ -36,11 +36,11 @@ function CBootcampPage() {
                 Event Concluded
               </span>
             ) : attendanceOpen ? (
-              <a href="#register">
+              <Link href="?attendance=true">
                 <button className="rounded-full border border-[#4bee6e] bg-[#4bee6e] px-5 py-1.5 text-sm font-bold text-[#0A146E] shadow-sm transition duration-300 ease-in-out hover:bg-transparent hover:text-white md:text-base">
                   Mark Attendance
                 </button>
-              </a>
+              </Link>
             ) : registrationOpen ? (
               <a href="#register">
                 <button className="rounded-full border border-white bg-white px-5 py-1.5 text-sm font-bold text-[#0A146E] shadow-sm transition duration-300 ease-in-out hover:bg-transparent hover:text-white md:text-base">

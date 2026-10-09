@@ -36,11 +36,11 @@ function AskSNT() {
                 Event Concluded
               </span>
             ) : attendanceOpen ? (
-              <a href="#register">
+              <Link href="?attendance=true">
                 <button className="rounded-full border border-[#4bee6e] bg-[#4bee6e] px-5 py-1.5 text-sm font-bold text-[#0A146E] shadow-sm transition duration-300 ease-in-out hover:bg-transparent hover:text-white md:text-base">
                   Mark Attendance
                 </button>
-              </a>
+              </Link>
             ) : registrationOpen ? (
               <a href="#register">
                 <button className="rounded-full border border-white bg-white px-5 py-1.5 text-sm font-bold text-[#0A146E] shadow-sm transition duration-300 ease-in-out hover:bg-transparent hover:text-white md:text-base">
@@ -68,12 +68,12 @@ function AskSNT() {
           </div>
         </div>
 
-        {/* 12-COL FULL-WIDTH CONTENT GRID */}
-        <div className="grid w-full grid-cols-12 items-start gap-8 lg:gap-12">
+        {/* 12-COL FULL-WIDTH CONTENT GRID (items-center to align heights nicely) */}
+        <div className="grid w-full grid-cols-12 items-center gap-8 lg:gap-12">
           
-          {/* POSTER / IMAGE PLACEHOLDER */}
+          {/* POSTER: limited max-width to avoid stretching too tall */}
           <div className="col-span-12 flex justify-center lg:col-span-4 lg:justify-start">
-            <div className="relative w-full max-w-[340px] overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-50 shadow-md transition duration-300 hover:shadow-lg lg:max-w-none">
+            <div className="relative w-full max-w-[280px] overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-50 shadow-md transition duration-300 hover:shadow-lg sm:max-w-[320px]">
               <Image
                 src={AskSNTPoster}
                 alt="Ask S&t Poster"
@@ -144,8 +144,8 @@ function AskSNT() {
           </div>
         </div>
 
-        {/* REGISTRATION / ATTENDANCE / STATUS SECTION */}
-        <div id="register" className="mx-auto mt-14 w-full max-w-4xl pt-4">
+        {/* REGISTRATION / ATTENDANCE / STATUS SECTION (Reduced top margin from mt-14 to mt-8) */}
+        <div id="register" className="mx-auto mt-8 w-full max-w-4xl">
           {ended ? (
             <div className="rounded-2xl border-2 border-[#0A146E]/15 bg-slate-50/80 p-8 text-center text-[#0A146E] shadow-sm">
               <p className="text-4xl">🏁</p>
@@ -164,12 +164,12 @@ function AskSNT() {
             </Suspense>
           ) : (
             <div className="rounded-2xl border-2 border-amber-300 bg-amber-50/80 p-8 text-center text-[#0A146E] shadow-sm">
-  <p className="text-4xl">⏳</p>
-  <h3 className="mt-3 text-2xl font-bold">Registrations Are Closed</h3>
-  <p className="mt-2 text-sm text-slate-700 md:text-base">
-    Registrations for {eventDetails?.title || "Ask S&T"} are now closed. If you have already registered, check your email or join the WhatsApp group for class schedules and session updates.
-  </p>
-</div>
+              <p className="text-4xl">⏳</p>
+              <h3 className="mt-3 text-2xl font-bold">Registrations Are Closed</h3>
+              <p className="mt-2 text-sm text-slate-700 md:text-base">
+                Registrations for {eventDetails?.title || "Ask S&T"} are now closed. If you have already registered, check your email or join the WhatsApp group for class schedules and session updates.
+              </p>
+            </div>
           )}
         </div>
 
