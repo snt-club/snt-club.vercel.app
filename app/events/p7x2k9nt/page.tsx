@@ -1,21 +1,46 @@
 'use client';
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import Link from 'next/link';
 import EventFormSwitcher from '@/components/EventFormSwitcher';
 import { getEventConfig } from '@/lib/eventRegistrations';
 import Image from 'next/image';
 import AskSNTPoster from '@/assets/images/AskS&T.jpeg';
 
-function AskSNT() {
-  const eventDetails = getEventConfig('p7x2k9nt');
+const EVENT_ID = "p7x2k9nt";
 
-  // Status flags from event config
-  const registrationOpen = Boolean(eventDetails?.registrationOpen);
+function AskSNT() {
+  const eventDetails = getEventConfig(EVENT_ID);
+
+  // 1. Local state for live DB capacity
+  const [isFull, setIsFull] = useState(false);
+  const [loadingStatus, setLoadingStatus] = useState(true);
+
+  useEffect(() => {
+    async function checkEventCapacity() {
+      try {
+        const res = await fetch(`/api/z9x4p7/${EVENT_ID}/s7yb37hi`);
+        const data = await res.json();
+        if (data?.isFull) {
+          setIsFull(true);
+        }
+      } catch (err) {
+        console.error('Error fetching event capacity', err);
+      } finally {
+        setLoadingStatus(false);
+      }
+    }
+
+    checkEventCapacity();
+  }, []);
+
+  // 2. Combine static config with dynamic DB check
+  const staticRegOpen = Boolean(eventDetails?.registrationOpen);
   const attendanceOpen = Boolean(eventDetails?.attendanceOpen);
   const started = Boolean(eventDetails?.started);
   const ended = Boolean(eventDetails?.ended);
 
-  // Determine whether any interactive form should be accessible
+  // Closed if DB says it's full
+  const registrationOpen = staticRegOpen && !isFull;
   const showForm = !ended && (attendanceOpen || registrationOpen);
 
   return (
@@ -144,34 +169,37 @@ function AskSNT() {
           </div>
         </div>
 
-        {/* REGISTRATION / ATTENDANCE / STATUS SECTION (Reduced top margin from mt-14 to mt-8) */}
-        <div id="register" className="mx-auto mt-8 w-full max-w-4xl">
-          {ended ? (
-            <div className="rounded-2xl border-2 border-[#0A146E]/15 bg-slate-50/80 p-8 text-center text-[#0A146E] shadow-sm">
-              <p className="text-4xl">🏁</p>
-              <h3 className="mt-3 text-2xl font-bold">Event Concluded</h3>
-              <p className="mt-2 text-sm text-slate-600 md:text-base">
-                Whether it's academics 📚, technology 💻, college life 🎓, career guidance 🚀, or anything else — this is your space to ask, explore, and learn! 🙌🏻
-              </p>
-            </div>
-          ) : showForm ? (
-            <Suspense fallback={<div className="py-10 text-center text-base font-semibold text-[#0A146E]">Loading form...</div>}>
-              <EventFormSwitcher
-                event="p7x2k9nt"
-                title="Ask S&T"
-                whatsappGroupUrl=""
-              />
-            </Suspense>
-          ) : (
-            <div className="rounded-2xl border-2 border-amber-300 bg-amber-50/80 p-8 text-center text-[#0A146E] shadow-sm">
-              <p className="text-4xl">⏳</p>
-              <h3 className="mt-3 text-2xl font-bold">Registrations Are Closed</h3>
-              <p className="mt-2 text-sm text-slate-700 md:text-base">
-                Registrations for {eventDetails?.title || "Ask S&T"} are now closed. If you have already registered, check your email or join the WhatsApp group for class schedules and session updates.
-              </p>
-            </div>
-          )}
-        </div>
+        {/* REGISTRATION / ATTENDANCE / STATUS SECTION */}
+      <div id="register" className="mx-auto mt-8 w-full max-w-4xl">
+        {loadingStatus ? (
+          <div className="py-8 text-center text-slate-500">Checking availability...</div>
+        ) : ended ? (
+          <div className="rounded-2xl border-2 border-[#0A146E]/15 bg-slate-50/80 p-8 text-center text-[#0A146E] shadow-sm">
+            <p className="text-4xl">🏁</p>
+            <h3 className="mt-3 text-2xl font-bold">Event Concluded</h3>
+          </div>
+        ) : showForm ? (
+          <Suspense fallback={<div className="py-10 text-center text-base font-semibold text-[#0A146E]">Loading form...</div>}>
+            <EventFormSwitcher
+              event={EVENT_ID}
+              title="Ask S&T"
+              whatsappGroupUrl=""
+            />
+          </Suspense>
+        ) : (
+          <div className="rounded-2xl border-2 border-amber-300 bg-amber-50/80 p-8 text-center text-[#0A146E] shadow-sm">
+            <p className="text-4xl">⏳</p>
+            <h3 className="mt-3 text-2xl font-bold">
+              {isFull ? "Registrations Full!" : "Registrations Are Closed"}
+            </h3>
+            <p className="mt-2 text-sm text-slate-700 md:text-base">
+              {isFull 
+                ? "This event has reached its maximum limit of 100 registrations."
+                : `Registrations for ${eventDetails?.title || "Ask S&T"} are now closed.`}
+            </p>
+          </div>
+        )}
+      </div>
 
       </div>
     </>
