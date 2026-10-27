@@ -9,6 +9,8 @@ import Faculty from '@/components/main-sections/faculty';
 import CoreTeam from '@/components/main-sections/coreteam';
 import CoreMembers from '@/components/main-sections/coremembers';
 
+export const dynamic = 'force-dynamic';
+
 
 export default function Home() {
   return (
