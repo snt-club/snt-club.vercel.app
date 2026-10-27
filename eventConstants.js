@@ -130,6 +130,20 @@ const eventDetails = [
     eventTime: '2 PM - 3 PM',
     eventVenue: '4F-L4, Civil Block',
   },
+
+  {
+    eventName: '🚀 CAMPUS TO CORPORATE — Decode Your Career!',
+    eventDesc: 'The Science & Technology Club, SKIT, is organizing Campus to Corporate, an engaging career-readiness session designed to help B.Tech students prepare for internships and placements.',
+    eventImg: c_bootcamp_img,
+    eventRegLink: '/events/d6c0d6ca',
+    registrationDeadline: '2026-10-28T14:00:00+05:30',
+startDateTime: '2026-10-28T14:00:00+05:30',
+endDateTime: '2026-10-28T15:00:00+05:30',
+attendanceDeadline: '2026-10-28T15:00:00+05:30',
+eventDate: 'October 28, 2026',
+    eventTime: '2 PM - 3 PM',
+    eventVenue: '4F-L4, Civil Block',
+  },
   {
     eventName: 'C Bootcamp',
     eventDesc: 'Join the C Bootcamp to master C programming through flexible hybrid classes, hands-on tasks, and real-time support.',
