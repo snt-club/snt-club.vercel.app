@@ -75,7 +75,7 @@ function CodeWithSntPage() {
           <div className="col-span-12 flex justify-center lg:col-span-4 lg:justify-start">
             <div className="relative w-full max-w-[340px] overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-50 shadow-md transition duration-300 hover:shadow-lg lg:max-w-none">
               <Image
-                src={flutterworkshop_img}
+                src={CampusPoster}
                 alt="CAMPUS_TO_CORPORATE Poster"
                 width={600}
                 height={600}
